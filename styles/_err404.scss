@@ -1,0 +1,56 @@
+.hero-seo {
+  height: 80vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/img/dashi_greenhatseo.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  h2 {
+    margin: 0rem 2rem;
+    padding: 3rem;
+    color: #f8f8f8;
+  }
+}
+
+.slider-text {
+  margin-top: 5rem;
+  margin-left: 6rem;
+  margin-bottom: 5rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: 00.3s;
+  text-align: center;
+  width: 35%;
+  padding: 3rem;
+  overflow: hidden;
+  background-color: #282429;
+  color: #f8f8f8;
+  border-color: #10010f;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+}
+.slider-text a:link {
+  background: #ff5722;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #10010f;
+
+  font-weight: bolder;
+}
+[role="doc-subtitle"] {
+  font-weight: bold;
+  text-align: center;
+}
+.slider-text a:hover,
+a:active {
+  background-color: #5fbab0;
+}

@@ -1,0 +1,41 @@
+.projects {
+  width: 90%;
+  margin: auto;
+  min-height: 90vh;
+  @include flex(space-between, center, row);
+  text-align: center;
+  flex-wrap: wrap;
+  img {
+    margin: 5rem;
+  }
+}
+
+.kitty-velour,
+.travelator,
+.bobmin-photography,
+.herald,
+.jrtoys,
+.windsor-hotel {
+  flex: 1 1 40rem;
+  @include flex(center, center, column);
+  img {
+    max-width: 80%;
+  }
+  transition: transform 500ms;
+}
+
+.kitty-velour:focus,
+.travelator:focus,
+.bobmin-photography:focus,
+.herald:focus,
+.jrtoys:focus,
+.windsor-hotel:focus,
+.kitty-velour:hover,
+.travelator:hover,
+.bobmin-photography:hover,
+.herald:hover,
+.jrtoys:hover,
+.windsor-hotel:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}

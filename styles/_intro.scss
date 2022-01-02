@@ -1,0 +1,110 @@
+.main-head {
+  width: 100%;
+  margin: 0 0 0 auto;
+  background: $background-color;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  position: relative;
+}
+
+nav {
+  @include flex(space-between, center, row);
+  min-height: 10vh;
+  width: 60%;
+  flex-wrap: wrap;
+
+  .logo {
+    @include flex(flext-start, center, row);
+    flex: 1 1 10rem;
+    margin-left: 6%;
+    h1 {
+      margin: 1rem 1rem;
+    }
+  }
+  ul {
+    @include flex(space-evenly, center, row);
+
+    flex: 1 1 40rem;
+    a {
+      padding: 0rem 1.8rem 0rem 1.8rem;
+    }
+  }
+}
+
+.intro {
+  min-height: 90vh;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  @include flex(space-between, center, row);
+  h2 {
+    font-size: 8rem;
+    padding-top: 2rem;
+  }
+  h3 {
+    font-size: 6rem;
+    padding: 2rem 0rem;
+  }
+  p {
+    padding-top: 2rem;
+    color: whitesmoke;
+  }
+}
+
+.splash {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  z-index: -2;
+}
+
+.mallow {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  background: transparent url(../img/mallow.png) 0 0 no-repeat;
+  width: 350px;
+  height: 350px;
+  transform: translate(-30%, -88%);
+  margin: 2em auto;
+  animation: run 1.5s steps(2) infinite;
+  z-index: -1;
+}
+@keyframes run {
+  100% {
+    background-position: -706px 0;
+  }
+}
+
+.intro-social {
+  margin-top: 4rem;
+  a {
+    margin-right: 5rem;
+  }
+}
+
+.active {
+  background: $grey-text;
+  color: $highlighter;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+}
+
+.intro-text,
+.intro-images {
+  flex: 1 1 40rem;
+}
+
+#plant-left {
+  animation: plant 1.5s ease infinite alternate;
+}
+
+@keyframes plant {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-3%);
+  }
+}

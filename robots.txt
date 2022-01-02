@@ -1,0 +1,6 @@
+User-Agent: *
+
+Allow: /
+Disallow: 
+
+Sitemap: http://jrt.id.au/sitemap.xml

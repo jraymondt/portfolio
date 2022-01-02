@@ -1,0 +1,142 @@
+$header1: 2.2rem;
+$header2: 3.8rem;
+$header3: 2.4rem;
+$header4: 1.9rem;
+$text: 2.4rem;
+$gradient: linear-gradient(left, #1e2229, #000000);
+$background-color: #334756;
+$grey-text: #082032;
+$highlighter: #ff4c29;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "global";
+@import "intro";
+@import "projects";
+@import "contact";
+@import "footer";
+@import "err404";
+
+@media screen and (max-width: 1387px) {
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-144%, -88%);
+  }
+}
+
+@media screen and (max-width: 1332px) {
+  html {
+    font-size: 53%;
+  }
+  .splash {
+    display: none;
+  }
+  svg {
+    width: 80%;
+  }
+  nav {
+    width: 100%;
+  }
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-44%, -128%);
+  }
+}
+
+@media screen and (max-width: 1136px) {
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-28%, -135%);
+  }
+}
+@media screen and (max-width: 812px) {
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-44%, -111%);
+  }
+}
+
+@media screen and (max-width: 754px) {
+  html {
+    font-size: 45%;
+  }
+
+  svg {
+    height: 60%;
+  }
+  main-head {
+    width: 100%;
+  }
+  nav {
+    .logo {
+      @include flex(center, center, column);
+      flex: 1 1 20rem;
+      margin-top: 2rem;
+      margin-left: 0;
+    }
+    ul {
+      flex: 1 1 60rem;
+      padding: 3rem 0rem;
+    }
+  }
+  .intro-text {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .intro-images {
+    text-align: left;
+  }
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-24%, -88%);
+  }
+  .intro-social {
+    @include flex(center, center, row);
+    a {
+      margin: 2rem;
+    }
+  }
+  .kitty-velour,
+  .travelator,
+  .bobmin-photography,
+  .herald,
+  .jrtoys,
+  .windsor-hotel {
+    img {
+      width: 70%;
+    }
+  }
+  .kitty-velour:focus,
+  .travelator:focus,
+  .bobmin-photography:focus,
+  .herald:focus,
+  .jrtoys:focus,
+  .windsor-hotel:focus,
+  .kitty-velour:hover,
+  .travelator:hover,
+  .bobmin-photography:hover,
+  .herald:hover,
+  .jrtoys:hover,
+  .windsor-hotel:hover {
+    transform: scale(1.2);
+  }
+  form {
+    padding: 0;
+    width: 100%;
+  }
+}

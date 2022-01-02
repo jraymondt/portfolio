@@ -1,0 +1,27 @@
+nav height = 28px;
+
+body {
+	width: 758px;
+	margin: 6px auto 0 auto;
+	border-top: solid 1px #8e8e8e;
+	background: transparent url(../images/bg-texture.png) no-repeat top
+	center;
+	height: 100%;
+	color: #666666;
+	font-size: 13px;
+	position: relative;
+	font-family: Times, ”Times New Roman”, serif;
+}
+#primary {
+	width: 375px;
+	padding-right: 4px;
+}
+
+#secondary {
+	width: 130px;
+}
+#tertiary {
+	width: 244px;
+	margin-right:0;
+	padding-left: 4px;
+}

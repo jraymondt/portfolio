@@ -1,0 +1,676 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: whitesmoke;
+  background: #082032;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+li,
+button,
+label,
+input,
+p,
+a {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 3.8rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+h4,
+h5 {
+  font-size: 1.9rem;
+}
+
+ul {
+  list-style: none;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.main-head {
+  width: 100%;
+  margin: 0 0 0 auto;
+  background: #334756;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  position: relative;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 10vh;
+  width: 60%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flext-start;
+      -ms-flex-pack: flext-start;
+          justify-content: flext-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10rem;
+          flex: 1 1 10rem;
+  margin-left: 6%;
+}
+
+nav .logo h1 {
+  margin: 1rem 1rem;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+nav ul a {
+  padding: 0rem 1.8rem 0rem 1.8rem;
+}
+
+.intro {
+  min-height: 90vh;
+  width: 90%;
+  margin: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.intro h2 {
+  font-size: 8rem;
+  padding-top: 2rem;
+}
+
+.intro h3 {
+  font-size: 6rem;
+  padding: 2rem 0rem;
+}
+
+.intro p {
+  padding-top: 2rem;
+  color: whitesmoke;
+}
+
+.splash {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  z-index: -2;
+}
+
+.mallow {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  background: transparent url(../img/mallow.png) 0 0 no-repeat;
+  width: 350px;
+  height: 350px;
+  -webkit-transform: translate(-30%, -88%);
+          transform: translate(-30%, -88%);
+  margin: 2em auto;
+  -webkit-animation: run 1.5s steps(2) infinite;
+          animation: run 1.5s steps(2) infinite;
+  z-index: -1;
+}
+
+@-webkit-keyframes run {
+  100% {
+    background-position: -706px 0;
+  }
+}
+
+@keyframes run {
+  100% {
+    background-position: -706px 0;
+  }
+}
+
+.intro-social {
+  margin-top: 4rem;
+}
+
+.intro-social a {
+  margin-right: 5rem;
+}
+
+.active {
+  background: #082032;
+  color: #ff4c29;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+}
+
+.intro-text,
+.intro-images {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+#plant-left {
+  -webkit-animation: plant 1.5s ease infinite alternate;
+          animation: plant 1.5s ease infinite alternate;
+}
+
+@-webkit-keyframes plant {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-3%);
+            transform: translateY(-3%);
+  }
+}
+
+@keyframes plant {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-3%);
+            transform: translateY(-3%);
+  }
+}
+
+.projects {
+  width: 90%;
+  margin: auto;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.projects img {
+  margin: 5rem;
+}
+
+.kitty-velour,
+.travelator,
+.bobmin-photography,
+.herald,
+.jrtoys,
+.windsor-hotel {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+}
+
+.kitty-velour img,
+.travelator img,
+.bobmin-photography img,
+.herald img,
+.jrtoys img,
+.windsor-hotel img {
+  max-width: 80%;
+}
+
+.kitty-velour:focus,
+.travelator:focus,
+.bobmin-photography:focus,
+.herald:focus,
+.jrtoys:focus,
+.windsor-hotel:focus,
+.kitty-velour:hover,
+.travelator:hover,
+.bobmin-photography:hover,
+.herald:hover,
+.jrtoys:hover,
+.windsor-hotel:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  z-index: 1;
+}
+
+.form-section {
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 3rem;
+}
+
+.form-section form {
+  padding: 3rem 10rem;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 2rem;
+}
+
+.form-section form input,
+.form-section form textarea {
+  margin: 2rem;
+}
+
+.form-section form input:focus,
+.form-section form textarea:focus {
+  outline: 2px solid black;
+}
+
+.form-section form textarea {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+}
+
+.form-section form button {
+  width: 100%;
+  padding: 2rem;
+  background: #ff5722;
+  color: white;
+}
+
+.form-section form button:focus {
+  background: #393e46;
+}
+
+.contact-me {
+  padding: 3rem 8rem;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 2rem;
+  margin-bottom: 5rem;
+}
+
+.contact-me h2 {
+  padding: 2rem;
+}
+
+footer {
+  background: #082032;
+  color: whitesmoke;
+  min-height: 10vh;
+  padding: 0% 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flext-start;
+      -ms-flex-pack: flext-start;
+          justify-content: flext-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer ul {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer h4 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.hero-seo {
+  height: 80vh;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), url("/img/dashi_greenhatseo.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/img/dashi_greenhatseo.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-seo h2 {
+  margin: 0rem 2rem;
+  padding: 3rem;
+  color: #f8f8f8;
+}
+
+.slider-text {
+  margin-top: 5rem;
+  margin-left: 6rem;
+  margin-bottom: 5rem;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 00.3s;
+  transition: 00.3s;
+  text-align: center;
+  width: 35%;
+  padding: 3rem;
+  overflow: hidden;
+  background-color: #282429;
+  color: #f8f8f8;
+  border-color: #10010f;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.slider-text a:link {
+  background: #ff5722;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #10010f;
+  font-weight: bolder;
+}
+
+[role="doc-subtitle"] {
+  font-weight: bold;
+  text-align: center;
+}
+
+.slider-text a:hover,
+a:active {
+  background-color: #5fbab0;
+}
+
+@media screen and (max-width: 1387px) {
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-144%, -88%);
+            transform: translate(-144%, -88%);
+  }
+}
+
+@media screen and (max-width: 1332px) {
+  html {
+    font-size: 53%;
+  }
+  .splash {
+    display: none;
+  }
+  svg {
+    width: 80%;
+  }
+  nav {
+    width: 100%;
+  }
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-44%, -128%);
+            transform: translate(-44%, -128%);
+  }
+}
+
+@media screen and (max-width: 1136px) {
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-28%, -135%);
+            transform: translate(-28%, -135%);
+  }
+}
+
+@media screen and (max-width: 812px) {
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-44%, -111%);
+            transform: translate(-44%, -111%);
+  }
+}
+
+@media screen and (max-width: 754px) {
+  html {
+    font-size: 45%;
+  }
+  svg {
+    height: 60%;
+  }
+  main-head {
+    width: 100%;
+  }
+  nav .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 20rem;
+            flex: 1 1 20rem;
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+  nav ul {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 60rem;
+            flex: 1 1 60rem;
+    padding: 3rem 0rem;
+  }
+  .intro-text {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .intro-images {
+    text-align: left;
+  }
+  .mallow {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-24%, -88%);
+            transform: translate(-24%, -88%);
+  }
+  .intro-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .intro-social a {
+    margin: 2rem;
+  }
+  .kitty-velour img,
+  .travelator img,
+  .bobmin-photography img,
+  .herald img,
+  .jrtoys img,
+  .windsor-hotel img {
+    width: 70%;
+  }
+  .kitty-velour:focus,
+  .travelator:focus,
+  .bobmin-photography:focus,
+  .herald:focus,
+  .jrtoys:focus,
+  .windsor-hotel:focus,
+  .kitty-velour:hover,
+  .travelator:hover,
+  .bobmin-photography:hover,
+  .herald:hover,
+  .jrtoys:hover,
+  .windsor-hotel:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  form {
+    padding: 0;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

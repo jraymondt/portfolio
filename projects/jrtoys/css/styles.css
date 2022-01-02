@@ -1,0 +1,238 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	font-family: Consolas, "Lucida Console";
+	color: lightgoldenrodyellow;
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	}
+
+nav {
+	width: 100%;
+	height: auto;
+		
+}
+
+ul  {
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+	background-color: darkgreen;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: darkgreen;	
+}
+
+li a:hover {
+  background-color: black;
+}
+
+
+
+#outer {
+	max-width: 1020px;
+	padding: 0px;
+	margin: 0px auto;
+	border: 10px solid darkgreen;
+	height: auto;
+}
+
+
+header {
+	width: 99%;
+	height: 200px;
+	padding: 1px;
+}
+
+
+#logo_img {
+	position: inherit;
+	max-width: 45%;
+	height: auto;
+	float: left;
+	background-color: transparent;
+		
+}
+
+h1 {
+	float: right;
+	background-color: transparent;
+	font-size: 52px;
+	color: #00A651;
+	padding: 25px;
+	text-shadow: 2px 2px 5px indigo;
+}
+
+h2 {
+	color: #00A651;
+	padding: 10px;
+	text-shadow: 2px 2px 5px indigo;
+}
+
+h3 {
+	color: #00A651;
+	text-shadow: 2px 2px 5px indigo;
+}
+#header_img {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+url("../images/circular-economy-header.webp");
+	max-width: 99%;
+	height: 200px;
+	padding: 1px;
+}
+
+#primary_info {
+	text-align: right;
+	background-color: transparent;
+	font-size: 18px;
+	color: ghostwhite;
+	margin-right: 25px;
+	float: right;
+}
+
+main {
+	max-width: 99%;
+	height: auto;
+	padding: 0px;
+	margin-top: 0px;
+	margin: 0px;
+	float: left;
+	border: 5px solid transparent;
+	background: black;
+}
+
+/* --- #section_1 {
+	width: 20%;
+	padding: 0px;
+	margin: 0px;
+	height: 800px;
+	background: black;
+	float: left;
+	border: 5px solid #4A0E4E;
+	
+} ----*/
+
+section {
+	width: 19%;
+	padding: 5px;
+	margin: 1px;
+	background: black;
+	float: left;
+	border: 5px solid transparent;
+}
+
+article {
+	width: 76%;
+	padding: 5px;
+	margin: 1px;
+	background: black;
+	float: left;
+	border: 5px solid transparent;
+	text-align: justify;
+	display: inline-block;
+}
+
+
+p {
+	text-align: justify;
+	font-weight: 700;
+}
+
+#robit {
+	clear: left;
+	float: right;
+	margin-left: 20px;
+	width: 48%;
+	border: 2px solid #031209;
+}
+
+.clearfloat {
+	clear: both;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+footer {
+	width: 99%;
+	height: 150px;
+	padding: 0px;
+	margin-top: 15px;
+	border: 5px solid transparent;
+}
+
+aside {
+	width: 77%;
+	padding: 1px;
+	margin: 1px;
+	height: auto;
+	background: black;
+	float: left;
+	border: 5px solid transparent;
+}
+	
+#left_footer {
+	width: 20%;
+	padding: 1px;
+	margin: 1px;
+	height: auto;
+	background: black;
+	float: left;
+	border: 5px solid transparent;
+}
+
+#footer_img {
+	float: left;
+	max-width: 92%;
+	border: 5px solid #031209;
+	
+}
+
+ul.social-media-list {
+    list-style-type: none;
+	margin: 0;
+    padding: 0;
+    font-size: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 135px;
+}
+
+ul.social-media-list li {
+    display: inline-block;
+    margin: 2px;
+}
+
+ul.social-media-list img {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #00A651;
+    width: 62px;
+    height: 62px;
+}
+
+ul.social-media-list img:hover {
+    background-color: darkgreen;
+}

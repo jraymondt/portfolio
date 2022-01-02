@@ -1,0 +1,27 @@
+<body>
+<header>
+	<nav></nav>
+</header>
+<div id=”main”>
+	<div id=”primary”>
+		<article id=”ac1”></article>
+		<article></article>
+	</div>
+	<div id=”secondary”>
+		<article id=”ac2”></article>
+		<article id=”ac3”></article>
+		<article id=”ac4”></article>
+	</div>
+	<div id=”tertiary”>
+		<aside>adverts go here</aside>
+		<article id=”ac5”></article>
+	</div>
+</div><!-- #main -->
+<footer>
+	<section id=”authors”></section>
+	<section></section>
+	<section></section>
+</footer>
+
+<script src=”js/scripts.js”> <script>
+</body>
