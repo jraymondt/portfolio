@@ -1,0 +1,40 @@
+$text-colours: (
+  black: $black,
+  white: $white,
+  red: $red,
+  orange: $orange,
+  blue: $blue,
+  green: $green,
+  sky-blue: $sky-blue,
+  pale-red: $pale-red,
+  pale-violet: $pale-violet,
+  soft-blue: $soft-blue,
+  pale-cyan: $pale-cyan,
+  pale-yellow: $pale-yellow,
+);
+
+$bg-colours: (
+  black: $black,
+  white: $white,
+  red: $red,
+  orange: $orange,
+  blue: $blue,
+  green: $green,
+  sky-blue: $sky-blue,
+  pale-red: $pale-red,
+  pale-violet: $pale-violet,
+  soft-blue: $soft-blue,
+  pale-cyan: $pale-cyan,
+  pale-yellow: $pale-yellow,
+);
+
+@each $colour-name, $colour-value in $text-colours {
+  .text-#{$colour-name} {
+    color: $colour-value;
+  }
+}
+@each $colour-name, $colour-value in $bg-colours {
+  .bg-#{$colour-name} {
+    background-color: $colour-value;
+  }
+}

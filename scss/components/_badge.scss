@@ -1,0 +1,21 @@
+.badge {
+  width: fit-content;
+  padding: 6px;
+  border: 3px solid #000;
+  border-radius: 50px;
+  box-shadow: 3px 3px 0 0 #000;
+
+  .badge-inner {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 50px;
+    .badge-text {
+      padding: 11px;
+      margin: 0;
+    }
+  }
+}
