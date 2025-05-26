@@ -1,0 +1,17 @@
+.avatar {
+  overflow: hidden;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #000;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0 0 #031926;
+  img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+  }
+}

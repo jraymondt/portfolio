@@ -1,0 +1,109 @@
+$myPink: #db1bdb;
+$greeGrey: #37413c;
+$orange: #ec9420;
+$drkGrey: #2a2c2b;
+$litBlurey: #bdc3c7;
+$purp: #99008c;
+
+$space-xs: 10px;
+$space-sm: 15px;
+$space-md: 20px;
+$space-lg: 30px;
+$space-xl: 40px; 
+$space-xxl: 80px;
+
+$black: #000000;
+$white: #ffffff;
+$red: #e8280e;
+$blue: #1b7aae;
+$green: #19b97e;
+$green-light: #92fca2;
+$sky-blue: #90cff1;
+$sky-blue-light: #bae0f4;
+$pale-red: #eb8085;
+$pale-violet: #ba8dce;
+$soft-blue: #4799ae;
+$pale-cyan: #94d2c5;
+$pale-yellow: #ecec25;
+$pale-yellow-light: #e9e993;
+$light: #c9e1f9;
+
+$hover-red: #8e2424;
+$hover-orange: #a03821;
+$hover-blue: #02466b;
+$hover-green: #248361;
+$hover-sky-blue: #7ca3b8;
+$hover-pale-red: #a86060;
+$hover-pale-violet: #986eab;
+$hover-soft-blue: #246468;
+$hover-pale-cyan: #499384;
+$hover-pale-yellow: #999943;
+$bg-card-1: #d9bfb0;
+$bg-card-2: #acc2d2;
+$bg-card-3: #cbb7e5;
+$bg-card-4: #bfe5d7;
+$bg-card-5: #e1d1ba;
+$bg-card-6: #baddcb;
+$dark: #141414;
+$light: #F8F9FA;
+$border: solid 1vmin #000;
+$border-width: 3px;
+$border-width-bold: 4px;
+
+$shadow-offset: 4px;
+$shadow-offset-large: 8px;
+
+$shadow-1: 1.5vmin 1.5vmin #000;
+$shadow-2: 1.5vmin 1.5vmin #000;
+$shadow-3: 1.5vmin 1.5vmin #000;
+
+:root {
+  --font: "Work Sans", sans-serif;
+  --shadow-1: 1.5vmin 1.5vmin #000;
+  --border: solid 1vmin #000;
+  --border-small: solid 0.65vmin #000;
+   /* colours */
+  --primary: #FF6B35;
+  --secondary: #3A86FF;
+  --accent: #8338EC;
+  --dark: #141414;
+  --light: #F8F9FA;
+  --yellow: #FFBE0B;
+  --green: #06D6A0;
+
+  /* Background colours */
+  --bg-card-1: #FFE6D8;
+  --bg-card-2: #D8EEFE;
+  --bg-card-3: #E9D8FF;
+  --bg-card-4: #D8FFF1;
+  --bg-card-5: #FFEFD8;
+  --bg-card-6: #D8FFEA;
+
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+
+  /* Borders */
+  --border-width: 3px;
+  --border-width-bold: 4px;
+
+  /* Shadows */
+  --shadow-offset: 4px;
+  --shadow-offset-large: 8px;
+
+  /* Spacing */
+  --space-xs: 10px;
+  --space-sm: 15px;
+  --space-md: 20px;
+  --space-lg: 30px;
+  --space-xl: 40px;
+  --space-xxl: 80px;
+
+
+  /* Border Radius */
+  --radius-none: 0;
+
+  /* Transitions */
+  --transition-speed: 0.2s;
+  --transition-ease: ease;
+}

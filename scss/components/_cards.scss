@@ -1,0 +1,230 @@
+.card {
+  width: 300px;
+  margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 4px solid #000;
+  box-shadow: -4px 4px 0px #000000;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  &:hover {
+    box-shadow: 0px 0px 0px #000000;
+    transform: translate(-8px, 8px);
+  }
+}
+
+.card a {
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-thumbnail img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 18px;
+}
+
+.text-small {
+  font-size: 14px;
+  color: #888;
+}
+
+.card-content div {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.card-content strong {
+  cursor: pointer;
+}
+
+.profile-card {
+  height: 85vmin;
+  aspect-ratio: 5/8;
+  background: $pale-violet;
+  border-radius: 4vmin;
+  box-shadow: var(--shadow-1);
+  border: var(--border);
+  position: relative;
+  overflow: visible;
+  padding-block: 4vmin;
+  margin: auto;
+  color: $black;
+  margin-top: 5vmin;
+
+  #mug {
+    box-shadow: 0.6vmin 0.6vmin #000;
+    background: url("../images/avatar2025-sml.png") center/ cover
+      no-repeat;
+    width: 20vmin;
+    aspect-ratio: 1;
+    border: var(--border-small);
+    border-radius: 5vmin;
+    margin: auto;
+  }
+  #name {
+    text-align: center;
+    font-weight: 600;
+    font-size: 3.5vmin;
+  }
+  #title {
+    margin: auto;
+    text-align: center;
+    font-size: 1.5vmin;
+  }
+  .desc {
+    width: fit-content;
+    color: $drkGrey;
+    height: 20%;
+    background: $litBlurey;
+    position: relative;
+    border-color: $orange;
+    border-radius: 3vmin;
+    border: var(--border-small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 6vmin;
+    font-size: 4vmin;
+    font-weight: 600;
+  }
+  #descParent {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 40vmin;
+    aspect-ratio: 5/2;
+    gap: 4vmin;
+    position: absolute;
+    overflow: visible;
+    bottom: 16vmin;
+    justify-content: center;
+  }
+  #descParent :nth-child(2) {
+    background: $purp;
+    border-color: $black;
+    left: 8vmin;
+    box-shadow: 0.6vmin 0.6vmin $pale-yellow-light, 1vmin 1vmin #000,
+      1vmin 1vmin #000, 0.65vmin 1vmin #000, 1vmin 0.65vmin #000;
+  }
+  #descParent :first-child {
+    right: 18vmin;
+    border-color: $black;
+    background: $pale-red;
+    box-shadow: 0.6vmin 0.6vmin $pale-violet, 1vmin 1vmin #000,
+      0.65vmin 1vmin #000, 1vmin 0.65vmin #000;
+  }
+  #descParent :last-child {
+    right: 8vmin;
+    border-color: $hover-orange;
+    background: $pale-yellow-light;
+    box-shadow: 0.6vmin 0.6vmin $green-light, 1vmin 1vmin #000,
+      1vmin 1vmin #000, 0.65vmin 1vmin #000, 1vmin 0.65vmin #000;
+  }
+  #btn {
+    position: absolute;
+    bottom: 4vmin;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 32vmin;
+    padding-block: 1.5vmin;
+    border-radius: 3vmin;
+    border: var(--border-small);
+    box-shadow: 0.6vmin 0.6vmin #000;
+    text-align: center;
+    background: $pale-yellow;
+    text-decoration: none;
+    font-weight: 800;
+    color: $black;
+    font-size: 4vmin;
+    transition: all 0.2s ease;
+  
+    &:hover {
+      background: $green-light;
+      color: $black;
+      box-shadow: 0.6vmin 0.6vmin #000, 1vmin 1vmin #000, 0.65vmin 1vmin #000,
+        1vmin 0.65vmin #000;
+      transform: translate(0.5vmin, -0.5vmin);
+    }
+  }
+}
+
+/***************************** Services cards ************************
+**********************************************************************/
+.skills-head {
+  margin-top: 8vmin;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.service-card {
+    background-color: var(--light);
+    border: var(--border-width) solid var(--dark);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-offset-large) var(--shadow-offset-large) 0 var(--dark);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 12px 12px 0 var(--dark);
+}
+
+.service-card:nth-child(1) {
+    background-color: var(--bg-card-1);
+}
+
+.service-card:nth-child(2) {
+    background-color: var(--bg-card-2);
+}
+
+.service-card:nth-child(3) {
+    background-color: var(--bg-card-3);
+}
+
+.service-card:nth-child(4) {
+    background-color: var(--bg-card-4);
+}
+
+.service-card:nth-child(5) {
+    background-color: var(--bg-card-5);
+}
+
+.service-card:nth-child(6) {
+    background-color: var(--bg-card-6);
+}
+
+.service-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+    color: var(--dark);
+    background-color: var(--light);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-width) solid var(--dark);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
