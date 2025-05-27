@@ -1,6 +1,6 @@
 # conversion rights
 
-## Collecting workspace information# Migrating HTML Portfolio to PHP Website
+## Migrating HTML Portfolio to PHP Website
 
 To migrate your HTML portfolio to a PHP website, you'll need to:
 
@@ -14,7 +14,6 @@ Here's a comprehensive approach to migrate your portfolio:
 
 Start by setting up a basic PHP structure:
 
-```
 /portfolio/
 ├── includes/         # For reusable components
 │   ├── header.php
@@ -30,7 +29,6 @@ Start by setting up a basic PHP structure:
 ├── portfolio.php
 ├── contact.php
 └── .htaccess         # URL rewriting (optional)
-```
 
 ## 2. Create a Configuration File
 
@@ -344,7 +342,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 ```
 
-2. **Dynamic Projects Page**:
+## 7. **Dynamic Projects Page**
+
    Store projects in an array or database for easier management:
 
 ```php

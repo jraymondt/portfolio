@@ -8,7 +8,7 @@ include 'includes/navbar.php';
 ?>
 
 <main>
-  <div class="wrapper">
+  <div class="dialog">
     <h2 class="title">🚎 Welcome Earth Humanoids 🚎</h2>        
     <div class="welcome">
       <div class="profile-card">
@@ -49,14 +49,15 @@ include 'includes/navbar.php';
         ?>
       </div><!--end skills-->  
       
-      <div class="box-black">
+      <div class="dialog">
+        <h3>Episode IX: In progress</h3>
         <p>
-          <h3>Episode IX: In progress</h3>
           <br>
+        </p>
         <p>
           Diploma of Front End Web Development, versed in many things master of none. I have dabbled in some IT help desk and many other professions, since the courier times, I am dedicated to web development, I am keen to push my creative potential to a non-logical extreme. 🚀👾🌖👨🏻‍🚀
-        </p>
-      </div>
+        </p>  
+      </div><!--end dialog-->
     </div><!--end welcome-->
   </div><!--end wrapper-->  
 </main>
