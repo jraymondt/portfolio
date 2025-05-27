@@ -5,12 +5,12 @@ $drkGrey: #2a2c2b;
 $litBlurey: #bdc3c7;
 $purp: #99008c;
 
-$space-xs: 10px;
-$space-sm: 15px;
-$space-md: 20px;
-$space-lg: 30px;
-$space-xl: 40px; 
-$space-xxl: 80px;
+$space-xs: 1.5vmin;
+$space-sm: 2vmin;
+$space-md: 3vmin;
+$space-lg: 4vmin;
+$space-xl: 5vmin; 
+$space-xxl: 10vmin;
 
 $black: #000000;
 $white: #ffffff;
@@ -91,13 +91,14 @@ $shadow-3: 1.5vmin 1.5vmin #000;
   --shadow-offset: 4px;
   --shadow-offset-large: 8px;
 
-  /* Spacing */
-  --space-xs: 10px;
-  --space-sm: 15px;
-  --space-md: 20px;
-  --space-lg: 30px;
-  --space-xl: 40px;
-  --space-xxl: 80px;
+  /* spaced */
+
+  --space-xs: 1.5vmin;
+  --space-sm: 2vmin;
+  --space-md: 3vmin;
+  --space-lg: 4vmin;
+  --space-xl: 5vmin;
+  --space-xxl: 10vmin;
 
 
   /* Border Radius */

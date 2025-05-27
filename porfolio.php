@@ -5,7 +5,6 @@ $page_keywords = "web development, portfolio, projects, HTML, CSS, JavaScript";
 include 'includes/header.php';
 include 'includes/navbar.php';
 ?>
-
 <main>
   <div class="wrapper">
     <h2>👾 so far so good 🌖</h2>
@@ -35,5 +34,4 @@ include 'includes/navbar.php';
     <!-- Additional content here -->
   </div><!--end wrapper-->
 </main>
-
 <?php include 'includes/footer.php'; ?>

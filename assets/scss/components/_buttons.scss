@@ -2,7 +2,7 @@
   display: inline-block;
   padding: 11px 22px;
   background-color: $bg-colour;
-  color: $text-color;
+  color: $text-colour;
   border: none;
   cursor: pointer;
   font-size: 16px;
@@ -16,7 +16,7 @@
 
   &:hover {
     box-shadow: 3px 3px 0px #000000;
-    background-color: $hover-bg-color;
+    background-color: $hover-bg-colour;
   }
 
   &:focus {
@@ -82,8 +82,8 @@ $button-variants: (
   ),
 );
 
-@each $variant, $colours in $button-variants {
-  .nb-button.#{$variant} {
+@each $input_variant, $colours in $button-variants {
+  .bb-button.#{$input_variant} {
     @include button-styles($colours...);
   }
 }

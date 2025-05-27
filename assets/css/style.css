@@ -4,7 +4,7 @@
   --shadow-1: 1.5vmin 1.5vmin #000;
   --border: solid 1vmin #000;
   --border-small: solid 0.65vmin #000;
-  /* Colors */
+  /* colours */
   --primary: #FF6B35;
   --secondary: #3A86FF;
   --accent: #8338EC;
@@ -12,7 +12,7 @@
   --light: #F8F9FA;
   --yellow: #FFBE0B;
   --green: #06D6A0;
-  /* Background colors */
+  /* Background colours */
   --bg-card-1: #FFE6D8;
   --bg-card-2: #D8EEFE;
   --bg-card-3: #E9D8FF;
@@ -28,13 +28,13 @@
   /* Shadows */
   --shadow-offset: 4px;
   --shadow-offset-large: 8px;
-  /* Spacing */
-  --space-xs: 10px;
-  --space-sm: 15px;
-  --space-md: 20px;
-  --space-lg: 30px;
-  --space-xl: 40px;
-  --space-xxl: 80px;
+  /* spaced */
+  --space-xs: 1.5vmin;
+  --space-sm: 2vmin;
+  --space-md: 3vmin;
+  --space-lg: 4vmin;
+  --space-xl: 5vmin;
+  --space-xxl: 10vmin;
   /* Border Radius */
   --radius-none: 0;
   /* Transitions */
@@ -72,7 +72,6 @@ pre {
   vertical-align: baseline;
   border: 0;
   outline: 0;
-  background: transparent;
   box-sizing: border-box;
   text-decoration: none;
 }
@@ -92,7 +91,7 @@ img {
   border: 0;
 }
 
-.nb-button.default {
+.bb-button.default {
   display: inline-block;
   padding: 11px 22px;
   background-color: #ffffff;
@@ -108,19 +107,19 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.default:hover {
+.bb-button.default:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #aaaaaa;
 }
-.nb-button.default:focus {
+.bb-button.default:focus {
   outline-color: transparent;
 }
-.nb-button.default.disabled {
+.bb-button.default.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.nb-button.orange {
+.bb-button.orange {
   display: inline-block;
   padding: 11px 22px;
   background-color: #ec9420;
@@ -136,19 +135,19 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.orange:hover {
+.bb-button.orange:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #a03821;
 }
-.nb-button.orange:focus {
+.bb-button.orange:focus {
   outline-color: transparent;
 }
-.nb-button.orange.disabled {
+.bb-button.orange.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.nb-button.blue {
+.bb-button.blue {
   display: inline-block;
   padding: 11px 22px;
   background-color: #1b7aae;
@@ -164,19 +163,19 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.blue:hover {
+.bb-button.blue:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #02466b;
 }
-.nb-button.blue:focus {
+.bb-button.blue:focus {
   outline-color: transparent;
 }
-.nb-button.blue.disabled {
+.bb-button.blue.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.nb-button.green {
+.bb-button.green {
   display: inline-block;
   padding: 11px 22px;
   background-color: #19b97e;
@@ -192,19 +191,19 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.green:hover {
+.bb-button.green:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #248361;
 }
-.nb-button.green:focus {
+.bb-button.green:focus {
   outline-color: transparent;
 }
-.nb-button.green.disabled {
+.bb-button.green.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.nb-button.sky-blue {
+.bb-button.sky-blue {
   display: inline-block;
   padding: 11px 22px;
   background-color: #90cff1;
@@ -220,19 +219,19 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.sky-blue:hover {
+.bb-button.sky-blue:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #7ca3b8;
 }
-.nb-button.sky-blue:focus {
+.bb-button.sky-blue:focus {
   outline-color: transparent;
 }
-.nb-button.sky-blue.disabled {
+.bb-button.sky-blue.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.nb-button.pale-red {
+.bb-button.pale-red {
   display: inline-block;
   padding: 11px 22px;
   background-color: #eb8085;
@@ -248,19 +247,19 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.pale-red:hover {
+.bb-button.pale-red:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #a86060;
 }
-.nb-button.pale-red:focus {
+.bb-button.pale-red:focus {
   outline-color: transparent;
 }
-.nb-button.pale-red.disabled {
+.bb-button.pale-red.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.nb-button.pale-violet {
+.bb-button.pale-violet {
   display: inline-block;
   padding: 11px 22px;
   background-color: #ba8dce;
@@ -276,19 +275,19 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.pale-violet:hover {
+.bb-button.pale-violet:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #986eab;
 }
-.nb-button.pale-violet:focus {
+.bb-button.pale-violet:focus {
   outline-color: transparent;
 }
-.nb-button.pale-violet.disabled {
+.bb-button.pale-violet.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.nb-button.soft-blue {
+.bb-button.soft-blue {
   display: inline-block;
   padding: 11px 22px;
   background-color: #4799ae;
@@ -304,19 +303,19 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.soft-blue:hover {
+.bb-button.soft-blue:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #246468;
 }
-.nb-button.soft-blue:focus {
+.bb-button.soft-blue:focus {
   outline-color: transparent;
 }
-.nb-button.soft-blue.disabled {
+.bb-button.soft-blue.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.nb-button.pale-cyan {
+.bb-button.pale-cyan {
   display: inline-block;
   padding: 11px 22px;
   background-color: #94d2c5;
@@ -332,19 +331,19 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.pale-cyan:hover {
+.bb-button.pale-cyan:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #499384;
 }
-.nb-button.pale-cyan:focus {
+.bb-button.pale-cyan:focus {
   outline-color: transparent;
 }
-.nb-button.pale-cyan.disabled {
+.bb-button.pale-cyan.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.nb-button.pale-yellow {
+.bb-button.pale-yellow {
   display: inline-block;
   padding: 11px 22px;
   background-color: #ecec25;
@@ -360,14 +359,14 @@ img {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
-.nb-button.pale-yellow:hover {
+.bb-button.pale-yellow:hover {
   box-shadow: 3px 3px 0px #000000;
   background-color: #999943;
 }
-.nb-button.pale-yellow:focus {
+.bb-button.pale-yellow:focus {
   outline-color: transparent;
 }
-.nb-button.pale-yellow.disabled {
+.bb-button.pale-yellow.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
@@ -472,7 +471,7 @@ img {
   background-color: #ecec25;
 }
 
-.nb-input.default {
+.bb-input.default {
   padding: 10px;
   background-color: #ffffff;
   color: #000000;
@@ -486,29 +485,29 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.default:hover {
+.bb-input.default:hover {
   background-color: #aaaaaa;
 }
-.nb-input.default:focus {
+.bb-input.default:focus {
   outline-color: transparent;
   border-color: #aaaaaa;
 }
-.nb-input.default.disabled {
+.bb-input.default.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.default::-moz-placeholder {
+.bb-input.default::-moz-placeholder {
   color: #000000;
   opacity: 1;
   text-align: left;
 }
-.nb-input.default::placeholder {
+.bb-input.default::placeholder {
   color: #000000;
   opacity: 1;
   text-align: left;
 }
 
-.nb-input.orange {
+.bb-input.orange {
   padding: 10px;
   background-color: #ec9420;
   color: black;
@@ -522,29 +521,29 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.orange:hover {
+.bb-input.orange:hover {
   background-color: #a03821;
 }
-.nb-input.orange:focus {
+.bb-input.orange:focus {
   outline-color: transparent;
   border-color: #a03821;
 }
-.nb-input.orange.disabled {
+.bb-input.orange.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.orange::-moz-placeholder {
+.bb-input.orange::-moz-placeholder {
   color: black;
   opacity: 1;
   text-align: left;
 }
-.nb-input.orange::placeholder {
+.bb-input.orange::placeholder {
   color: black;
   opacity: 1;
   text-align: left;
 }
 
-.nb-input.blue {
+.bb-input.blue {
   padding: 10px;
   background-color: #1b7aae;
   color: white;
@@ -558,29 +557,29 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.blue:hover {
+.bb-input.blue:hover {
   background-color: #02466b;
 }
-.nb-input.blue:focus {
+.bb-input.blue:focus {
   outline-color: transparent;
   border-color: #02466b;
 }
-.nb-input.blue.disabled {
+.bb-input.blue.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.blue::-moz-placeholder {
+.bb-input.blue::-moz-placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
-.nb-input.blue::placeholder {
+.bb-input.blue::placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
 
-.nb-input.green {
+.bb-input.green {
   padding: 10px;
   background-color: #19b97e;
   color: white;
@@ -594,29 +593,29 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.green:hover {
+.bb-input.green:hover {
   background-color: #248361;
 }
-.nb-input.green:focus {
+.bb-input.green:focus {
   outline-color: transparent;
   border-color: #248361;
 }
-.nb-input.green.disabled {
+.bb-input.green.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.green::-moz-placeholder {
+.bb-input.green::-moz-placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
-.nb-input.green::placeholder {
+.bb-input.green::placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
 
-.nb-input.sky-blue {
+.bb-input.sky-blue {
   padding: 10px;
   background-color: #90cff1;
   color: white;
@@ -630,29 +629,29 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.sky-blue:hover {
+.bb-input.sky-blue:hover {
   background-color: #7ca3b8;
 }
-.nb-input.sky-blue:focus {
+.bb-input.sky-blue:focus {
   outline-color: transparent;
   border-color: #7ca3b8;
 }
-.nb-input.sky-blue.disabled {
+.bb-input.sky-blue.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.sky-blue::-moz-placeholder {
+.bb-input.sky-blue::-moz-placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
-.nb-input.sky-blue::placeholder {
+.bb-input.sky-blue::placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
 
-.nb-input.pale-red {
+.bb-input.pale-red {
   padding: 10px;
   background-color: #eb8085;
   color: white;
@@ -666,29 +665,29 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.pale-red:hover {
+.bb-input.pale-red:hover {
   background-color: #a86060;
 }
-.nb-input.pale-red:focus {
+.bb-input.pale-red:focus {
   outline-color: transparent;
   border-color: #a86060;
 }
-.nb-input.pale-red.disabled {
+.bb-input.pale-red.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.pale-red::-moz-placeholder {
+.bb-input.pale-red::-moz-placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
-.nb-input.pale-red::placeholder {
+.bb-input.pale-red::placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
 
-.nb-input.pale-violet {
+.bb-input.pale-violet {
   padding: 10px;
   background-color: #ba8dce;
   color: white;
@@ -702,29 +701,29 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.pale-violet:hover {
+.bb-input.pale-violet:hover {
   background-color: #986eab;
 }
-.nb-input.pale-violet:focus {
+.bb-input.pale-violet:focus {
   outline-color: transparent;
   border-color: #986eab;
 }
-.nb-input.pale-violet.disabled {
+.bb-input.pale-violet.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.pale-violet::-moz-placeholder {
+.bb-input.pale-violet::-moz-placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
-.nb-input.pale-violet::placeholder {
+.bb-input.pale-violet::placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
 
-.nb-input.soft-blue {
+.bb-input.soft-blue {
   padding: 10px;
   background-color: #4799ae;
   color: white;
@@ -738,29 +737,29 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.soft-blue:hover {
+.bb-input.soft-blue:hover {
   background-color: #246468;
 }
-.nb-input.soft-blue:focus {
+.bb-input.soft-blue:focus {
   outline-color: transparent;
   border-color: #246468;
 }
-.nb-input.soft-blue.disabled {
+.bb-input.soft-blue.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.soft-blue::-moz-placeholder {
+.bb-input.soft-blue::-moz-placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
-.nb-input.soft-blue::placeholder {
+.bb-input.soft-blue::placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
 
-.nb-input.pale-cyan {
+.bb-input.pale-cyan {
   padding: 10px;
   background-color: #94d2c5;
   color: white;
@@ -774,29 +773,29 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.pale-cyan:hover {
+.bb-input.pale-cyan:hover {
   background-color: #499384;
 }
-.nb-input.pale-cyan:focus {
+.bb-input.pale-cyan:focus {
   outline-color: transparent;
   border-color: #499384;
 }
-.nb-input.pale-cyan.disabled {
+.bb-input.pale-cyan.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.pale-cyan::-moz-placeholder {
+.bb-input.pale-cyan::-moz-placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
-.nb-input.pale-cyan::placeholder {
+.bb-input.pale-cyan::placeholder {
   color: white;
   opacity: 1;
   text-align: left;
 }
 
-.nb-input.pale-yellow {
+.bb-input.pale-yellow {
   padding: 10px;
   background-color: #ecec25;
   color: black;
@@ -810,23 +809,23 @@ img {
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nb-input.pale-yellow:hover {
+.bb-input.pale-yellow:hover {
   background-color: #999943;
 }
-.nb-input.pale-yellow:focus {
+.bb-input.pale-yellow:focus {
   outline-color: transparent;
   border-color: #999943;
 }
-.nb-input.pale-yellow.disabled {
+.bb-input.pale-yellow.disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-.nb-input.pale-yellow::-moz-placeholder {
+.bb-input.pale-yellow::-moz-placeholder {
   color: black;
   opacity: 1;
   text-align: left;
 }
-.nb-input.pale-yellow::placeholder {
+.bb-input.pale-yellow::placeholder {
   color: black;
   opacity: 1;
   text-align: left;
@@ -835,9 +834,9 @@ img {
 .dialog {
   background: #ffffff;
   border-radius: 20px;
-  filter: drop-shadow(4px 4px 0px #000);
+  filter: drop-shadow(6px 6px 0px #000000);
   padding: 3vmin;
-  border: 3px solid #000;
+  border: 4px solid #000;
   width: 88%;
 }
 .dialog p {
@@ -1117,7 +1116,7 @@ img {
   display: inline-block;
 }
 
-.nb-label {
+.bb-label {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1127,7 +1126,7 @@ img {
   text-transform: uppercase;
 }
 
-input.nb-checkbox {
+input.bb-checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1138,11 +1137,11 @@ input.nb-checkbox {
   border-radius: 4px;
   cursor: pointer;
 }
-input.nb-checkbox:checked {
+input.bb-checkbox:checked {
   background-color: #007bff;
   color: #fff;
 }
-input.nb-checkbox:checked::before {
+input.bb-checkbox:checked::before {
   content: "x";
   font-weight: bold;
   color: inherit;
@@ -1751,80 +1750,19 @@ input.nb-checkbox:checked::before {
   cursor: pointer;
 }
 
+/**************************************** ****************************************
+      GLOBAL SASS ****************************************************************/
 * {
   font-size: 17px;
 }
 
-/**************************************** ****************************************
-      @if SASS THEME (light/dark) light still needs some work if I get time...
-***************************************** ***************************************/
-html,
-body,
-div,
-form,
-footer,
-fieldset,
-legend,
-caption,
-label,
-blockquote,
-pre {
+body {
+  font-family: "B612", sans-serif;
   background-color: #2a2c2b;
-  color: #bdc3c7;
-  font-family: "b612", sans-serif;
-  font-size: 3vmin;
-}
-html h1,
-body h1,
-div h1,
-form h1,
-footer h1,
-fieldset h1,
-legend h1,
-caption h1,
-label h1,
-blockquote h1,
-pre h1 {
-  font-size: 1.5rem;
-}
-html h2,
-body h2,
-div h2,
-form h2,
-footer h2,
-fieldset h2,
-legend h2,
-caption h2,
-label h2,
-blockquote h2,
-pre h2 {
-  font-size: 1.3rem;
-}
-html h3,
-body h3,
-div h3,
-form h3,
-footer h3,
-fieldset h3,
-legend h3,
-caption h3,
-label h3,
-blockquote h3,
-pre h3 {
-  font-size: 1.2rem;
-}
-html h4,
-body h4,
-div h4,
-form h4,
-footer h4,
-fieldset h4,
-legend h4,
-caption h4,
-label h4,
-blockquote h4,
-pre h4 {
-  font-size: 1.1rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /**************************************** ****************************************
@@ -2018,12 +1956,55 @@ pre h4 {
   }
 }
 /**************************************** ****************************************
-      GLOBAL SASS
+      4040 SASS
 ***************************************** ***************************************/
-#navbar,
-#main,
-#footer {
-  width: 100%;
+.error-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-page .container {
+  margin: var(--space-md);
+  padding: var(--space-lg);
+}
+.error-page .container .dialog {
+  text-align: center;
+  padding: var(--space-xl);
+  border: var(--border-width) solid var(--dark);
+  box-shadow: var(--shadow-1);
+  background-color: var(--bg-card-1);
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: var(--space-md);
+}
+.error-page .container .dialog h1 {
+  font-size: 8vmin;
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+  font-weight: bold;
+}
+.error-page .container .dialog h2 {
+  margin-bottom: var(--space-md);
+  color: var(--dark);
+}
+.error-page .container .dialog p {
+  margin-bottom: var(--space-lg);
+  font-size: 1.2rem;
+}
+.error-page .container .dialog .service-icon {
+  margin: var(--space-md) auto;
+  font-size: 4.5vmin;
+}
+.error-page .error-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+.error-page .error-actions .bb-button {
+  min-width: 200px;
 }
 
 /**************************************** ****************************************
@@ -2059,18 +2040,14 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 15vmin;
+  margin-bottom: 5vmin;
 }
 .profile_pic img {
   flex: 1 1 50%;
   max-width: 666px;
-  padding: 1rem;
-  box-shadow: #ecec25 1px 3px 33px 33px;
+  box-shadow: #2a2c2b 1px 3px 33px 33px;
   border-radius: 10%;
-  margin-bottom: 2rem;
-}
-.profile_pic img a {
-  margin-left: 6rem;
+  margin-bottom: 2vmin;
 }
 
 form {
@@ -2136,7 +2113,6 @@ form label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: #ecec25;
   font-size: 4vmin;
   margin-top: 5vmin;
@@ -2147,7 +2123,7 @@ form label {
 
 .layer {
   background-color: #2a2c2b;
-  padding: 1vmin;
+  padding: 6vmin;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -2178,15 +2154,17 @@ form label {
   text-align: left;
 }
 
-.box-black {
+#starwar {
   background-color: #000000;
   color: #ecec25;
-  font-size: 3.5vmin;
-  padding: 2vmin;
-  text-align: justify;
-  margin-top: 5vmin;
+  padding: 6vmin;
+  box-shadow: #ec9420 1px 3px 22px 22px;
+  margin-top: 14vmin;
+  margin-bottom: 4vmin;
 }
-.box-black p {
+#starwar p {
+  color: #ecec25;
+  font-size: 3vmin;
   text-align: left;
 }
 
@@ -2325,15 +2303,15 @@ form label {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 4vmin;
+  margin-top: 5vmin;
 }
 
 .service-card {
   color: #000000;
   background-color: #F8F9FA;
   border: 3px solid #000000;
-  padding: 30px;
+  padding: 4vmin;
   box-shadow: 8px 8px 0 #000000;
   transition: all 0.3s ease;
   position: relative;
@@ -2372,7 +2350,7 @@ form label {
 
 .service-icon {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 3vmin;
   color: #141414;
   background-color: #F8F9FA;
   width: 60px;
@@ -2506,7 +2484,7 @@ form label {
 ***********************************************************/
 @media screen and (max-width: 1024px) {
   .dialog {
-    width: 80%;
+    width: 100%;
     max-width: 900px;
     margin-top: 5vmin;
     padding: 8vmin;
@@ -2565,7 +2543,9 @@ form label {
     height: auto;
   }
   .profile_pic {
-    margin-top: 10vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
   .profile_pic img {
@@ -2573,10 +2553,6 @@ form label {
     height: auto;
     flex: 1 1 100%;
     padding: 0.25rem;
-  }
-  .profile_pic a {
-    margin-left: 0.01rem;
-    padding: 0.49rem;
   }
   .skills {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -2625,7 +2601,6 @@ form label {
   }
   .profile_pic {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }

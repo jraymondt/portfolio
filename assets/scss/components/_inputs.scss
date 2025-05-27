@@ -2,7 +2,7 @@
 @mixin input-styles($bg-colour, $text-colour, $border-colour, $hover-bg-colour) {
   padding: 10px;
   background-color: $bg-colour;
-  color: $text-color;
+  color: $text-colour;
   border: 2px solid $border-colour;
   border-radius: 0.25rem;
   box-shadow: 2px 2px 0px 0px #000;
@@ -96,8 +96,8 @@ $input-variants: (
   ),
 );
 
-@each $variant, $colours in $input-variants {
-  .nb-input.#{$variant} {
+@each $input_variant, $colours in $input-variants {
+  .bb-input.#{$input_variant} {
     @include input-styles($colours...);
   }
 }

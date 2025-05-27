@@ -1,6 +1,6 @@
 @mixin alert-styles($bg-colour, $border-colour) {
   background-color: $bg-colour;
-  border: 1px solid $border-color;
+  border: 1px solid $border-colour;
   padding: 0.1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
@@ -30,8 +30,8 @@ $alert-variants: (
 );
 
 
-@each $variant, $colors in $alert-variants {
-  .alert.#{$variant} {
+@each $input_variant, $colours in $alert-variants {
+  .alert.#{$input_variant} {
     @include alert-styles($colours...);
   }
 }

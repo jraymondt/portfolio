@@ -6,7 +6,7 @@
       <p>
       <div class="avatar bg-pale-red">
         <a href="https://jraymondt.com/blog" target="_blank" rel="noopener">
-          <img src="images/avatar2025-sml.png" alt="bob a tar">
+          <img src="../assets/images/avatar2025-sml.png" alt="bob a tar">
         </a>  
       </div>
       <p>
@@ -34,11 +34,11 @@
     </div>
   </footer>
 </div><!-- end footer-wrap-->
-<script src="/js/navbar.js"></script>
-<script src="/js/copydate.js"></script>
-<script src="/js/errorMessages.js"></script>
-<script src="/js/register.js"></script>
-<script src="/js/validation.js"></script>
+<script src="../assets/js/navbar.js"></script>
+<script src="../assets/js/copydate.js"></script>
+<script src="../assets/js/errorMessages.js"></script>
+<script src="../assets/js/register.js"></script>
+<script src="../assets/js/validation.js"></script>
 <script src="https://kit.fontawesome.com/18d6f5b67f.js" crossorigin="anonymous"></script>
 </body>
 </html>

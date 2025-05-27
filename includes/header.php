@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title><?php echo $page_title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&display=swap" rel="stylesheet">
     <meta name="description" content="<?php echo $page_description; ?>">

@@ -1,4 +1,4 @@
-@import "colors";
+@import "colours";
 @import "reset";
 
 @import "components/buttons";
@@ -16,10 +16,20 @@
 @import "components/dropdown";
 @import "components/util";
 
+/**************************************** ****************************************
+      GLOBAL SASS ****************************************************************/
 * {
   font-size: 17px;
 }
 
+body {
+  font-family: "B612", sans-serif;
+  background-color: $drkGrey;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+}
 
 
 /**************************************** ****************************************
@@ -259,12 +269,63 @@
 }
 
 /**************************************** ****************************************
-      GLOBAL SASS
+      4040 SASS
 ***************************************** ***************************************/      
-#navbar,
-#main,
-#footer {
-  width: 100%;
+.error-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .container {
+    margin: var(--space-md);
+    padding: var(--space-lg);
+
+    .dialog {
+      text-align: center;
+      padding: var(--space-xl);
+      border: var(--border-width) solid var(--dark);
+      box-shadow: var(--shadow-1);
+      background-color: var(--bg-card-1);
+      max-width: 600px;
+      margin: 0 auto;
+      margin-bottom: var(--space-md);
+    
+      h1 {
+        font-size: 8vmin;
+        line-height: 1;
+        margin-bottom: var(--space-sm);
+        font-weight: bold;
+      }
+      
+      h2 {
+        margin-bottom: var(--space-md);
+        color: var(--dark);
+      }
+      
+      p {
+        margin-bottom: var(--space-lg);
+        font-size: 1.2rem;
+      }
+      
+      .service-icon {
+        margin: var(--space-md) auto;
+        font-size: 4.5vmin;
+      }
+    }  
+  }
+  
+  .error-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+    
+    .bb-button {
+      min-width: 200px;
+    }
+  }
 }
 
 /**************************************** ****************************************
@@ -303,19 +364,14 @@ main {
   flex-wrap: wrap;
   justify-content: center; 
   align-items: center;
-  margin-top: 15vmin;  
+  margin-bottom: 5vmin;  
 
     img {
       flex: 1 1 50%;
       max-width: 666px;
-      padding: 1rem;
-      box-shadow: $pale-yellow 1px 3px 33px 33px;
+      box-shadow: $drkGrey 1px 3px 33px 33px;
       border-radius: 10%;
-      margin-bottom: 2rem;
-
-      a {
-        margin-left: 6rem;
-      }
+      margin-bottom: 2vmin;
     }
   }  
 
@@ -392,7 +448,6 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: $pale-yellow;
   font-size: 4vmin;
   margin-top: 5vmin;
@@ -404,7 +459,7 @@ form {
 
 .layer {
   background-color: $drkGrey;
-  padding: 1vmin;
+  padding: 6vmin;
   width: 100%;
   display: flex;
   flex-direction: column; 
@@ -438,18 +493,21 @@ form {
   }
 }
 
-.box-black {
+#starwar {
   background-color: $black;
   color: $pale-yellow;
-  font-size: 3.5vmin;
-  padding: 2vmin;
-  text-align: justify;
-  margin-top: 5vmin;
+  padding: 6vmin;
+  box-shadow: $orange 1px 3px 22px 22px;
+  margin-top: 14vmin;
+  margin-bottom: 4vmin;
 
   p {
+    color: $pale-yellow;
+    font-size: 3vmin;
     text-align: left;
   }
 }
+
 
 
 /**************************************** ****************************************
@@ -726,7 +784,6 @@ $hover-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
       padding: 32px 16px;
     }
   
-
     form {
       display: flex;
       flex-direction: column;
@@ -743,7 +800,7 @@ $hover-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     label {
       font-weight: bold;
       color: $orange;
-      backgrond-color: $white;
+      background-color: $white;
       font-size: 1.5rem;
       padding: 0.25rem;
       margin: 0.25rem;
@@ -821,13 +878,12 @@ $hover-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   }
 }
 
-
 /*************************************************************
       @media screen and (max-width: 1024px)
 ***********************************************************/
 @media screen and (max-width: 1024px) {
   .dialog {
-    width: 80%;
+    width: 100%;
     max-width: 900px;
     margin-top: 5vmin;
     padding: 8vmin;
@@ -850,7 +906,6 @@ $hover-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 /*************************************************************
       @media screen and (max-width: 768px)
 ***********************************************************/
-
 @media screen and (max-width: 768px) {
   
   * {
@@ -902,7 +957,9 @@ $hover-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   }
 
   .profile_pic {
-    margin-top: 10vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
     align-items: center;
   
     img {
@@ -911,15 +968,8 @@ $hover-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
       flex: 1 1 100%;
       padding: 0.25rem;    
     }
-  
-    a {
-      margin-left: 0.01rem;
-      padding: 0.49rem;
-    }
   }
-
-  
-  
+    
   .skills {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
@@ -983,7 +1033,6 @@ $hover-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 
   .profile_pic {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center; 
     align-items: center;  
 

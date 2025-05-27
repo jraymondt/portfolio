@@ -1,8 +1,8 @@
 <?php
 
-$page_title = "JRT - home";
-$page_description = "Personal Portfolio of James Raymond Thompson";
-$page_keywords = "Personal portfolio, front end, web development, HTML, CSS, JavaScript";
+$page_title = "JRT - contact";
+$page_description = "Contact Jimbob for front-end development opportunities or collaborations.";
+$page_keywords = "Personal portfolio, front end, web development, HTML, CSS, JavaScript, Tailwind CSS, contact, email, opportunities";
 include 'includes/header.php';
 include 'includes/navbar.php';
 ?>
@@ -16,7 +16,7 @@ include 'includes/navbar.php';
           <br>
           <p>Contact me via the form below or</p> 
           <br><br>
-            <a href="mailto:james@jraymondt.com"><button class="nb-button orange rounded"> email </button></a>
+            <a href="mailto:james@jraymondt.com"><button class="bb-button orange rounded"> email </button></a>
         </div>
           <form class="dialog" action="/action_page.php">
             <h4><b>Testing porpoises only</b></h4>
@@ -32,7 +32,7 @@ include 'includes/navbar.php';
               <option value="space">Space the final frontier</option>
             </select>
             <label for="subject">Subject</label>
-            <textarea class="nb-input orange" id="subject" name="subject" placeholder="Write something.."></textarea>
+            <textarea class="bb-input orange" id="subject" name="subject" placeholder="Write something.."></textarea>
             <input class="nb-button orange rounded" type="submit" value="Submit">
           </form>
       </div><!--end wrapper-->
