@@ -139,6 +139,8 @@ git push origin james-features
 ```code
 git fetch upstream
 git merge upstream/main
+git fetch main
+git merge main
 ```
 
 ### Step 9: Push changes to the main upstream branch
@@ -171,6 +173,12 @@ git branch -d james-features
 git branch
 git status
 git branch -a
+git branch -d branch-name
+git checkout -b branch-name
+git checkout main
+git merge branch-name
+git push origin branch-name
+git push origin --delete branch-name
 git checkout branch-name
 ```
 
