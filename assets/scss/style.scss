@@ -1,0 +1,1097 @@
+@import "colours";
+@import "reset";
+
+@import "components/buttons";
+@import "components/colors";
+@import "components/inputs";
+@import "components/dialog";
+@import "components/marquee";
+@import "components/cards";
+@import "components/avatar";
+@import "components/checkbox";
+@import "components/badge";
+@import "components/modal";
+@import "components/alert";
+@import "components/accordion";
+@import "components/dropdown";
+@import "components/util";
+
+/**************************************** ****************************************
+      GLOBAL SASS ****************************************************************/
+* {
+  font-size: 2.5vmin;
+}
+
+body {
+  font-family: "B612", sans-serif;
+  background-color: $drkGrey;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+}
+
+/**************************************** ****************************************
+      NAVIGATION SASS
+***************************************** ***************************************/
+.navbar {
+  position: sticky;
+  top: 0;
+  width: calc(100% - 3vmin);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $greeGrey;
+  border: 0.6vmin solid $orange;
+  padding: 2.2vmin 3.7vmin;
+  box-shadow: 0.9vmin 0.9vmin 0 #000;
+  border-radius: 2.2vmin;
+  margin: 1.5vmin;
+  z-index: 1000;
+
+  .mobile-title {
+    display: none; 
+    color: $orange;
+    font-size: 2.2vmin;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    background-color: $greeGrey;
+    flex: 0 0 auto;
+    
+    img {
+      width: 12vmin;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      margin: 0 1.5vmin;
+    }
+    
+    a {
+      color: $orange;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.9vmin;
+      text-transform: uppercase;
+      transition: color 0.2s ease-in-out;
+      padding: 1.2vmin 1.8vmin;
+      display: block;
+      
+      &:hover {
+        color: $hover-orange;
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+    background-color: $greeGrey;
+    border: 0.15vmin dashed $orange;
+    cursor: pointer;
+    z-index: 1001;
+    flex: 0 0 auto; 
+    
+    div {
+      width: 4.5vmin;
+      height: 0.45vmin;
+      background-color: $litBlurey;
+      margin: 0.9vmin 0;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+// Responsive styles
+@media screen and (min-width: 1025px) {
+  .navbar {
+    padding: 3vmin 6vmin;
+    
+    .nav-links a {
+      font-size: 2.2vmin;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    .nav-links a {
+      font-size: 1.8vmin;
+      padding: 0.9vmin 1.2vmin;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1.8vmin 3vmin;
+    
+    .mobile-title {
+      display: block; 
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    
+    &.menu-active .mobile-title {
+      opacity: 1;
+    }
+
+    .nav-links {
+      position: fixed; 
+      right: 0;
+      top: 0;
+      height: 100vh;
+      background-color: $greeGrey;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+      z-index: 999;
+      padding-top: 9vmin;
+      border-left: 0.6vmin solid $orange;
+      box-shadow: -0.7vmin 0 2.2vmin rgba(0,0,0,0.2);
+      
+      li {
+        opacity: 0;
+        margin: 2.2vmin 0;
+        width: 100%;
+        text-align: center;
+        
+        .nav-active & {
+          opacity: 1;
+          animation: navLinkFade 0.5s ease forwards;
+        }
+      }
+      
+      a {
+        font-size: 2.1vmin;
+        padding: 1.8vmin;
+        width: 100%;
+        display: inline-block;
+      }
+    }
+    
+    .burger {
+      display: block;
+      margin-left: auto;
+    }
+  }
+  
+  .nav-active {
+    transform: translateX(0%) !important;
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(7.5vmin);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .toggle {
+    .line1 {
+      transform: rotate(-45deg) translate(-0.7vmin, 0.9vmin);
+      background-color: $orange;
+    }
+    
+    .line2 {
+      opacity: 0;
+    }
+    
+    .line3 {
+      transform: rotate(45deg) translate(-0.7vmin, -0.9vmin);
+      background-color: $orange; 
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 1.5vmin 2.2vmin;
+    
+    .logo-container img {
+      width: 9vmin;
+    }
+    
+    .mobile-title {
+      font-size: 1.8vmin;
+    }
+
+    .nav-links {
+      width: 70%; 
+      
+      a {
+        font-size: 1.9vmin;
+      }
+    }
+  }
+}
+
+/**************************************** ****************************************
+      404 SASS
+***************************************** ***************************************/      
+.error-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .container {
+    margin: var(--space-md);
+    padding: var(--space-lg);
+
+    .dialog {
+      text-align: center;
+      padding: var(--space-xl);
+      border: var(--border-width) solid var(--dark);
+      box-shadow: var(--shadow-1);
+      background-color: var(--bg-card-1);
+      max-width: 90vmin;
+      margin: 0 auto;
+      margin-bottom: var(--space-md);
+    
+      h1 {
+        font-size: 12vmin;
+        line-height: 1;
+        margin-bottom: var(--space-sm);
+        font-weight: bold;
+      }
+      
+      h2 {
+        margin-bottom: var(--space-md);
+        color: var(--dark);
+      }
+      
+      p {
+        margin-bottom: var(--space-lg);
+        font-size: 1.8vmin;
+      }
+      
+      .service-icon {
+        margin: var(--space-md) auto;
+        font-size: 6.7vmin;
+      }
+    }  
+  }
+  
+  .error-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+    
+    .bb-button {
+      min-width: 30vmin;
+    }
+  }
+}
+
+/**************************************** ****************************************
+      svg logo
+***************************************** ***************************************/
+.logo-container {
+  position: relative; 
+  display: inline-block; 
+
+  img {
+    display: block;
+    max-width: 15vmin; 
+    height: auto;
+    z-index: 1001;
+  }
+
+  .logo {
+    background-color: $greeGrey;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1002; 
+    text-align: center; 
+  }
+}
+
+main {
+  background-color: $drkGrey;
+  overflow: hidden;
+}
+
+.profile_pic {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;
+  margin-bottom: 5vmin;  
+
+  img {
+    flex: 1 1 50%;
+    max-width: 100vmin;
+    box-shadow: $drkGrey 0.15vmin 0.45vmin 4.9vmin 4.9vmin;
+    border-radius: 10%;
+    margin-bottom: 2vmin;
+  }
+}  
+
+
+/**************************************** 
+****************************************
+      CONTACT FORM SASS
+***************************************** 
+***************************************/
+.form-container {
+  width: 100%;
+  max-width: 90vmin;
+  margin: 0 auto;
+  padding: 3vmin;
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 3vmin;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 4vmin;
+    border-radius: 1.5vmin;
+    border: 0.3vmin solid $orange;
+    box-shadow: 0.6vmin 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1vmin;
+      
+      label {
+        font-weight: bold;
+        color: $orange;
+        font-size: 2.2vmin;
+        text-transform: uppercase;
+        letter-spacing: 0.1vmin;
+        margin-bottom: 0.5vmin;
+      }
+      
+      .bb-input {
+        width: 100%;
+        padding: 1.5vmin;
+        border: 0.2vmin solid $greeGrey;
+        border-radius: 0.8vmin;
+        font-size: 2vmin;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+        background-color: #fff;
+        text-align: left !important;
+        
+        &:focus {
+          outline: none;
+          border-color: $black;
+          box-shadow: 0 0 0 0.3vmin rgba(255, 107, 53, 0.2);
+          transform: translateY(-0.1vmin);
+        }
+        
+        &:hover {
+          border-color: lighten($orange, 10%);
+        }
+        
+        &.orange {
+          border-color: $orange;
+          
+          &:focus {
+            border-color: darken($orange, 10%);
+            box-shadow: 0 0 0 0.4vmin rgba(255, 107, 53, 0.25);
+          }
+        }
+      }
+      
+      textarea.bb-input {
+        min-height: 18vmin;
+        resize: vertical;
+        font-family: inherit;
+        line-height: 1.5;
+        text-align: left !important;
+      }
+    }
+    
+    .bb-button {
+      align-self: flex-start;
+      padding: 1.8vmin 3.5vmin;
+      font-size: 2.2vmin;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1vmin;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &.orange {
+        background-color: $orange;
+        color: white;
+        
+        &:hover {
+          background-color: darken($orange, 10%);
+          transform: translateY(-0.2vmin);
+          box-shadow: 0 0.4vmin 0.8vmin rgba(0, 0, 0, 0.2);
+        }
+        
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 0.2vmin 0.4vmin rgba(0, 0, 0, 0.2);
+        }
+      }
+      
+      &.rounded {
+        border-radius: 0.8vmin;
+      }
+    }
+  }
+}
+
+// Responsive adjustments for the contact form
+@media screen and (max-width: 768px) {
+  .form-container {
+    max-width: 95vmin;
+    padding: 2vmin;
+    
+    form {
+      padding: 3vmin;
+      gap: 2.5vmin;
+      
+      .form-group {
+        label {
+          font-size: 2vmin;
+        }
+        
+        .bb-input {
+          padding: 1.2vmin;
+          font-size: 1.8vmin;
+        }
+        
+        textarea.bb-input {
+          min-height: 15vmin;
+        }
+      }
+      
+      .bb-button {
+        padding: 1.5vmin 3vmin;
+        font-size: 2vmin;
+        align-self: stretch; // Full width on mobile
+      }
+    }
+  }
+}
+
+// Add to the form styling above
+.form-group {
+  &.error {
+    .bb-input {
+      border-color: #e74c3c;
+      background-color: rgba(231, 76, 60, 0.05);
+    }
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 1.6vmin;
+    margin-top: 0.5vmin;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-container {
+    padding: 1.5vmin;
+    
+    form {
+      padding: 2.5vmin;
+      
+      .form-group {
+        label {
+          font-size: 1.8vmin;
+        }
+        
+        .bb-input {
+          padding: 1vmin;
+          font-size: 1.6vmin;
+        }
+        
+        textarea.bb-input {
+          min-height: 12vmin;
+        }
+      }
+      
+      .bb-button {
+        padding: 1.2vmin 2.5vmin;
+        font-size: 1.8vmin;
+      }
+    }
+  }
+}
+
+/**************************************** ****************************************
+      BUTTONS SASS @extend
+***************************************** ***************************************/
+%button-base {
+  display: inline-block;
+  padding: 1.1vmin 1.9vmin;
+  border-radius: 0.6vmin;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button {
+  @extend %button-base;
+  background-color: $purp; 
+  color: $orange;
+  box-shadow: 0 1.2vmin 2.4vmin 0 rgba(0,0,0,0.2), 0 0.9vmin 3vmin 0 rgba(0,0,0,0.19);
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 1.8vmin 2.4vmin 0 rgba(0,0,0,0.24), 0 2.5vmin 7.5vmin 0 rgba(0,0,0,0.19);
+    background-color: darken($purp, 10%);
+  }
+}
+ 
+.secondary-button {
+  margin: 3vmin; 
+  @extend %button-base;
+  background-color: $orange;
+  color: $black;
+  border: 0.15vmin solid $purp;
+  
+  &:hover {
+    background-color: $hover-orange;
+  }
+}
+
+/**************************************** ****************************************
+      wrapper SASS
+***************************************** ***************************************/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $pale-yellow;
+  font-size: 4vmin;
+  margin-top: 5vmin;
+
+  .dialog {
+    color: $black;
+  }
+}
+
+.layer {
+  background-color: $drkGrey;
+  padding: 6vmin;
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  margin-top: 5vmin; 
+
+  .container {
+    background-color: $drkGrey;
+    padding: 2vmin;
+    border-radius: 1.5vmin;
+    box-shadow: 0 0.6vmin 1.2vmin rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    h3 {
+      color: $litBlurey;
+      font-size: 5vmin;
+      margin-top: 5vmin; 
+      text-align: center;
+    }
+    
+    p {
+      color: $orange;
+      font-size: 3vmin;
+      margin-top: 5vmin; 
+      text-align: left;
+    }
+  }
+}
+
+#starwar {
+  background-color: $black;
+  color: $pale-yellow;
+  padding: 6vmin;
+  box-shadow: $orange 0.15vmin 0.45vmin 3.3vmin 3.3vmin;
+  margin-top: 14vmin;
+  margin-bottom: 4vmin;
+
+  p {
+    color: $pale-yellow;
+    font-size: 3vmin;
+    text-align: left;
+  }
+}
+
+/**************************************** ****************************************
+      gallery SASS
+***************************************** ***************************************/
+$gallery-gap: 1.5vmin;
+$hover-scale: 1.05;
+$box-shadow: 0 0.6vmin 0.9vmin rgba(0, 0, 0, 0.1);
+$hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
+
+.gallery {
+  padding: 3vmin;
+  position: relative;
+  margin-top: 7.5vmin;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr)); 
+  gap: $gallery-gap; 
+
+  .container {
+    position: relative;
+
+    img {
+      width: 100%; 
+      height: auto;
+      border-radius: 1.2vmin;
+      box-shadow: $box-shadow;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale($hover-scale);
+        box-shadow: $hover-box-shadow;
+      }
+    }
+  }
+}
+
+/**************************************** ****************************************
+      Footer SASS
+***************************************** ***************************************/
+#footer-wrap {
+  width: calc(100% - 3vmin);
+  margin: 1.5vmin;
+  margin-top: 12vmin;
+  background-color: $greeGrey;
+  border-radius: 2.2vmin;
+  
+  footer {
+    background-color: $greeGrey;
+    border: 0.6vmin solid $orange;
+    padding: 3vmin 3.7vmin;
+    box-shadow: 0.9vmin 0.9vmin 0 #000;
+    border-radius: 2.2vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3vmin;
+    margin-top: 12vmin;
+
+    .footer-column {
+      flex: 1 1 30%;
+      text-align: center;
+      background-color: $greeGrey;
+
+      h3 {
+        background-color: $greeGrey;
+        font-size: 2.2vmin;
+        margin-bottom: 1.5vmin;
+        color: $orange;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      p {
+        background-color: $greeGrey;
+        margin: 0.7vmin 0;
+      }
+
+      a {
+        color: $orange;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: $hover-orange;
+        }
+      }
+    }
+
+    .footer-profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $greeGrey;
+
+      .avatar {
+        width: 12vmin;
+        height: 12vmin;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 0.45vmin solid $orange;
+        box-shadow: 0.6vmin 0.6vmin 0 #000;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-0.7vmin);
+        }
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .footer-social {
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5vmin;
+        background-color: $greeGrey;
+
+        a {
+          font-size: 3vmin;
+          color: $orange;
+          padding: 1.2vmin;
+          border-radius: 1.2vmin;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: $hover-orange;
+            transform: translateY(-0.45vmin);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #footer-wrap footer {
+    flex-direction: column;
+    align-items: center;
+    
+    .footer-column {
+      flex: 1 1 100%;
+      margin-bottom: 2.2vmin;
+    }
+  }
+}
+
+/**************************************** ****************************************
+      MISC ADDITIONAL SASS/CSS
+***************************************** ***************************************/
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45vmin, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.service-card {
+  color: $black;
+  background-color: $light;
+  border: var(--border-width) solid $black;
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-offset-large) var(--shadow-offset-large) 0 $black;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translate(-0.45vmin, -0.45vmin);
+    box-shadow: 1.8vmin 1.8vmin 0 $black;
+  }
+  
+  &:nth-child(1) { background-color: var(--bg-card-1); }
+  &:nth-child(2) { background-color: var(--bg-card-2); }
+  &:nth-child(3) { background-color: var(--bg-card-3); }
+  &:nth-child(4) { background-color: var(--bg-card-4); }
+  &:nth-child(5) { background-color: var(--bg-card-5); }
+  &:nth-child(6) { background-color: var(--bg-card-6); }
+  
+  h3 {
+    font-size: 2.2vmin;
+    margin-bottom: 2.2vmin;
+  }
+  
+  p {
+    font-size: 1.5vmin;
+    line-height: 1.5;
+  }
+}
+
+.service-icon {
+  font-size: 3vmin;
+  margin-bottom: var(--space-md);
+  color: var(--dark);
+  background-color: var(--light);
+  width: 9vmin;
+  height: 9vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width) solid var(--dark);
+}
+
+/**************************************** ****************************************
+      MISC @media
+***************************************** ***************************************/
+
+@media only screen and (max-width: 800px) {
+  * {
+    font-size: 1.8vmin;
+  }
+
+  .extra-item {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .container:focus,
+  .container:hover {
+    transform: none;
+    z-index: 1;
+  }
+
+  .text {
+    font-size: smaller;
+    padding: 4.8vmin 2.4vmin;
+  }
+
+  
+
+@media screen and (max-width: 1200px) {
+  .dialog {
+    width: 70%;
+    max-width: 147vmin;
+    margin-top: 5vmin;
+    padding: 8vmin;
+    
+    p {
+      color: $black;
+      text-align: center;
+    }
+
+    label {
+      padding: 3.3vmin;
+    }
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .dialog {
+    width: 70%;
+    max-width: 147vmin;
+    margin-top: 5vmin;
+    padding: 10vmin;
+    
+    p {
+      color: $black;
+      text-align: center;
+    }
+
+    label {
+      padding: 1vmin;
+    }
+
+    input {
+      padding: 1vmin;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .dialog {
+    width: 100%;
+    max-width: 135vmin;
+    margin-top: 5vmin;
+    padding: 8vmin;
+    
+    p {
+      color: $black;
+      text-align: center;
+    }
+
+    label {
+      padding: 3vmin;
+    }
+    
+    input {
+      margin-top: 8vmin;
+      padding: 1.8vmin;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 1.9vmin;
+  }
+
+  .gallery .row .container {
+    flex: 1 1 calc(50% - #{$gallery-gap});
+    max-width: calc(50% - #{$gallery-gap});
+  }
+
+  #welcome p {
+    font-size: 1.9vmin;
+  }
+
+  body {
+    overflow-x: hidden;
+    font-size: 1.8vmin;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 2.2vmin;
+  }
+
+  .skill-box {
+    padding: 3vmin;
+    text-align: center;
+
+    h3 {
+      font-size: 1.9vmin;
+    }
+
+    p {
+      font-size: 1.8vmin;
+    }
+  }
+
+  .navbar {
+    padding: 1.5vmin 1.5vmin;
+    background-color: $greeGrey;
+    box-shadow: none;
+    
+    .logo-image {
+      width: 15vmin; 
+      height: auto;
+    }
+  }
+
+  .profile_pic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+  
+    img {
+      max-width: 63vmin;
+      height: auto;
+      flex: 1 1 100%;
+      padding: 0.37vmin;    
+    }
+  }
+    
+  .skills {
+    grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr));
+    gap: 2.2vmin;
+  }
+  
+  .skill-box {
+    padding: 3.3vmin;
+    text-align: center;
+
+    h3 {
+      font-size: 1.9vmin;
+    }
+
+    p {
+      font-size: 1.8vmin;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  * {
+    font-size: 1.2vmin;
+  }
+  
+  .gallery .row .container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  #welcome p {
+    font-size: 1.2vmin;
+  }
+
+  .skills {
+    padding: 1.5vmin;
+  }
+
+  .skill-box {
+    padding: 1.5vmin;
+
+    h3 {
+      font-size: 1.35vmin;
+    }
+
+    p {
+      font-size: 1.2vmin;
+    }
+  }
+
+  #footer-wrap {
+    padding: 1.5vmin;
+    font-size: 1.2vmin;
+  }
+
+  .profile_pic {
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+
+    img {
+      flex: 1 1 50%;
+      max-width: 33.7vmin;
+      padding: 6vmin;
+      box-shadow: chartreuse 0.15vmin 0.45vmin 4.9vmin 4.9vmin;
+      border-radius: 12%;
+      margin-bottom: 3vmin;
+
+      a {
+        margin: 0.09vmin;
+      }
+    }
+  }  
+
+  .nav-active {
+    transform: translateX(0);
+  }
+}

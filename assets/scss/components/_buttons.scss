@@ -1,0 +1,93 @@
+@mixin button-styles($bg-colour, $text-colour, $hover-bg-colour) {
+  display: inline-block;
+  padding: 11px 22px;
+  background-color: $bg-colour;
+  color: $text-colour;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 3px solid #000000;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+
+  &:hover {
+    box-shadow: 3px 3px 0px #000000;
+    background-color: $hover-bg-colour;
+  }
+
+  &:focus {
+    outline-color: transparent;
+  }
+
+  &.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+$button-variants: (
+  default: (
+    #ffffff,
+    #000000,
+    #aaaaaa,
+  ),
+  orange: (
+    $orange,
+    white,
+    $hover-orange,
+  ),
+  blue: (
+    $blue,
+    white,
+    $hover-blue,
+  ),
+  green: (
+    $green,
+    white,
+    $hover-green,
+  ),
+  sky-blue: (
+    $sky-blue,
+    white,
+    $hover-sky-blue,
+  ),
+  pale-red: (
+    $pale-red,
+    white,
+    $hover-pale-red,
+  ),
+  pale-violet: (
+    $pale-violet,
+    white,
+    $hover-pale-violet,
+  ),
+  soft-blue: (
+    $soft-blue,
+    white,
+    $hover-soft-blue,
+  ),
+  pale-cyan: (
+    $pale-cyan,
+    white,
+    $hover-pale-cyan,
+  ),
+  pale-yellow: (
+    $pale-yellow,
+    black,
+    $hover-pale-yellow,
+  ),
+);
+
+@each $input_variant, $colours in $button-variants {
+  .bb-button.#{$input_variant} {
+    @include button-styles($colours...);
+  }
+}
+
+.rounded {
+  border-radius: 9999px;
+}

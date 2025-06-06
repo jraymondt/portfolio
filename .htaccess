@@ -3,4 +3,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
 # Handle 404 errors
-ErrorDocument 404 /err404.php
+ErrorDocument 404 /404.php
