@@ -2047,6 +2047,69 @@ main {
   margin-bottom: 2vmin;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 12vmin;
+  margin-bottom: 12vmin;
+  padding: 1vmin;
+  color: #ec9420;
+  text-align: left;
+  max-width: 88%;
+}
+form label {
+  font-weight: bold;
+  color: #ec9420;
+  background-color: #ffffff;
+  font-size: 3vmin;
+  padding: 0.37vmin;
+  margin: 0.37vmin;
+}
+form input[type=text],
+form input[type=email],
+form input[type=tel],
+form select,
+form textarea {
+  width: 100%;
+  padding: 1.1vmin;
+  border: 0.15vmin solid #37413c;
+  margin-top: 0.9vmin;
+  margin-bottom: 2.4vmin;
+  resize: vertical;
+  box-sizing: border-box;
+  font-size: 2.5vmin;
+  border-radius: 0.6vmin;
+  text-align: left !important;
+}
+form input[type=text]:focus,
+form input[type=email]:focus,
+form input[type=tel]:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #ec9420;
+  box-shadow: 0 0 0 0.45vmin rgba(255, 107, 53, 0.1);
+}
+form textarea {
+  min-height: 18vmin;
+}
+form input[type=submit] {
+  background-color: #ec9420;
+  color: #ffffff;
+  border: none;
+  padding: 1.5vmin 3vmin;
+  border-radius: 0.6vmin;
+  font-size: 1.6vmin;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1.5vmin;
+  transition: background-color 0.3s ease;
+}
+form input[type=submit]:hover {
+  background-color: #bdc3c7;
+}
+
 /**************************************** 
 ****************************************
       CONTACT FORM SASS
@@ -2072,6 +2135,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1vmin;
+  position: relative;
+  transition: all 0.3s ease;
 }
 .form-container form .form-group label {
   font-weight: bold;
@@ -2094,7 +2159,7 @@ main {
 }
 .form-container form .form-group .bb-input:focus {
   outline: none;
-  border-color: #000000;
+  border-color: #ec9420;
   box-shadow: 0 0 0 0.3vmin rgba(255, 107, 53, 0.2);
   transform: translateY(-0.1vmin);
 }
@@ -2114,6 +2179,51 @@ main {
   font-family: inherit;
   line-height: 1.5;
   text-align: left !important;
+}
+.form-container form .form-group.has-error .bb-input {
+  border-color: #e74c3c !important;
+  background-color: rgba(231, 76, 60, 0.05);
+  box-shadow: 0 0 0 0.3vmin rgba(231, 76, 60, 0.2);
+}
+.form-container form .form-group.has-error label {
+  color: #e74c3c;
+}
+.form-container form .form-group.has-success .bb-input {
+  border-color: #27ae60 !important;
+  background-color: rgba(39, 174, 96, 0.05);
+  box-shadow: 0 0 0 0.3vmin rgba(39, 174, 96, 0.2);
+}
+.form-container form .form-group .error-message {
+  color: #e74c3c;
+  font-size: 1.6vmin;
+  margin-top: 0.5vmin;
+  display: block;
+  min-height: 2.5vmin;
+  opacity: 0;
+  transform: translateY(-0.5vmin);
+  transition: all 0.3s ease;
+}
+.form-container form .form-group .error-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.form-container form .form-group .error-message::before {
+  content: "⚠ ";
+  font-weight: bold;
+}
+.form-container form .form-group .success-message {
+  color: #27ae60;
+  font-size: 1.6vmin;
+  margin-top: 0.5vmin;
+  display: block;
+  min-height: 2.5vmin;
+  opacity: 0;
+  transform: translateY(-0.5vmin);
+  transition: all 0.3s ease;
+}
+.form-container form .form-group .success-message.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 .form-container form .bb-button {
   align-self: flex-start;
@@ -2142,6 +2252,52 @@ main {
 .form-container form .bb-button.rounded {
   border-radius: 0.8vmin;
 }
+.form-container form .bb-button:disabled {
+  background-color: #bdc3c7 !important;
+  color: #7f8c8d !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none !important;
+}
+.form-container form .bb-button:disabled:hover {
+  background-color: #bdc3c7 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+@keyframes shake {
+  0%, 20%, 40%, 60%, 80% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-0.5vmin);
+  }
+}
+.form-progress {
+  width: 100%;
+  height: 0.6vmin;
+  background-color: #ecf0f1;
+  border-radius: 0.3vmin;
+  margin-bottom: 3vmin;
+  overflow: hidden;
+}
+.form-progress .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  width: 0%;
+  transition: width 0.5s ease;
+  border-radius: 0.3vmin;
+  position: relative;
+}
+.form-progress .progress-fill::after {
+  content: attr(data-progress);
+  position: absolute;
+  right: 1vmin;
+  top: -3vmin;
+  font-size: 1.4vmin;
+  color: #2c3e50;
+  font-weight: bold;
+}
 
 @media screen and (max-width: 768px) {
   .form-container {
@@ -2168,16 +2324,6 @@ main {
     align-self: stretch;
   }
 }
-.form-group.error .bb-input {
-  border-color: #e74c3c;
-  background-color: rgba(231, 76, 60, 0.05);
-}
-.form-group .error-message {
-  color: #e74c3c;
-  font-size: 1.6vmin;
-  margin-top: 0.5vmin;
-}
-
 @media screen and (max-width: 480px) {
   .form-container {
     padding: 1.5vmin;
@@ -2539,6 +2685,7 @@ main {
     margin-bottom: 2.4vmin;
     resize: vertical;
     box-sizing: inherit;
+    text-align: left !important;
   }
   input[type=submit] {
     background-color: #ec9420;
@@ -2564,6 +2711,9 @@ main {
   .dialog label {
     padding: 3.3vmin;
   }
+  .dialog input, .dialog textarea {
+    text-align: left !important;
+  }
 }
 @media screen and (max-width: 2000px) {
   .dialog {
@@ -2579,8 +2729,9 @@ main {
   .dialog label {
     padding: 1vmin;
   }
-  .dialog input {
+  .dialog input, .dialog textarea {
     padding: 1vmin;
+    text-align: left !important;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -2597,9 +2748,10 @@ main {
   .dialog label {
     padding: 3vmin;
   }
-  .dialog input {
+  .dialog input, .dialog textarea {
     margin-top: 8vmin;
     padding: 1.8vmin;
+    text-align: left !important;
   }
 }
 @media screen and (max-width: 768px) {

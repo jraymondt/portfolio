@@ -359,6 +359,70 @@ main {
   }
 }  
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 12vmin;
+  margin-bottom: 12vmin;
+  padding: 1vmin;
+  color: $orange;
+  text-align: left;
+  max-width: 88%;
+
+  label {
+    font-weight: bold;
+    color: $orange;
+    background-color: $white;
+    font-size: 3vmin;
+    padding: 0.37vmin;
+    margin: 0.37vmin;  
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 1.1vmin;
+    border: 0.15vmin solid $greeGrey;
+    margin-top: 0.9vmin;
+    margin-bottom: 2.4vmin;
+    resize: vertical;
+    box-sizing: border-box;
+    font-size: 2.5vmin;
+    border-radius: 0.6vmin;
+    text-align: left !important;
+    
+    &:focus {
+      outline: none;
+      border-color: $orange;
+      box-shadow: 0 0 0 0.45vmin rgba(255, 107, 53, 0.1);
+    }
+  }
+
+  textarea {
+    min-height: 18vmin;
+  }
+
+  input[type="submit"] {
+    background-color: $orange;
+    color: $white;
+    border: none;
+    padding: 1.5vmin 3vmin;
+    border-radius: 0.6vmin;
+    font-size: 1.6vmin;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1.5vmin;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $litBlurey;
+    }
+  }
+}
 
 /**************************************** 
 ****************************************
@@ -385,6 +449,8 @@ main {
       display: flex;
       flex-direction: column;
       gap: 1vmin;
+      position: relative;
+      transition: all 0.3s ease;
       
       label {
         font-weight: bold;
@@ -408,7 +474,7 @@ main {
         
         &:focus {
           outline: none;
-          border-color: $black;
+          border-color: $orange;
           box-shadow: 0 0 0 0.3vmin rgba(255, 107, 53, 0.2);
           transform: translateY(-0.1vmin);
         }
@@ -433,6 +499,65 @@ main {
         font-family: inherit;
         line-height: 1.5;
         text-align: left !important;
+      }
+      
+      // Error state styling
+      &.has-error {
+        .bb-input {
+          border-color: #e74c3c !important;
+          background-color: rgba(231, 76, 60, 0.05);
+          box-shadow: 0 0 0 0.3vmin rgba(231, 76, 60, 0.2);
+        }
+        
+        label {
+          color: #e74c3c;
+        }
+      }
+      
+      // Success state styling
+      &.has-success {
+        .bb-input {
+          border-color: #27ae60 !important;
+          background-color: rgba(39, 174, 96, 0.05);
+          box-shadow: 0 0 0 0.3vmin rgba(39, 174, 96, 0.2);
+        }
+      }
+      
+      .error-message {
+        color: #e74c3c;
+        font-size: 1.6vmin;
+        margin-top: 0.5vmin;
+        display: block;
+        min-height: 2.5vmin;
+        opacity: 0;
+        transform: translateY(-0.5vmin);
+        transition: all 0.3s ease;
+        
+        &.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        &::before {
+          content: "⚠ ";
+          font-weight: bold;
+        }
+      }
+      
+      .success-message {
+        color: #27ae60;
+        font-size: 1.6vmin;
+        margin-top: 0.5vmin;
+        display: block;
+        min-height: 2.5vmin;
+        opacity: 0;
+        transform: translateY(-0.5vmin);
+        transition: all 0.3s ease;
+        
+        &.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
     
@@ -466,6 +591,59 @@ main {
       &.rounded {
         border-radius: 0.8vmin;
       }
+      
+      &:disabled {
+        background-color: #bdc3c7 !important;
+        color: #7f8c8d !important;
+        cursor: not-allowed;
+        opacity: 0.6;
+        transform: none !important;
+        
+        &:hover {
+          background-color: #bdc3c7 !important;
+          transform: none !important;
+          box-shadow: none !important;
+        }
+      }
+    }
+  }
+}
+
+// Add shake animation for error feedback
+@keyframes shake {
+  0%, 20%, 40%, 60%, 80% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-0.5vmin);
+  }
+}
+
+// progress bar styling
+.form-progress {
+  width: 100%;
+  height: 0.6vmin;
+  background-color: #ecf0f1;
+  border-radius: 0.3vmin;
+  margin-bottom: 3vmin;
+  overflow: hidden;
+  
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 0.3vmin;
+    position: relative;
+    
+    &::after {
+      content: attr(data-progress);
+      position: absolute;
+      right: 1vmin;
+      top: -3vmin;
+      font-size: 1.4vmin;
+      color: #2c3e50;
+      font-weight: bold;
     }
   }
 }
@@ -501,22 +679,6 @@ main {
         align-self: stretch; // Full width on mobile
       }
     }
-  }
-}
-
-// Add to the form styling above
-.form-group {
-  &.error {
-    .bb-input {
-      border-color: #e74c3c;
-      background-color: rgba(231, 76, 60, 0.05);
-    }
-  }
-  
-  .error-message {
-    color: #e74c3c;
-    font-size: 1.6vmin;
-    margin-top: 0.5vmin;
   }
 }
 
@@ -891,7 +1053,52 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     padding: 4.8vmin 2.4vmin;
   }
 
-  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    margin-top: 7.5vmin;
+    margin-bottom: 7.5vmin;
+    padding: 1.8vmin;
+    color: $black;
+    text-align: left;
+    max-width: 65%;
+  }
+
+  label {
+    font-weight: bold;
+    color: $orange;
+    background-color: $white;
+    font-size: 2.2vmin;
+    padding: 0.37vmin;
+    margin: 0.37vmin;
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 1.8vmin;
+    border: 0.15vmin solid $greeGrey;
+    margin-top: 0.9vmin;
+    margin-bottom: 2.4vmin;
+    resize: vertical;
+    box-sizing: inherit;
+    text-align: left !important;
+  }
+
+  input[type="submit"] {
+    background-color: $orange;
+    border: none;
+    cursor: pointer;
+    box-sizing: inherit;
+  }
+
+  input[type="submit"]:hover {
+    background-color: $litBlurey;
+  }
+}  
 
 @media screen and (max-width: 1200px) {
   .dialog {
@@ -907,6 +1114,10 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 
     label {
       padding: 3.3vmin;
+    }
+    
+    input, textarea {
+      text-align: left !important;
     }
   }
 }
@@ -927,8 +1138,9 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
       padding: 1vmin;
     }
 
-    input {
+    input, textarea {
       padding: 1vmin;
+      text-align: left !important;
     }
   }
 }
@@ -949,9 +1161,10 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
       padding: 3vmin;
     }
     
-    input {
+    input, textarea {
       margin-top: 8vmin;
       padding: 1.8vmin;
+      text-align: left !important;
     }
   }
 }

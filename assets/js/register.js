@@ -1,140 +1,209 @@
-// - register.js
-// This script validates a form.
-
-// Function called when the form is submitted.
-// Function validates the form data.
-function validateForm(e) {
+// James Thompson - register.js
+// error message function with animation
+function addErrorMessage(field, message) {
     'use strict';
-
-    // Get the event object:
-	if (typeof e == 'undefined') e = window.event;
-
-    // Get form references:
-	var firstName = U.$('firstName');
-	var lastName = U.$('lastName');
-	var email = U.$('email');
-	var phone = U.$('phone');
-	var city = U.$('city');
-	var state = U.$('state');
-	var zip = U.$('zip');
-	var terms = U.$('terms');
-
-	// Flag variable:
-	var error = false;
-
-	// Validate the first name:
-	if (/^[A-Z \.\-']{2,20}$/i.test(firstName.value)) {
-		removeErrorMessage('firstName');
-		addCorrectMessage("firstName", "\u2714");
-	} else {
-		addErrorMessage('firstName', 'Please enter your first name.');
-		removecorrectMessage('firstName');
-		error = true;
-	}
-	// Validate the last name:
-	if (/^[A-Z \.\-']{2,20}$/i.test(lastName.value)) {
-		removeErrorMessage('lastName');
-		addCorrectMessage("lastName", "\u2714");
-	} else {
-		addErrorMessage('lastName', 'Please enter your last name.');
-		removecorrectMessage('lastName');
-		error = true;
-	}
-		
-	// Validate the email address:
-	if (/^[\w.-]+@[\w.-]+\.[A-Za-z]{2,6}$/.test(email.value)) {
-		removeErrorMessage('email');
-		addCorrectMessage("email", "\u2714");
-	} else {
-		addErrorMessage('email', 'Please enter your email address.');
-		removecorrectMessage('email');
-		error = true;
-	}
-	
-	// Validate the phone number:
-	if (/\d{3}[ \-\.]?\d{3}[ \-\.]?\d{4}/.test(phone.value)) {
-		removeErrorMessage('phone');
-		addCorrectMessage("phone", "\u2714");
-	} else {
-		addErrorMessage('phone', 'Please enter your phone number.');
-		removecorrectMessage('phone');
-		error = true;
-	}
-	// city
-	if (/^[A-Z \.\-']{2,20}$/i.test(city.value)) {
-		removeErrorMessage('city');
-		addCorrectMessage("city", "\u2714");
-	} else {
-		addErrorMessage('city', 'Please enter City or Suburb.');
-		removecorrectMessage('city');
-		error = true;
-	}
-	
-	// Validate the state:
-	if (state.selectedIndex != 0) {
-		removeErrorMessage('state');
-		addCorrectMessage("state", "\u2714 You are in quite a state");
-	} else {
-		addErrorMessage('state', 'What state are you in?');
-		removecorrectMessage('state');
-		error = true;
-	}
-	
-	// Validate the zip code:
-	if (/^[2-7]{1}[0-9]{3}$/.test(zip.value)) {
-		removeErrorMessage('zip');
-		addCorrectMessage("zip", "\u2714");
-	} else {
-			addErrorMessage('zip', 'Please enter your post code.');
-		error = true;
-	}
-
-    // If an error occurred, prevent the default behavior:
-	if (error) {
-
-		// Prevent the form's submission:
-	    if (e.preventDefault) {
-	        e.preventDefault();
-	    } else {
-	        e.returnValue = false;
-	    }
-	    return false;
     
-	}
+    // Remove existing messages first
+    removeErrorMessage(field);
+    removecorrectMessage(field);
     
-} // End of validateForm() function.
-
-// Function called when the terms checkbox changes.
-// Function enables and disables the submit button.
-function toggleSubmit() {
-	'use strict';
+    // Get the error container
+    var errorDiv = U.$(field + '_error');
+    var formGroup = U.$(field).parentNode;
     
-	// Get a reference to the submit button:
-	var submit = U.$('submit');
-	
-	// Toggle its disabled property:
-	if (U.$('terms').checked) {
-		submit.disabled = false;
-	} else {
-		submit.disabled = true;
-	}
-	
-} // End of toggleSubmit() function.
+    if (errorDiv) {
+        errorDiv.innerHTML = message;
+        errorDiv.className = 'error-message show';
+        
+        // Add error class to form group for styling
+        if (formGroup.classList) {
+            formGroup.classList.add('has-error');
+            formGroup.classList.remove('has-success');
+        }
+        
+        // Add shake animation
+        U.$(field).style.animation = 'shake 0.5s ease-in-out';
+        setTimeout(function() {
+            U.$(field).style.animation = '';
+        }, 500);
+    }
+}
 
-// Establish functionality on window load:
+// success message function
+function addCorrectMessage(field, message) {
+    'use strict';
+    
+    var successDiv = U.$(field + '_correct');
+    var formGroup = U.$(field).parentNode;
+    
+    if (successDiv) {
+        successDiv.innerHTML = message;
+        successDiv.className = 'success-message show';
+        
+        // Add success class to form group
+        if (formGroup.classList) {
+            formGroup.classList.add('has-success');
+            formGroup.classList.remove('has-error');
+        }
+    }
+}
+
+// remove error function
+function removeErrorMessage(field) {
+    'use strict';
+    
+    var errorDiv = U.$(field + '_error');
+    var formGroup = U.$(field).parentNode;
+    
+    if (errorDiv) {
+        errorDiv.className = 'error-message';
+        errorDiv.innerHTML = '';
+        
+        // Remove error class
+        if (formGroup.classList) {
+            formGroup.classList.remove('has-error');
+        }
+    }
+}
+
+//  remove success function
+function removecorrectMessage(field) {
+    'use strict';
+    
+    var successDiv = U.$(field + '_correct');
+    var formGroup = U.$(field).parentNode;
+    
+    if (successDiv) {
+        successDiv.className = 'success-message';
+        successDiv.innerHTML = '';
+        
+        // Remove success class
+        if (formGroup.classList) {
+            formGroup.classList.remove('has-success');
+        }
+    }
+}
+
+// Real-time validation function
+function validateFieldRealTime(field) {
+    'use strict';
+    
+    var value = U.$(field).value;
+    var isValid = false;
+    
+    switch(field) {
+        case 'firstName':
+        case 'lastName':
+        case 'city':
+            isValid = /^[A-Z \.\-']{2,20}$/i.test(value);
+            break;
+        case 'email':
+            isValid = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,6}$/.test(value);
+            break;
+        case 'phone':
+            isValid = /\d{3}[ \-\.]?\d{3}[ \-\.]?\d{4}/.test(value);
+            break;
+        case 'zip':
+            isValid = /^[2-7]{1}[0-9]{3}$/.test(value);
+            break;
+        case 'state':
+            isValid = U.$(field).selectedIndex !== 0;
+            break;
+    }
+    
+    if (value.length > 0) {
+        if (isValid) {
+            removeErrorMessage(field);
+            addCorrectMessage(field, "✓");
+        } else {
+            removecorrectMessage(field);
+            addErrorMessage(field, getErrorMessage(field));
+        }
+    } else {
+        removeErrorMessage(field);
+        removecorrectMessage(field);
+    }
+}
+
+// function for field-specific error messages
+function getErrorMessage(field) {
+    'use strict';
+    
+    var messages = {
+        'firstName': 'First name must be 2-20 characters, letters only.',
+        'lastName': 'Last name must be 2-20 characters, letters only.',
+        'email': 'Please enter a valid email address.',
+        'phone': 'Please enter a valid phone number (e.g., 123-456-7890).',
+        'city': 'City must be 2-20 characters, letters only.',
+        'state': 'Please select your state.',
+        'zip': 'Please enter a valid Australian post code (2000-7999).'
+    };
+    
+    return messages[field] || 'Please check this field.';
+}
+
+// Progress indicator function
+function updateFormProgress() {
+    'use strict';
+    
+    var fields = ['firstName', 'lastName', 'email', 'phone', 'city', 'state', 'zip'];
+    var completed = 0;
+    
+    fields.forEach(function(field) {
+        var formGroup = U.$(field).parentNode;
+        if (formGroup && formGroup.classList.contains('has-success')) {
+            completed++;
+        }
+    });
+    
+    var progress = Math.round((completed / fields.length) * 100);
+    var progressBar = U.$('formProgress');
+    
+    if (progressBar) {
+        progressBar.style.width = progress + '%';
+        progressBar.setAttribute('data-progress', progress + '%');
+    }
+    
+    //  should enable the submit button?
+    checkFormValidity();
+}
+
+//  window load with real-time validation
 window.onload = function() {
     'use strict';
 
-	// The validateForm() function handles the form:
+    // The validateForm() function handles the form:
     U.addEvent(U.$('theForm'), 'submit', validateForm);
 
-	// Disable the submit button to start:
-	U.$('submit').disabled = true;
+    // Disable the submit button to start:
+    U.$('submit').disabled = true;
 
-	// Watch for changes on the terms checkbox:
+    // Watch for changes on the terms checkbox:
     U.addEvent(U.$('terms'), 'change', toggleSubmit);
 
-	// Enbable tooltips on the phone number:
-	U.enableTooltips('phone');
+    // Enable tooltips on the phone number:
+    U.enableTooltips('phone');
     
+    // Add real-time validation to all fields
+    var fields = ['firstName', 'lastName', 'email', 'phone', 'city', 'state', 'zip'];
+    
+    fields.forEach(function(field) {
+        var element = U.$(field);
+        if (element) {
+            // Validate on blur (when user leaves field)
+            U.addEvent(element, 'blur', function() {
+                validateFieldRealTime(field);
+                updateFormProgress();
+            });
+            
+            // Also validate on input for immediate feedback
+            U.addEvent(element, 'input', function() {
+                clearTimeout(element.validationTimeout);
+                element.validationTimeout = setTimeout(function() {
+                    validateFieldRealTime(field);
+                    updateFormProgress();
+                }, 300);
+            });
+        }
+    });
 };
