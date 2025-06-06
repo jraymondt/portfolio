@@ -6,7 +6,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <nav class="navbar">
   <div class="logo-container">
     <a href="index.php">
-      <img src="../assets/images/buddy.png" alt="buddha logo" class="logo-image">
+      <img src="<?php echo $baseUrl; ?>/assets/images/buddy.png" alt="buddha logo" class="logo-image">
     </a>
   </div>
   <h1 class="mobile-title">JamesRThompson</h1>

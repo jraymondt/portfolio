@@ -11,12 +11,16 @@ cd  <repo dir>
 
 ### Step 2
 
+To update to the latest version of the main branch
+
 ```code
-git checkout main  # or whichever branch contains your old website
-git pull origin main  # Ensure you're up to date with the remote
+git checkout main  
+git pull origin main  
 ```
 
 ### step 3
+
+Start a new branch for editing
 
 ```code
 git checkout -b new-version

@@ -10,7 +10,7 @@
         <i class="fas fa-error"></i>
       </div>
       <div class="error-actions">
-        <a href="index.php" class="bb-button orange rounded">
+        <a href="<?php echo $baseUrl; ?>" class="bb-button orange rounded">
           <i class="fas fa-home"></i>
           <span>Return Home</span>
         </a>

@@ -19,7 +19,7 @@
 /**************************************** ****************************************
       GLOBAL SASS ****************************************************************/
 * {
-  font-size: 2.5vmin;
+  font-size: 17px;
 }
 
 body {
@@ -31,28 +31,32 @@ body {
   overflow-x: hidden; 
 }
 
+
+/**************************************** ****************************************
+      NAVIGATION SASS
+***************************************** ***************************************/
 /**************************************** ****************************************
       NAVIGATION SASS
 ***************************************** ***************************************/
 .navbar {
   position: sticky;
   top: 0;
-  width: calc(100% - 3vmin);
+  width: calc(100% - 20px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $greeGrey;
-  border: 0.6vmin solid $orange;
-  padding: 2.2vmin 3.7vmin;
-  box-shadow: 0.9vmin 0.9vmin 0 #000;
-  border-radius: 2.2vmin;
-  margin: 1.5vmin;
+  border: 4px solid $orange;
+  padding: 15px 25px;
+  box-shadow: 6px 6px 0 #000;
+  border-radius: 15px;
+  margin: 10px;
   z-index: 1000;
 
   .mobile-title {
     display: none; 
     color: $orange;
-    font-size: 2.2vmin;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
@@ -61,40 +65,42 @@ body {
     flex: 1;
   }
 
+  // Logo container
   .logo-container {
     display: flex;
     align-items: center;
     background-color: $greeGrey;
-    flex: 0 0 auto;
+    flex: 0 0 auto; // Prevent from growing
     
     img {
-      width: 12vmin;
+      width: 80px;
       height: auto;
       display: block;
     }
   }
 
+  // Navigation links
   .nav-links {
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content: center; // Center items horizontally
     align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
     
     li {
-      margin: 0 1.5vmin;
+      margin: 0 10px;
     }
     
     a {
       color: $orange;
       font-weight: bold;
       text-decoration: none;
-      font-size: 1.9vmin;
+      font-size: 1.3rem;
       text-transform: uppercase;
       transition: color 0.2s ease-in-out;
-      padding: 1.2vmin 1.8vmin;
+      padding: 8px 12px;
       display: block;
       
       &:hover {
@@ -103,47 +109,51 @@ body {
     }
   }
 
+  
   .burger {
     display: none;
     background-color: $greeGrey;
-    border: 0.15vmin dashed $orange;
+    border: 1px dashed $orange;
     cursor: pointer;
     z-index: 1001;
     flex: 0 0 auto; 
     
     div {
-      width: 4.5vmin;
-      height: 0.45vmin;
+      width: 30px;
+      height: 3px;
       background-color: $litBlurey;
-      margin: 0.9vmin 0;
+      margin: 6px 0;
       transition: all 0.3s ease;
     }
   }
 }
 
 // Responsive styles
+// Larger screens
 @media screen and (min-width: 1025px) {
   .navbar {
-    padding: 3vmin 6vmin;
+    padding: 20px 40px;
     
     .nav-links a {
-      font-size: 2.2vmin;
+      font-size: 1.5rem;
     }
   }
 }
 
+// Medium screens
 @media screen and (max-width: 1024px) {
   .navbar {
     .nav-links a {
-      font-size: 1.8vmin;
-      padding: 0.9vmin 1.2vmin;
+      font-size: 1.2rem;
+      padding: 6px 8px;
     }
   }
 }
 
+// Tablet and smaller screens
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 1.8vmin 3vmin;
+    padding: 12px 20px;
     
     .mobile-title {
       display: block; 
@@ -164,21 +174,22 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: center; // Better vertical centering
       width: 60%;
       transform: translateX(100%);
       transition: transform 0.3s ease-in;
       z-index: 999;
-      padding-top: 9vmin;
-      border-left: 0.6vmin solid $orange;
-      box-shadow: -0.7vmin 0 2.2vmin rgba(0,0,0,0.2);
+      padding-top: 60px;
+      border-left: 4px solid $orange;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.2);
       
       li {
         opacity: 0;
-        margin: 2.2vmin 0;
+        margin: 15px 0;
         width: 100%;
         text-align: center;
         
+        // Apply animation with SCSS
         .nav-active & {
           opacity: 1;
           animation: navLinkFade 0.5s ease forwards;
@@ -186,8 +197,8 @@ body {
       }
       
       a {
-        font-size: 2.1vmin;
-        padding: 1.8vmin;
+        font-size: 1.4rem;
+        padding: 12px;
         width: 100%;
         display: inline-block;
       }
@@ -199,14 +210,16 @@ body {
     }
   }
   
+  
   .nav-active {
     transform: translateX(0%) !important;
   }
   
+  
   @keyframes navLinkFade {
     from {
       opacity: 0;
-      transform: translateX(7.5vmin);
+      transform: translateX(50px);
     }
     to {
       opacity: 1;
@@ -214,10 +227,11 @@ body {
     }
   }
   
+  
   .toggle {
     .line1 {
-      transform: rotate(-45deg) translate(-0.7vmin, 0.9vmin);
-      background-color: $orange;
+      transform: rotate(-45deg) translate(-5px, 6px);
+      background-color: $orange; // Change color when active
     }
     
     .line2 {
@@ -225,36 +239,37 @@ body {
     }
     
     .line3 {
-      transform: rotate(45deg) translate(-0.7vmin, -0.9vmin);
+      transform: rotate(45deg) translate(-5px, -6px);
       background-color: $orange; 
     }
   }
 }
 
+// Mobile screens
 @media screen and (max-width: 480px) {
   .navbar {
-    padding: 1.5vmin 2.2vmin;
+    padding: 10px 15px;
     
     .logo-container img {
-      width: 9vmin;
+      width: 60px;
     }
     
     .mobile-title {
-      font-size: 1.8vmin;
+      font-size: 1.2rem;
     }
 
     .nav-links {
       width: 70%; 
       
       a {
-        font-size: 1.9vmin;
+        font-size: 1.3rem;
       }
     }
   }
 }
 
 /**************************************** ****************************************
-      404 SASS
+      4040 SASS
 ***************************************** ***************************************/      
 .error-page {
   min-height: 80vh;
@@ -272,12 +287,12 @@ body {
       border: var(--border-width) solid var(--dark);
       box-shadow: var(--shadow-1);
       background-color: var(--bg-card-1);
-      max-width: 90vmin;
+      max-width: 600px;
       margin: 0 auto;
       margin-bottom: var(--space-md);
     
       h1 {
-        font-size: 12vmin;
+        font-size: 8vmin;
         line-height: 1;
         margin-bottom: var(--space-sm);
         font-weight: bold;
@@ -290,12 +305,12 @@ body {
       
       p {
         margin-bottom: var(--space-lg);
-        font-size: 1.8vmin;
+        font-size: 1.2rem;
       }
       
       .service-icon {
         margin: var(--space-md) auto;
-        font-size: 6.7vmin;
+        font-size: 4.5vmin;
       }
     }  
   }
@@ -308,7 +323,7 @@ body {
     margin: var(--space-lg) 0;
     
     .bb-button {
-      min-width: 30vmin;
+      min-width: 200px;
     }
   }
 }
@@ -316,13 +331,14 @@ body {
 /**************************************** ****************************************
       svg logo
 ***************************************** ***************************************/
+
 .logo-container {
   position: relative; 
   display: inline-block; 
 
   img {
-    display: block;
-    max-width: 15vmin; 
+    display: block; // to remove extra space below the image
+    max-width: 100px; 
     height: auto;
     z-index: 1001;
   }
@@ -350,229 +366,64 @@ main {
   align-items: center;
   margin-bottom: 5vmin;  
 
-  img {
-    flex: 1 1 50%;
-    max-width: 100vmin;
-    box-shadow: $drkGrey 0.15vmin 0.45vmin 4.9vmin 4.9vmin;
-    border-radius: 10%;
-    margin-bottom: 2vmin;
-  }
-}  
+    img {
+      flex: 1 1 50%;
+      max-width: 666px;
+      box-shadow: $drkGrey 1px 3px 33px 33px;
+      border-radius: 10%;
+      margin-bottom: 2vmin;
+    }
+  }  
 
-
-/**************************************** 
-****************************************
-      CONTACT FORM SASS
-***************************************** 
-***************************************/
-.form-container {
-  width: 100%;
-  max-width: 90vmin;
-  margin: 0 auto;
-  padding: 3vmin;
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 3vmin;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 4vmin;
-    border-radius: 1.5vmin;
-    border: 0.3vmin solid $orange;
-    box-shadow: 0.6vmin 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
-    
-    .form-group {
+form {
       display: flex;
       flex-direction: column;
-      gap: 1vmin;
-      
-      label {
-        font-weight: bold;
-        color: $orange;
-        font-size: 2.2vmin;
-        text-transform: uppercase;
-        letter-spacing: 0.1vmin;
-        margin-bottom: 0.5vmin;
-      }
-      
-      .bb-input {
-        width: 100%;
-        padding: 1.5vmin;
-        border: 0.2vmin solid $greeGrey;
-        border-radius: 0.8vmin;
-        font-size: 2vmin;
-        transition: all 0.3s ease;
-        box-sizing: border-box;
-        background-color: #fff;
-        text-align: left !important;
-        
-        &:focus {
-          outline: none;
-          border-color: $black;
-          box-shadow: 0 0 0 0.3vmin rgba(255, 107, 53, 0.2);
-          transform: translateY(-0.1vmin);
-        }
-        
-        &:hover {
-          border-color: lighten($orange, 10%);
-        }
-        
-        &.orange {
-          border-color: $orange;
-          
-          &:focus {
-            border-color: darken($orange, 10%);
-            box-shadow: 0 0 0 0.4vmin rgba(255, 107, 53, 0.25);
-          }
-        }
-      }
-      
-      textarea.bb-input {
-        min-height: 18vmin;
-        resize: vertical;
-        font-family: inherit;
-        line-height: 1.5;
-        text-align: left !important;
-      }
-    }
+      justify-content: left;
+      margin-top: 12vmin;
+      margin-bottom: 12vmin;
+      padding: 1vmin;
+      color: $black;
+      padding: 1vmin;
+      color: $orange;
+      text-align: left;
+      max-width: 88%;
     
-    .bb-button {
-      align-self: flex-start;
-      padding: 1.8vmin 3.5vmin;
-      font-size: 2.2vmin;
+    label {
       font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.1vmin;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      
-      &.orange {
-        background-color: $orange;
-        color: white;
-        
-        &:hover {
-          background-color: darken($orange, 10%);
-          transform: translateY(-0.2vmin);
-          box-shadow: 0 0.4vmin 0.8vmin rgba(0, 0, 0, 0.2);
-        }
-        
-        &:active {
-          transform: translateY(0);
-          box-shadow: 0 0.2vmin 0.4vmin rgba(0, 0, 0, 0.2);
-        }
-      }
-      
-      &.rounded {
-        border-radius: 0.8vmin;
-      }
+      color: $orange;
+      background-color: $white;
+      font-size: 3vmin;
+      padding: 0.25rem;
+      margin: 0.25rem;  
     }
-  }
-}
+  }    
 
-// Responsive adjustments for the contact form
-@media screen and (max-width: 768px) {
-  .form-container {
-    max-width: 95vmin;
-    padding: 2vmin;
-    
-    form {
-      padding: 3vmin;
-      gap: 2.5vmin;
-      
-      .form-group {
-        label {
-          font-size: 2vmin;
-        }
-        
-        .bb-input {
-          padding: 1.2vmin;
-          font-size: 1.8vmin;
-        }
-        
-        textarea.bb-input {
-          min-height: 15vmin;
-        }
-      }
-      
-      .bb-button {
-        padding: 1.5vmin 3vmin;
-        font-size: 2vmin;
-        align-self: stretch; // Full width on mobile
-      }
-    }
-  }
-}
-
-// Add to the form styling above
-.form-group {
-  &.error {
-    .bb-input {
-      border-color: #e74c3c;
-      background-color: rgba(231, 76, 60, 0.05);
-    }
-  }
-  
-  .error-message {
-    color: #e74c3c;
-    font-size: 1.6vmin;
-    margin-top: 0.5vmin;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .form-container {
-    padding: 1.5vmin;
-    
-    form {
-      padding: 2.5vmin;
-      
-      .form-group {
-        label {
-          font-size: 1.8vmin;
-        }
-        
-        .bb-input {
-          padding: 1vmin;
-          font-size: 1.6vmin;
-        }
-        
-        textarea.bb-input {
-          min-height: 12vmin;
-        }
-      }
-      
-      .bb-button {
-        padding: 1.2vmin 2.5vmin;
-        font-size: 1.8vmin;
-      }
-    }
-  }
-}
 
 /**************************************** ****************************************
       BUTTONS SASS @extend
 ***************************************** ***************************************/
+
 %button-base {
   display: inline-block;
-  padding: 1.1vmin 1.9vmin;
-  border-radius: 0.6vmin;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.button {
-  @extend %button-base;
-  background-color: $purp; 
-  color: $orange;
-  box-shadow: 0 1.2vmin 2.4vmin 0 rgba(0,0,0,0.2), 0 0.9vmin 3vmin 0 rgba(0,0,0,0.19);
-  text-decoration: none;
 
-  &:hover {
-    box-shadow: 0 1.8vmin 2.4vmin 0 rgba(0,0,0,0.24), 0 2.5vmin 7.5vmin 0 rgba(0,0,0,0.19);
-    background-color: darken($purp, 10%);
-  }
+.button {
+    @extend %button-base;
+    background-color: $purp; 
+    color: $orange;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-decoration: none;
+
+    &:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+      background-color: darken($purp, 10%);
+    }
 }
  
 .secondary-button {
@@ -580,7 +431,7 @@ main {
   @extend %button-base;
   background-color: $orange;
   color: $black;
-  border: 0.15vmin solid $purp;
+  border: 1px solid $purp;
   
   &:hover {
     background-color: $hover-orange;
@@ -590,6 +441,8 @@ main {
 /**************************************** ****************************************
       wrapper SASS
 ***************************************** ***************************************/
+
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -617,8 +470,8 @@ main {
   .container {
     background-color: $drkGrey;
     padding: 2vmin;
-    border-radius: 1.5vmin;
-    box-shadow: 0 0.6vmin 1.2vmin rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 
     &:hover {
@@ -631,7 +484,6 @@ main {
       margin-top: 5vmin; 
       text-align: center;
     }
-    
     p {
       color: $orange;
       font-size: 3vmin;
@@ -645,7 +497,7 @@ main {
   background-color: $black;
   color: $pale-yellow;
   padding: 6vmin;
-  box-shadow: $orange 0.15vmin 0.45vmin 3.3vmin 3.3vmin;
+  box-shadow: $orange 1px 3px 22px 22px;
   margin-top: 14vmin;
   margin-bottom: 4vmin;
 
@@ -656,20 +508,22 @@ main {
   }
 }
 
+
+
 /**************************************** ****************************************
       gallery SASS
 ***************************************** ***************************************/
-$gallery-gap: 1.5vmin;
+$gallery-gap: 1rem;
 $hover-scale: 1.05;
-$box-shadow: 0 0.6vmin 0.9vmin rgba(0, 0, 0, 0.1);
-$hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$hover-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 
+// gallery styling********************************************************
 .gallery {
-  padding: 3vmin;
   position: relative;
-  margin-top: 7.5vmin;
+  margin-top: 5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: $gallery-gap; 
 
   .container {
@@ -678,7 +532,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     img {
       width: 100%; 
       height: auto;
-      border-radius: 1.2vmin;
+      border-radius: 8px;
       box-shadow: $box-shadow;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -693,24 +547,28 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 /**************************************** ****************************************
       Footer SASS
 ***************************************** ***************************************/
+/**************************************** ****************************************
+      Footer SASS
+***************************************** ***************************************/
+
 #footer-wrap {
-  width: calc(100% - 3vmin);
-  margin: 1.5vmin;
+  width: calc(100% - 20px);
+  margin: 10px;
   margin-top: 12vmin;
   background-color: $greeGrey;
-  border-radius: 2.2vmin;
+  border-radius: 15px;
   
   footer {
     background-color: $greeGrey;
-    border: 0.6vmin solid $orange;
-    padding: 3vmin 3.7vmin;
-    box-shadow: 0.9vmin 0.9vmin 0 #000;
-    border-radius: 2.2vmin;
+    border: 4px solid $orange;
+    padding: 20px 25px;
+    box-shadow: 6px 6px 0 #000;
+    border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 3vmin;
+    gap: 2rem;
     margin-top: 12vmin;
 
     .footer-column {
@@ -720,8 +578,8 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 
       h3 {
         background-color: $greeGrey;
-        font-size: 2.2vmin;
-        margin-bottom: 1.5vmin;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
         color: $orange;
         text-transform: uppercase;
         font-weight: bold;
@@ -729,7 +587,8 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 
       p {
         background-color: $greeGrey;
-        margin: 0.7vmin 0;
+        margin: 0.5rem 0;
+        
       }
 
       a {
@@ -751,16 +610,16 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
       background-color: $greeGrey;
 
       .avatar {
-        width: 12vmin;
-        height: 12vmin;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         overflow: hidden;
-        border: 0.45vmin solid $orange;
-        box-shadow: 0.6vmin 0.6vmin 0 #000;
+        border: 3px solid $orange;
+        box-shadow: 4px 4px 0 #000;
         transition: transform 0.3s ease;
         
         &:hover {
-          transform: translateY(-0.7vmin);
+          transform: translateY(-5px);
         }
         
         img {
@@ -775,19 +634,19 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
       .social-icons {
         display: flex;
         justify-content: center;
-        gap: 1.5vmin;
+        gap: 1rem;
         background-color: $greeGrey;
 
         a {
-          font-size: 3vmin;
+          font-size: 2rem;
           color: $orange;
-          padding: 1.2vmin;
-          border-radius: 1.2vmin;
+          padding: 8px;
+          border-radius: 8px;
           transition: all 0.3s ease;
 
           &:hover {
             color: $hover-orange;
-            transform: translateY(-0.45vmin);
+            transform: translateY(-3px);
           }
         }
       }
@@ -795,6 +654,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
   }
 }
 
+// Media query adjustments
 @media screen and (max-width: 768px) {
   #footer-wrap footer {
     flex-direction: column;
@@ -802,7 +662,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     
     .footer-column {
       flex: 1 1 100%;
-      margin-bottom: 2.2vmin;
+      margin-bottom: 1.5rem;
     }
   }
 }
@@ -810,93 +670,174 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 /**************************************** ****************************************
       MISC ADDITIONAL SASS/CSS
 ***************************************** ***************************************/
+
+
+// Services cards with proper SCSS nesting
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(45vmin, 1fr));
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $space-lg;
+  margin-top: $space-xl;
 }
 
 .service-card {
   color: $black;
   background-color: $light;
-  border: var(--border-width) solid $black;
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-offset-large) var(--shadow-offset-large) 0 $black;
+  border: $border-width solid $black;
+  padding: $space-lg;
+  box-shadow: $shadow-offset-large $shadow-offset-large 0 $black;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   
+ 
   &:hover {
-    transform: translate(-0.45vmin, -0.45vmin);
-    box-shadow: 1.8vmin 1.8vmin 0 $black;
+    transform: translate(-3px, -3px);
+    box-shadow: 12px 12px 0 $black;
   }
   
-  &:nth-child(1) { background-color: var(--bg-card-1); }
-  &:nth-child(2) { background-color: var(--bg-card-2); }
-  &:nth-child(3) { background-color: var(--bg-card-3); }
-  &:nth-child(4) { background-color: var(--bg-card-4); }
-  &:nth-child(5) { background-color: var(--bg-card-5); }
-  &:nth-child(6) { background-color: var(--bg-card-6); }
   
+  &:nth-child(1) { background-color: $bg-card-1; }
+  &:nth-child(2) { background-color: $bg-card-2; }
+  &:nth-child(3) { background-color: $bg-card-3; }
+  &:nth-child(4) { background-color: $bg-card-4; }
+  &:nth-child(5) { background-color: $bg-card-5; }
+  &:nth-child(6) { background-color: $bg-card-6; }
+  
+ 
   h3 {
-    font-size: 2.2vmin;
-    margin-bottom: 2.2vmin;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
   }
   
+ 
   p {
-    font-size: 1.5vmin;
+    font-size: 1rem;
     line-height: 1.5;
   }
 }
 
+
 .service-icon {
-  font-size: 3vmin;
-  margin-bottom: var(--space-md);
-  color: var(--dark);
-  background-color: var(--light);
-  width: 9vmin;
-  height: 9vmin;
+  font-size: 2rem;
+  margin-bottom: $space-md;
+  color: $dark;
+  background-color: $light;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: var(--border-width) solid var(--dark);
+  border: $border-width solid $dark;
 }
+
+
+/* extend*/
+
+%button-base {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
 
 /**************************************** ****************************************
       MISC @media
 ***************************************** ***************************************/
 
+/*************************************************************
+      @media screen and (max-width: 1500px)
+***********************************************************/
+
+
+
+
+/*************************************************************
+      @media screen and (max-width: 800px)
+***********************************************************/
+
 @media only screen and (max-width: 800px) {
   * {
-    font-size: 1.8vmin;
+    font-size: 1.2rem;
   }
 
-  .extra-item {
-    display: none;
-  }
+    .extra-item {
+      display: none;
+    }
 
-  .container {
-    width: 100%;
-  }
+    .container {
+      width: 100%;
+    }
 
-  .container:focus,
-  .container:hover {
-    transform: none;
-    z-index: 1;
-  }
+    .container:focus,
+    .container:hover {
+      transform: none;
+      z-index: 1;
+    }
 
-  .text {
-    font-size: smaller;
-    padding: 4.8vmin 2.4vmin;
-  }
-
+    .text {
+      font-size: smaller;
+      padding: 32px 16px;
+    }
   
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: left;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      padding: 1.2rem;
+      color: $black;
+      text-align: left;
+      max-width: 65%;
+    }
 
+    label {
+      font-weight: bold;
+      color: $orange;
+      background-color: $white;
+      font-size: 1.5rem;
+      padding: 0.25rem;
+      margin: 0.25rem;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid $greeGrey;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+      box-sizing: inherit;
+    }
+
+    input[type="submit"] {
+      background-color: $orange;
+      border: none;
+      cursor: pointer;
+      box-sizing: inherit;
+    }
+
+    input[type="submit"]:hover {
+      background-color: $litBlurey;
+    }
+  }  
+
+  /*************************************************************
+      @media screen and (max-width: 1200px)
+***********************************************************/
 @media screen and (max-width: 1200px) {
+ 
   .dialog {
     width: 70%;
-    max-width: 147vmin;
+    max-width: 986px;
     margin-top: 5vmin;
     padding: 8vmin;
     
@@ -906,15 +847,19 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     }
 
     label {
-      padding: 3.3vmin;
+      padding: 22px;
     }
   }
 }
 
+/*************************************************************
+      @media screen and (max-width: 2000px)
+***********************************************************/
 @media screen and (max-width: 2000px) {
+ 
   .dialog {
     width: 70%;
-    max-width: 147vmin;
+    max-width: 986px;
     margin-top: 5vmin;
     padding: 10vmin;
     
@@ -933,10 +878,13 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
   }
 }
 
+/*************************************************************
+      @media screen and (max-width: 1024px)
+***********************************************************/
 @media screen and (max-width: 1024px) {
   .dialog {
     width: 100%;
-    max-width: 135vmin;
+    max-width: 900px;
     margin-top: 5vmin;
     padding: 8vmin;
     
@@ -946,19 +894,22 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     }
 
     label {
-      padding: 3vmin;
+      padding: 20px;
     }
-    
     input {
       margin-top: 8vmin;
-      padding: 1.8vmin;
+      padding: 12px;
     }
   }
 }
 
+/*************************************************************
+      @media screen and (max-width: 768px)
+***********************************************************/
 @media screen and (max-width: 768px) {
+  
   * {
-    font-size: 1.9vmin;
+    font-size: 1.26rem;
   }
 
   .gallery .row .container {
@@ -967,39 +918,40 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
   }
 
   #welcome p {
-    font-size: 1.9vmin;
+    font-size: 1.26rem;
   }
 
   body {
     overflow-x: hidden;
-    font-size: 1.8vmin;
+    font-size: 1.23rem;
   }
 
   .container {
     flex-direction: column;
-    gap: 2.2vmin;
+    gap: 15px;
   }
 
+  
   .skill-box {
-    padding: 3vmin;
+    padding: 2rem;
     text-align: center;
 
     h3 {
-      font-size: 1.9vmin;
+      font-size: 1.26rem;
     }
 
     p {
-      font-size: 1.8vmin;
+      font-size: 1.23rem;
     }
   }
 
   .navbar {
-    padding: 1.5vmin 1.5vmin;
+    padding: 1rem 1rem;
     background-color: $greeGrey;
     box-shadow: none;
     
     .logo-image {
-      width: 15vmin; 
+      width: 100px; 
       height: auto;
     }
   }
@@ -1011,35 +963,40 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     align-items: center;
   
     img {
-      max-width: 63vmin;
+      max-width: 420px;
       height: auto;
       flex: 1 1 100%;
-      padding: 0.37vmin;    
+      padding: 0.25rem;    
     }
   }
     
   .skills {
-    grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr));
-    gap: 2.2vmin;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
   }
   
   .skill-box {
-    padding: 3.3vmin;
+    padding: 2.2rem;
     text-align: center;
 
     h3 {
-      font-size: 1.9vmin;
+      font-size: 1.26rem;;
     }
 
     p {
-      font-size: 1.8vmin;
+      font-size: 1.23rem;;
     }
   }
 }
 
+/**************************************************************
+      @480px and below
+***********************************************************/
+
 @media (max-width: 480px) {
+  
   * {
-    font-size: 1.2vmin;
+    font-size: 0.8rem;
   }
   
   .gallery .row .container {
@@ -1048,29 +1005,31 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
   }
 
   #welcome p {
-    font-size: 1.2vmin;
+    font-size: 0.8rem;
   }
 
   .skills {
-    padding: 1.5vmin;
+    padding: 10px;
   }
 
+  
   .skill-box {
-    padding: 1.5vmin;
+    padding: 10px;
 
     h3 {
-      font-size: 1.35vmin;
+      font-size: 0.9rem;
     }
 
     p {
-      font-size: 1.2vmin;
+      font-size: 0.8rem;
     }
   }
 
   #footer-wrap {
-    padding: 1.5vmin;
-    font-size: 1.2vmin;
+    padding: 1rem;
+    font-size: 0.8rem;
   }
+
 
   .profile_pic {
     display: flex;
@@ -1079,14 +1038,14 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 
     img {
       flex: 1 1 50%;
-      max-width: 33.7vmin;
-      padding: 6vmin;
-      box-shadow: chartreuse 0.15vmin 0.45vmin 4.9vmin 4.9vmin;
+      max-width: 225px;
+      padding: 4rem;
+      box-shadow: chartreuse 1px 3px 33px 33px;
       border-radius: 12%;
-      margin-bottom: 3vmin;
+      margin-bottom: 2rem;
 
       a {
-        margin: 0.09vmin;
+        margin: 0.06rem;
       }
     }
   }  
