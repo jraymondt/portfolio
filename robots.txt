@@ -1,6 +1,18 @@
 User-Agent: *
 
 Allow: /
-Disallow: 
 
-Sitemap: http://jrt.id.au/sitemap.xml
+
+# Prevent crawling of admin areas or private sections (if applicable)
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /resources/private/
+# Prevent crawling of search results pages if you have search functionality
+Disallow: /*?q=*
+
+# Slow down specific bots if needed
+User-Agent: AhrefsBot
+Crawl-delay: 10
+
+# Add multiple sitemaps if applicable
+Sitemap: https://jraymondt.com/sitemap.xml

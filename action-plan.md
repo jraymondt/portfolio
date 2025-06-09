@@ -67,24 +67,23 @@ $nav_items = [
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title><?php echo $page_title; ?></title>
+    <title><?= $page_title ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&display=swap" rel="stylesheet">
-    <meta name="description" content="<?php echo $page_description; ?>">
-    <meta name="keywords" content="<?php echo $page_keywords; ?>">
-    <meta name="author" content="<?php echo $site_author; ?>">
-    <meta name="robots" content="index,follow">
+    <meta name="description" content="<?= $page_description ?>">
+    <meta name="author" content="<?= $site_author ?>">
     <link rel="icon" href="images/logo.svg">
-    <meta property="og:title" content="<?php echo $site_title; ?>">
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="<?= $site_title ?>">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php echo $site_url; ?>">
-    <meta property="og:image" content="<?php echo $site_url; ?>/images/best_can.png">
-    <meta property="og:description" content="<?php echo $site_title; ?>: Personal Portfolio">
+    <meta property="og:url" content="<?= $site_url ?>">
+    <meta property="og:image" content="<?= $site_url ?>/images/best_can.png">
+    <meta property="og:description" content="<?= $site_title ?>: Personal Portfolio">
     <meta property="og:locale" content="en_AU">
     <meta property="og:locale:alternate" content="en_GB">
-    <meta property="og:site_name" content="<?php echo $site_title; ?>">
+    <meta property="og:site_name" content="<?= $site_title ?>">
   </head>
   <body>
 ```
