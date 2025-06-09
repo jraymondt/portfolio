@@ -28,6 +28,45 @@ $bg-colours: (
   pale-yellow: $pale-yellow,
 );
 
+// Base colors
+$white: #ffffff;
+$black: #000000;
+
+// Primary colors
+$orange: #ff7f00;
+$blue: #3498db;
+$green: #2ecc71;
+$red: #e74c3c;
+$purple: #9b59b6;
+$pink: #e84393;
+$yellow: #f1c40f;
+$gray: #95a5a6;
+
+// Secondary colors
+$sky-blue: #00bcd4;
+$pale-red: #ff6b6b;
+$pale-violet: #a29bfe;
+$soft-blue: #74b9ff;
+$pale-cyan: #81ecec;
+$pale-yellow: #ffeaa7;
+
+// Hover states (slightly darker variants)
+$hover-orange: darken($orange, 10%);
+$hover-blue: darken($blue, 10%);
+$hover-green: darken($green, 10%);
+$hover-red: darken($red, 10%);
+$hover-purple: darken($purple, 10%);
+$hover-pink: darken($pink, 10%);
+$hover-yellow: darken($yellow, 10%);
+$hover-gray: darken($gray, 10%);
+$hover-sky-blue: darken($sky-blue, 10%);
+$hover-pale-red: darken($pale-red, 10%);
+$hover-pale-violet: darken($pale-violet, 10%);
+$hover-soft-blue: darken($soft-blue, 10%);
+$hover-pale-cyan: darken($pale-cyan, 10%);
+$hover-pale-yellow: darken($pale-yellow, 10%);
+
+
 @each $colour-name, $colour-value in $text-colours {
   .text-#{$colour-name} {
     color: $colour-value;

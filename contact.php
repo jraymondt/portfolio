@@ -20,24 +20,53 @@ include 'includes/navbar.php';
                     <button class="bb-button orange rounded"> email </button>
                     </a>
                 <br><br>            
+                <p>Alternatively, you can fill out the privacy friendly form that definitely doesn't harvest all your souls and make you start at the begining of the map. Form below:↓ ↓ ↓</p>              
                 <div class="form-container">
-                    <form>
+                    <form method="post" action="process_contact.php">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input class="bb-input orange" type="text" id="name" name="name" required>
+                            <input class="bb-input orange" type="text" id="name" name="name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input class="bb-input orange" type="email" id="email" name="email" required>
+                            <input class="bb-input orange" type="email" id="email" name="email">
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea class="bb-input orange" id="message" name="message" required></textarea>
+                            <textarea class="bb-input orange" id="message" name="message"></textarea>
                         </div>
                         <input class="bb-button orange rounded" type="submit" value="Send Message">
                     </form>
-                </div><!--end form-container-->    
-            </div><!--end dialog-->    
+                </div>
+                <br><br>
+                <p>Or connect with me on social media:</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/jraymondt" target="_blank" rel="noopener noreferrer">
+                        <button class="bb-button blue rounded">LinkedIn</button>
+                    </a>
+                    <a href="https://github.com/jraymondt" target="_blank" rel="noopener noreferrer">
+                        <button class="bb-button blue rounded">GitHub</button>
+                    </a>
+                    <a href="https://x.com/flatlinejim" target="_blank" rel="noopener noreferrer">
+                        <button class="bb-button orange rounded">Cooked</button>
+                    </a>
+                    <a href="https://www.instagram.com/jraymondt/" target="_blank" rel="noopener noreferrer">
+                        <button class="bb-button pink rounded">Insta</button>
+                    </a>
+                    <a href="https://www.tiktok.com/@jraymondt" target="_blank" rel="noopener noreferrer">
+                        <button class="bb-button purple rounded">TokTok</button>
+                    </a>
+                    <a href="https://www.youtube.com/@jraymondt" target="_blank" rel="noopener noreferrer">
+                        <button class="bb-button red rounded">Tubes</button>
+                    </a>
+                    <a href="https://www.twitch.tv/jraymondt" target="_blank" rel="noopener noreferrer">
+                        <button class="bb-button purple rounded">Twitch</button>
+                    </a>
+                    <a href="https://www.facebook.com/jraymondt" target="_blank" rel="noopener noreferrer">
+                        <button class="bb-button blue rounded">Facecook</button>
+                    </a>    
+                </div>
+            </div><!--end dialog-->       
         </div><!--end wrapper-->
     </main>
 <?php include 'includes/footer.php'; ?>

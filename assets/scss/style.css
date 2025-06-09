@@ -2386,6 +2386,7 @@ span.success {
   flex: 1 1 30%;
   text-align: center;
   background-color: #37413c;
+  color: #ffffff;
 }
 #footer-wrap footer .footer-column h3 {
   background-color: #37413c;

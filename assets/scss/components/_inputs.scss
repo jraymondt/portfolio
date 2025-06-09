@@ -1,7 +1,7 @@
 // Define a mixin for input styles
-@mixin input-styles($bg-colour, $text-colour, $border-colour, $hover-bg-colour) {
+@mixin input-styles($bb-colour, $text-colour, $border-colour, $hover-bg-colour) {
   padding: 10px;
-  background-color: $bg-colour;
+  background-color: $bb-colour;
   color: $text-colour;
   border: 2px solid $border-colour;
   border-radius: 0.25rem;

@@ -2,7 +2,6 @@
 @import "reset";
 
 @import "components/buttons";
-@import "components/colors";
 @import "components/inputs";
 @import "components/dialog";
 @import "components/marquee";
@@ -470,6 +469,43 @@ main {
   }
 }
 
+/* Form validation styles */
+.error {
+  color: #ff3860;
+}
+
+.success {
+  color: #23d160;
+}
+
+.error-input {
+  border: 2px solid #ff3860 !important;
+}
+
+.success-input {
+  border: 2px solid #23d160 !important;
+}
+
+.error, .success {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* For error message spans */
+span.error {
+  color: #ff3860;
+  font-size: 0.8em;
+  display: block;
+  margin-top: 5px;
+}
+
+span.success {
+  color: #23d160;
+  font-size: 1.2em;
+  display: inline-block;
+  margin-left: 5px;
+}
+
 // Responsive adjustments for the contact form
 @media screen and (max-width: 768px) {
   .form-container {
@@ -717,6 +753,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
       flex: 1 1 30%;
       text-align: center;
       background-color: $greeGrey;
+      color: $white ;
 
       h3 {
         background-color: $greeGrey;
@@ -729,6 +766,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 
       p {
         background-color: $greeGrey;
+        color: $white;
         margin: 0.7vmin 0;
       }
 
@@ -890,7 +928,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     font-size: smaller;
     padding: 4.8vmin 2.4vmin;
   }
-
+}
   
 
 @media screen and (max-width: 1200px) {
@@ -1090,8 +1128,8 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
       }
     }
   }  
-
+}
   .nav-active {
     transform: translateX(0);
   }
-}
+

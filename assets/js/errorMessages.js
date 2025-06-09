@@ -1,98 +1,160 @@
-// - errorMessages.js
+// james thompson -2025 06 09
 // This script defines functions for adding and removing error messages.
 
 // This function adds the error message.
 // It takes two arguments: the form element ID and the message.
+// errorMessages.js - Form validation feedback module
+// This script provides functions for adding/removing error and success messages
+
+/**
+ * Add an error message to a form field
+ * @param {string} id - The ID of the form element
+ * @param {string} msg - The error message to display
+ */
 function addErrorMessage(id, msg) {
-   	'use strict';
+    'use strict';
     
-    // Get the form element reference:
-    var elem = document.getElementById(id);
+    const element = document.getElementById(id);
+    const errorId = `${id}Error`;
     
-    // Define the new span's ID value:
-    var newId = id + 'Error';
+    // Check if error message already exists
+    let span = document.getElementById(errorId);
     
-    // Check for the existence of the span:
-    var span = document.getElementById(newId);
     if (span) {
-        span.firstChild.value = msg; // Update
-    } else { // Create new.
-    
-        // Create the span:
+        // Update existing message
+        span.textContent = msg;
+    } else {
+        // Create new error message
         span = document.createElement('span');
-        span.id = newId;
-		span.className = 'error';
-        span.appendChild(document.createTextNode(msg));
+        span.id = errorId;
+        span.className = 'error';
+        span.textContent = msg;
         
-        // Add the span to the parent:
-        elem.parentNode.appendChild(span);
-        elem.previousSibling.className = 'error';
-
-    } // End of main IF-ELSE.
-
-} // End of addErrorMessage() function.
-
-function addCorrectMessage(id, msg) {
-   	'use strict';
+        // Add the message after the form element
+        element.parentNode.appendChild(span);
+        
+        // Add error class to the label if it exists
+        if (element.previousSibling && element.previousSibling.nodeName === 'LABEL') {
+            element.previousSibling.className = 'error';
+        }
+    }
     
-    // Get the form element reference:
-    var elem = document.getElementById(id);
+    // Add error class to the input
+    element.classList.add('error-input');
+}
+
+/**
+ * Add a success indicator to a form field
+ * @param {string} id - The ID of the form element
+ * @param {string} msg - The success message (typically a checkmark)
+ */
+function addSuccessMessage(id, msg) {
+    'use strict';
     
-    // Define the new span's ID value:
-    var newId = id + 'correct';
+    const element = document.getElementById(id);
+    const successId = `${id}Success`;
     
-    // Check for the existence of the span:
-    var span = document.getElementById(newId);
+    // Check if success message already exists
+    let span = document.getElementById(successId);
+    
     if (span) {
-        span.firstChild.value = msg; // Update
-    } else { // Create new.
-    
-        // Create the span:
+        // Update existing message
+        span.textContent = msg;
+    } else {
+        // Create new success message
         span = document.createElement('span');
-        span.id = newId;
-		span.className = 'correct';
-        span.appendChild(document.createTextNode(msg));
+        span.id = successId;
+        span.className = 'success';
+        span.textContent = msg;
         
-        // Add the span to the parent:
-        elem.parentNode.appendChild(span);
-        elem.previousSibling.className = 'correct';
+        // Add the message after the form element
+        element.parentNode.appendChild(span);
+        
+        // Add success class to the label if it exists
+        if (element.previousSibling && element.previousSibling.nodeName === 'LABEL') {
+            element.previousSibling.className = 'success';
+        }
+    }
+    
+    // Add success class to the input
+    element.classList.add('success-input');
+    element.classList.remove('error-input');
+}
 
-    } // End of main IF-ELSE.
-
-} // End of addcorrectMessage() function.
-
-// This function removes the error message.
-// It takes one argument: the form element ID.
+/**
+ * Remove an error message from a form field
+ * @param {string} id - The ID of the form element
+ */
 function removeErrorMessage(id) {
-   	'use strict';
+    'use strict';
+    
+    const errorId = `${id}Error`;
+    const span = document.getElementById(errorId);
+    const element = document.getElementById(id);
+    
+    if (span) {
+        // Remove the error message
+        span.parentNode.removeChild(span);
+        
+        // Remove error class from the label if it exists
+        if (element.previousSibling && element.previousSibling.nodeName === 'LABEL') {
+            element.previousSibling.className = '';
+        }
+        
+        // Remove error class from the input
+        element.classList.remove('error-input');
+    }
+}
 
-    // Get a reference to the span:
-    var span = document.getElementById(id + 'Error');
-	if (span) {
+/**
+ * Remove a success message from a form field
+ * @param {string} id - The ID of the form element
+ */
+function removeSuccessMessage(id) {
+    'use strict';
     
-	    // Remove the class from the label:
-	    span.previousSibling.previousSibling.className = null;
+    const successId = `${id}Success`;
+    const span = document.getElementById(successId);
+    const element = document.getElementById(id);
     
-	    // Remove the span:
-	    span.parentNode.removeChild(span);
+    if (span) {
+        // Remove the success message
+        span.parentNode.removeChild(span);
+        
+        // Remove success class from the label if it exists
+        if (element.previousSibling && element.previousSibling.nodeName === 'LABEL') {
+            element.previousSibling.className = '';
+        }
+        
+        // Remove success class from the input
+        element.classList.remove('success-input');
+    }
+}
 
-	} // End of IF.
+/**
+ * Clear all validation messages from a form
+ * @param {HTMLFormElement} form - The form element to clear
+ */
+function clearAllMessages(form) {
+    'use strict';
     
-} // End of removeErrorMessage() function.
+    // Get all inputs in the form
+    const inputs = form.querySelectorAll('input, select, textarea');
+    
+    // Remove messages for each input
+    inputs.forEach(input => {
+        if (input.id) {
+            removeErrorMessage(input.id);
+            removeSuccessMessage(input.id);
+        }
+    });
+}
 
-function removecorrectMessage(id) {
-   	'use strict';
-
-    // Get a reference to the span:
-    var span = document.getElementById(id + 'correct');
-	if (span) {
-    
-	    // Remove the class from the label:
-	    span.previousSibling.previousSibling.className = null;
-    
-	    // Remove the span:
-	    span.parentNode.removeChild(span);
-
-	} // End of IF.
-    
-} // End of removecorrectMessage() function.
+// Export these functions for use in register.js
+window.FormValidation = {
+    addError: addErrorMessage,
+    addSuccess: addSuccessMessage,
+    removeError: removeErrorMessage,
+    removeSuccess: removeSuccessMessage,
+    clearAll: clearAllMessages
+};

@@ -1,140 +1,105 @@
-// - register.js
-// This script validates a form.
+// Contact Form Validation Script
 
-// Function called when the form is submitted.
-// Function validates the form data.
-function validateForm(e) {
+// Function to validate the contact form
+function validateContactForm(e) {
     'use strict';
-
-    // Get the event object:
-	if (typeof e == 'undefined') e = window.event;
-
-    // Get form references:
-	var firstName = U.$('firstName');
-	var lastName = U.$('lastName');
-	var email = U.$('email');
-	var phone = U.$('phone');
-	var city = U.$('city');
-	var state = U.$('state');
-	var zip = U.$('zip');
-	var terms = U.$('terms');
-
-	// Flag variable:
-	var error = false;
-
-	// Validate the first name:
-	if (/^[A-Z \.\-']{2,20}$/i.test(firstName.value)) {
-		removeErrorMessage('firstName');
-		addCorrectMessage("firstName", "\u2714");
-	} else {
-		addErrorMessage('firstName', 'Please enter your first name.');
-		removecorrectMessage('firstName');
-		error = true;
-	}
-	// Validate the last name:
-	if (/^[A-Z \.\-']{2,20}$/i.test(lastName.value)) {
-		removeErrorMessage('lastName');
-		addCorrectMessage("lastName", "\u2714");
-	} else {
-		addErrorMessage('lastName', 'Please enter your last name.');
-		removecorrectMessage('lastName');
-		error = true;
-	}
-		
-	// Validate the email address:
-	if (/^[\w.-]+@[\w.-]+\.[A-Za-z]{2,6}$/.test(email.value)) {
-		removeErrorMessage('email');
-		addCorrectMessage("email", "\u2714");
-	} else {
-		addErrorMessage('email', 'Please enter your email address.');
-		removecorrectMessage('email');
-		error = true;
-	}
-	
-	// Validate the phone number:
-	if (/\d{3}[ \-\.]?\d{3}[ \-\.]?\d{4}/.test(phone.value)) {
-		removeErrorMessage('phone');
-		addCorrectMessage("phone", "\u2714");
-	} else {
-		addErrorMessage('phone', 'Please enter your phone number.');
-		removecorrectMessage('phone');
-		error = true;
-	}
-	// city
-	if (/^[A-Z \.\-']{2,20}$/i.test(city.value)) {
-		removeErrorMessage('city');
-		addCorrectMessage("city", "\u2714");
-	} else {
-		addErrorMessage('city', 'Please enter City or Suburb.');
-		removecorrectMessage('city');
-		error = true;
-	}
-	
-	// Validate the state:
-	if (state.selectedIndex != 0) {
-		removeErrorMessage('state');
-		addCorrectMessage("state", "\u2714 You are in quite a state");
-	} else {
-		addErrorMessage('state', 'What state are you in?');
-		removecorrectMessage('state');
-		error = true;
-	}
-	
-	// Validate the zip code:
-	if (/^[2-7]{1}[0-9]{3}$/.test(zip.value)) {
-		removeErrorMessage('zip');
-		addCorrectMessage("zip", "\u2714");
-	} else {
-			addErrorMessage('zip', 'Please enter your post code.');
-		error = true;
-	}
-
-    // If an error occurred, prevent the default behavior:
-	if (error) {
-
-		// Prevent the form's submission:
-	    if (e.preventDefault) {
-	        e.preventDefault();
-	    } else {
-	        e.returnValue = false;
-	    }
-	    return false;
     
-	}
+    // Get the event object
+    if (typeof e == 'undefined') e = window.event;
     
-} // End of validateForm() function.
-
-// Function called when the terms checkbox changes.
-// Function enables and disables the submit button.
-function toggleSubmit() {
-	'use strict';
+    // Get form references
+    var name = document.getElementById('name');
+    var email = document.getElementById('email');
+    var message = document.getElementById('message');
     
-	// Get a reference to the submit button:
-	var submit = U.$('submit');
-	
-	// Toggle its disabled property:
-	if (U.$('terms').checked) {
-		submit.disabled = false;
-	} else {
-		submit.disabled = true;
-	}
-	
-} // End of toggleSubmit() function.
+    // Flag variable for tracking errors
+    var error = false;
+    
+    // Clear previous messages first
+    clearAllMessages();
+    
+    // Validate name (at least 2 characters)
+    if (name.value.trim().length >= 2) {
+        addSuccessIndicator(name);
+    } else {
+        addErrorMessage(name, 'Please enter your name (2+ characters)');
+        error = true;
+    }
+    
+    // Validate email (simple pattern)
+    if (/^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/.test(email.value)) {
+        addSuccessIndicator(email);
+    } else {
+        addErrorMessage(email, 'Please enter a valid email address');
+        error = true;
+    }
+    
+    // Validate message (at least 10 characters)
+    if (message.value.trim().length >= 10) {
+        addSuccessIndicator(message);
+    } else {
+        addErrorMessage(message, 'Please enter a message (10+ characters)');
+        error = true;
+    }
+    
+    // If errors occurred, prevent form submission
+    if (error) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else {
+            e.returnValue = false;
+        }
+        return false;
+    }
+    
+    // If everything is valid, show a sending message
+    document.querySelector('.form-container').innerHTML += '<p class="sending-message">Sending your message...</p>';
+}
 
-// Establish functionality on window load:
+// Add error message below an input
+function addErrorMessage(element, message) {
+    // Add error class to input
+    element.classList.add('error');
+    
+    // Create error message element
+    var errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    
+    // Add error message after the input
+    element.parentNode.appendChild(errorDiv);
+}
+
+// Add success indicator to an input
+function addSuccessIndicator(element) {
+    element.classList.add('success');
+    element.classList.remove('error');
+}
+
+// Clear all error and success messages
+function clearAllMessages() {
+    // Remove all error messages
+    var errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(function(message) {
+        message.parentNode.removeChild(message);
+    });
+    
+    // Remove error/success classes
+    var inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(function(input) {
+        input.classList.remove('error', 'success');
+    });
+}
+
+// Set up the form validation when the page loads
 window.onload = function() {
     'use strict';
-
-	// The validateForm() function handles the form:
-    U.addEvent(U.$('theForm'), 'submit', validateForm);
-
-	// Disable the submit button to start:
-	U.$('submit').disabled = true;
-
-	// Watch for changes on the terms checkbox:
-    U.addEvent(U.$('terms'), 'change', toggleSubmit);
-
-	// Enbable tooltips on the phone number:
-	U.enableTooltips('phone');
     
+    // Get form reference
+    var form = document.querySelector('form');
+    
+    // Add event listener for form submission
+    form.addEventListener('submit', validateContactForm);
 };
+// This script validates a contact form with fields for name, email, and message.
+// It checks that the name is at least 2 characters, the email is valid, and the message is at least 10 characters.

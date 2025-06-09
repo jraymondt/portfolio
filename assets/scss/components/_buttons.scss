@@ -31,9 +31,29 @@
 
 $button-variants: (
   default: (
-    #ffffff,
-    #000000,
-    #aaaaaa,
+    #e2dde1,
+    #22061d,
+    #ac81a1,
+  ),
+  red: (
+    $red,
+    white,
+    $hover-red,
+  ),
+  pink: (
+    $pink,
+    white,
+    $hover-pink,
+  ),
+  purple: (
+    $purple,
+    white,
+    $hover-purple,
+  ),
+  gray: (
+    $gray,
+    black,
+    $hover-gray,
   ),
   orange: (
     $orange,
