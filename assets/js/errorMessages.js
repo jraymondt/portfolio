@@ -1,16 +1,10 @@
 // james thompson -2025 06 09
 // This script defines functions for adding and removing error messages.
-
 // This function adds the error message.
 // It takes two arguments: the form element ID and the message.
 // errorMessages.js - Form validation feedback module
 // This script provides functions for adding/removing error and success messages
 
-/**
- * Add an error message to a form field
- * @param {string} id - The ID of the form element
- * @param {string} msg - The error message to display
- */
 function addErrorMessage(id, msg) {
     'use strict';
     
@@ -80,11 +74,7 @@ function addSuccessMessage(id, msg) {
     element.classList.add('success-input');
     element.classList.remove('error-input');
 }
-
-/**
- * Remove an error message from a form field
- * @param {string} id - The ID of the form element
- */
+// remove error messages
 function removeErrorMessage(id) {
     'use strict';
     
@@ -93,23 +83,19 @@ function removeErrorMessage(id) {
     const element = document.getElementById(id);
     
     if (span) {
-        // Remove the error message
+        // remove the error message
         span.parentNode.removeChild(span);
         
-        // Remove error class from the label if it exists
+        // remove error class from the label if it exists
         if (element.previousSibling && element.previousSibling.nodeName === 'LABEL') {
             element.previousSibling.className = '';
         }
         
-        // Remove error class from the input
+        // remove error class from the input
         element.classList.remove('error-input');
     }
 }
-
-/**
- * Remove a success message from a form field
- * @param {string} id - The ID of the form element
- */
+// remove sucess messages
 function removeSuccessMessage(id) {
     'use strict';
     
