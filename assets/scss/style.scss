@@ -23,7 +23,7 @@
 
 body {
   font-family: "B612", sans-serif;
-  background-color: $drkGrey;
+  background-color: $black;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -40,18 +40,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $greeGrey;
-  border: 0.6vmin solid $orange;
+  background-color: $litBlurey;
+  border: 1.6vmin solid $pinky;
   padding: 2.2vmin 3.7vmin;
-  box-shadow: 0.9vmin 0.9vmin 0 #000;
+  box-shadow: 0.9vmin 0.9vmin 0 $black;
   border-radius: 2.2vmin;
   margin: 1.5vmin;
   z-index: 1000;
 
   .mobile-title {
     display: none; 
-    color: $orange;
-    font-size: 2.2vmin;
+    color: $pale-yellow;
+    font-size: 3.2vmin;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
@@ -87,7 +87,7 @@ body {
     }
     
     a {
-      color: $orange;
+      color: $drkGrey;
       font-weight: bold;
       text-decoration: none;
       font-size: 1.9vmin;
@@ -97,7 +97,7 @@ body {
       display: block;
       
       &:hover {
-        color: $hover-orange;
+        color: $black;
       }
     }
   }
@@ -105,7 +105,7 @@ body {
   .burger {
     display: none;
     background-color: $greeGrey;
-    border: 0.15vmin dashed $orange;
+    border: 0.15vmin dashed $purp;
     cursor: pointer;
     z-index: 1001;
     flex: 0 0 auto; 
@@ -113,7 +113,7 @@ body {
     div {
       width: 4.5vmin;
       height: 0.45vmin;
-      background-color: $litBlurey;
+      background-color: $drkGrey;
       margin: 0.9vmin 0;
       transition: all 0.3s ease;
     }
@@ -374,10 +374,11 @@ main {
     display: flex;
     flex-direction: column;
     gap: 3vmin;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: $litBlurey;
+    color: $drkGrey;
     padding: 4vmin;
     border-radius: 1.5vmin;
-    border: 0.3vmin solid $orange;
+    border: 1.3vmin solid $purp;
     box-shadow: 0.6vmin 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
     
     .form-group {
@@ -387,7 +388,7 @@ main {
       
       label {
         font-weight: bold;
-        color: $orange;
+        color: $drkGrey;
         font-size: 2.2vmin;
         text-transform: uppercase;
         letter-spacing: 0.1vmin;
@@ -397,12 +398,12 @@ main {
       .bb-input {
         width: 100%;
         padding: 1.5vmin;
-        border: 0.2vmin solid $greeGrey;
+        border: 1.2vmin solid $greeGrey;
         border-radius: 0.8vmin;
         font-size: 2vmin;
         transition: all 0.3s ease;
         box-sizing: border-box;
-        background-color: #fff;
+        background-color: $light;
         text-align: left !important;
         
         &:focus {
@@ -437,6 +438,7 @@ main {
     
     .bb-button {
       align-self: flex-start;
+      color: $drkGrey;
       padding: 1.8vmin 3.5vmin;
       font-size: 2.2vmin;
       font-weight: bold;
@@ -448,7 +450,7 @@ main {
       
       &.orange {
         background-color: $orange;
-        color: white;
+        color: $light;
         
         &:hover {
           background-color: darken($orange, 10%);
@@ -469,41 +471,38 @@ main {
   }
 }
 
-/* Form validation styles */
-.error {
-  color: #ff3860;
-}
 
-.success {
-  color: #23d160;
+/*******************************************************/
+/*************** Form validation styles ***************/
+/*****************************************************/
+error {
+  color: $red;
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8em;
 }
 
 .error-input {
-  border: 2px solid #ff3860 !important;
+  border: 2px solid $red !important;
+}
+
+/* Success styles */
+.success {
+  color: $green;
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1.2em;
 }
 
 .success-input {
-  border: 2px solid #23d160 !important;
+  border: 2px solid $green !important;
 }
 
-.error, .success {
-  display: inline-block;
-  margin-left: 5px;
-}
-
-/* For error message spans */
-span.error {
-  color: #ff3860;
-  font-size: 0.8em;
-  display: block;
-  margin-top: 5px;
-}
-
+/* Position for success checkmark */
 span.success {
-  color: #23d160;
-  font-size: 1.2em;
-  display: inline-block;
-  margin-left: 5px;
+  position: relative;
+  top: 2px;
+  font-weight: bold;
 }
 
 // Responsive adjustments for the contact form
@@ -544,13 +543,13 @@ span.success {
 .form-group {
   &.error {
     .bb-input {
-      border-color: #e74c3c;
+      border-color: $red;
       background-color: rgba(231, 76, 60, 0.05);
     }
   }
   
   .error-message {
-    color: #e74c3c;
+    color: $red;
     font-size: 1.6vmin;
     margin-top: 0.5vmin;
   }
@@ -631,12 +630,15 @@ span.success {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: $pale-yellow;
+  color: $drkGrey;
   font-size: 4vmin;
   margin-top: 5vmin;
+ 
 
   .dialog {
-    color: $black;
+    color: $drkGrey;
+    margin: auto;
+    margin-top: 5vmin;
   }
 }
 
@@ -674,21 +676,6 @@ span.success {
       margin-top: 5vmin; 
       text-align: left;
     }
-  }
-}
-
-#starwar {
-  background-color: $black;
-  color: $pale-yellow;
-  padding: 6vmin;
-  box-shadow: $orange 0.15vmin 0.45vmin 3.3vmin 3.3vmin;
-  margin-top: 14vmin;
-  margin-bottom: 4vmin;
-
-  p {
-    color: $pale-yellow;
-    font-size: 3vmin;
-    text-align: left;
   }
 }
 
@@ -738,7 +725,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
   
   footer {
     background-color: $greeGrey;
-    border: 0.6vmin solid $orange;
+    border: 1.6vmin solid $pinky;
     padding: 3vmin 3.7vmin;
     box-shadow: 0.9vmin 0.9vmin 0 #000;
     border-radius: 2.2vmin;
@@ -759,7 +746,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
         background-color: $greeGrey;
         font-size: 2.2vmin;
         margin-bottom: 1.5vmin;
-        color: $orange;
+        color: $drkGrey;
         text-transform: uppercase;
         font-weight: bold;
       }
@@ -771,7 +758,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
       }
 
       a {
-        color: $orange;
+        color: $drkGrey;
         text-decoration: none;
         font-weight: bold;
         transition: color 0.2s ease-in-out;
@@ -818,7 +805,7 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 
         a {
           font-size: 3vmin;
-          color: $orange;
+          color: $drkGrey;
           padding: 1.2vmin;
           border-radius: 1.2vmin;
           transition: all 0.3s ease;
@@ -856,11 +843,11 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 }
 
 .service-card {
-  color: $black;
-  background-color: $light;
-  border: var(--border-width) solid $black;
+  color: $greeGrey;
+  background-color: $drkGrey;
+  border: $drkGrey 0.15vmin solid;
   padding: var(--space-lg);
-  box-shadow: var(--shadow-offset-large) var(--shadow-offset-large) 0 $black;
+  box-shadow: var(--shadow-offset-large) var(--shadow-offset-large) 0 $greeGrey;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -869,13 +856,6 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     transform: translate(-0.45vmin, -0.45vmin);
     box-shadow: 1.8vmin 1.8vmin 0 $black;
   }
-  
-  &:nth-child(1) { background-color: var(--bg-card-1); }
-  &:nth-child(2) { background-color: var(--bg-card-2); }
-  &:nth-child(3) { background-color: var(--bg-card-3); }
-  &:nth-child(4) { background-color: var(--bg-card-4); }
-  &:nth-child(5) { background-color: var(--bg-card-5); }
-  &:nth-child(6) { background-color: var(--bg-card-6); }
   
   h3 {
     font-size: 2.2vmin;
@@ -891,14 +871,14 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
 .service-icon {
   font-size: 3vmin;
   margin-bottom: var(--space-md);
-  color: var(--dark);
-  background-color: var(--light);
+  color: $drkGrey;
+  background-color: $drkGrey;
   width: 9vmin;
   height: 9vmin;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: var(--border-width) solid var(--dark);
+  border: var(--border-width) solid var(--light);
 }
 
 /**************************************** ****************************************

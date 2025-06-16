@@ -1,5 +1,4 @@
-// Contact Form Validation Script
-
+// Contact Form Validation Script that forms the main part of the contact form validation.
 // Function to validate the contact form
 function validateContactForm(e) {
     'use strict';

@@ -13,7 +13,6 @@
     <meta name="keywords" content="<?php echo $page_keywords; ?>">
     <meta name="author" content="<?php echo $site_author; ?>">
     <meta name="robots" content="index,follow">
-    <link rel="icon" href="images/logo.svg">
     <meta property="og:title" content="<?php echo $site_title; ?>">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo $site_url; ?>">

@@ -1,9 +1,47 @@
-// Base colours
+:root {
+    /* Spacing variables */
+    --space-sm: 0.75vmin;
+    --space-md: 1.5vmin;
+    --space-lg: 3vmin;
+    --space-xl: 6vmin;
+    
+    /* Border variables */
+    --border-width: 0.3vmin;
+    --border-radius: 1.2vmin;
+    
+    /* Shadow variables */
+    --shadow-offset-small: 0.3vmin;
+    --shadow-offset-medium: 0.6vmin;
+    --shadow-offset-large: 0.9vmin;
+    
+    /* Color references */
+    --dark: #000000;
+    --light: #ffffff;
+    /* Fonts */
+    --base-font-size: 2vmin;
+    --scale-ratio: 1.25;
+    --h1-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio));
+    --h2-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
+    --h3-size: calc(var(--base-font-size) * var(--scale-ratio));
+    --body-size: var(--base-font-size);
+    --small-size: calc(var(--base-font-size) / var(--scale-ratio));
+    --large-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
+    --xlarge-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio));
+}
+
+// badger colours
+$drkGrey: #060a0b;
+$greeGrey: #678ba5;
+$litBlurey: #9dbfe5;
+$pinky: #c4519e;
+$purp: #ad97c6;
 $white: #ffffff;
 $black: #000000;
+$dark: #142331;
+$light: #faf6ea;
 
 // Primary colours
-$orange: #ff7f00;
+$orange: #e95e0e;
 $blue: #3498db;
 $green: #2ecc71;
 $red: #e74c3c;
@@ -12,12 +50,6 @@ $pink: #e84393;
 $yellow: #f1c40f;
 $gray: #95a5a6;
 
-// existing theme colours
-$drkGrey: #121212;
-$greeGrey: #1e1e1e;
-$litBlurey: #e0e0e0;
-$purp: #9370DB;
-
 // Secondary colours
 $sky-blue: #00bcd4;
 $pale-red: #ff6b6b;
@@ -25,8 +57,10 @@ $pale-violet: #a29bfe;
 $soft-blue: #74b9ff;
 $pale-cyan: #81ecec;
 $pale-yellow: #ffeaa7;
-
-// Hover crafts and eels
+$pale-yellow-light: #faeab4;
+$green-light: #a8e6cf;
+$sky-blue-light: #b2ebf2;
+// Accent colours
 $hover-orange: darken($orange, 10%);
 $hover-blue: darken($blue, 10%);
 $hover-green: darken($green, 10%);
