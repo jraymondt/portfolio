@@ -6,7 +6,7 @@
             <p>
                 <div class="avatar bg-pale-red">
                     <a href="https://spiritualperfection.com.au" target="_blank" rel="noopener">
-                      <img src="<?php echo $baseUrl; ?>/assets/images/avatar2025-sml.png" alt="bob a tar">
+                      <img src="<?php echo $baseUrl; ?>/assets/images/logo.svg" alt="tar">
                     </a>  
                 </div>
             <p>

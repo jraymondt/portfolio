@@ -51,39 +51,37 @@ function validateContactForm(e) {
         return false;
     }
     
-    // If everything is valid, show a sending message
+    // when everything is valid, show a sending message
     document.querySelector('.form-container').innerHTML += '<p class="sending-message">Sending your message...</p>';
 }
 
-// Add error message below an input
 function addErrorMessage(element, message) {
-    // Add error class to input
     element.classList.add('error');
     
-    // Create error message element
+    // create error message element
     var errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
     errorDiv.textContent = message;
     
-    // Add error message after the input
+    // add error message after the input
     element.parentNode.appendChild(errorDiv);
 }
 
-// Add success indicator to an input
+
 function addSuccessIndicator(element) {
     element.classList.add('success');
     element.classList.remove('error');
 }
 
-// Clear all error and success messages
+
 function clearAllMessages() {
-    // Remove all error messages
+    // remove all error messages
     var errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(function(message) {
         message.parentNode.removeChild(message);
     });
     
-    // Remove error/success classes
+    // remove error/success classes
     var inputs = document.querySelectorAll('input, textarea');
     inputs.forEach(function(input) {
         input.classList.remove('error', 'success');
@@ -93,12 +91,13 @@ function clearAllMessages() {
 // Set up the form validation when the page loads
 window.onload = function() {
     'use strict';
-    
-    // Get form reference
+        
     var form = document.querySelector('form');
     
-    // Add event listener for form submission
-    form.addEventListener('submit', validateContactForm);
+//add event listener if form exists
+    if (form) {
+        form.addEventListener('submit', validateContactForm);
+    }
 };
 // This script validates a contact form with fields for name, email, and message.
 // It checks that the name is at least 2 characters, the email is valid, and the message is at least 10 characters.

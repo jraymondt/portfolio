@@ -74,8 +74,8 @@ $nav_items = [
     <link href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&display=swap" rel="stylesheet">
     <meta name="description" content="<?= $page_description ?>">
     <meta name="author" content="<?= $site_author ?>">
-    <link rel="icon" href="images/logo.svg">
-    <!-- Open Graph tags for social sharing -->
+    
+    
     <meta property="og:title" content="<?= $site_title ?>">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?= $site_url ?>">

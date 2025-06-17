@@ -47,10 +47,10 @@ include 'includes/navbar.php';
                     <a href="https://github.com/jraymondt" target="_blank" rel="noopener noreferrer">
                         <button class="bb-button blue rounded">GitHub</button>
                     </a>
-                    <a href="https://x.com/flatlinejim" target="_blank" rel="noopener noreferrer">
+                    <a href="https://x.com/jraymondt" target="_blank" rel="noopener noreferrer">
                         <button class="bb-button orange rounded">Cooked</button>
                     </a>
-                    <a href="https://www.instagram.com/jraymondt/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/jraymondt" target="_blank" rel="noopener noreferrer">
                         <button class="bb-button pink rounded">Insta</button>
                     </a>
                     <a href="https://www.tiktok.com/@jraymondt" target="_blank" rel="noopener noreferrer">

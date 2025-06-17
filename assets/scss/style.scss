@@ -270,7 +270,7 @@ body {
       padding: var(--space-xl);
       border: var(--border-width) solid var(--dark);
       box-shadow: var(--shadow-1);
-      background-color: var(--bg-card-1);
+      background-color: $purp;
       max-width: 90vmin;
       margin: 0 auto;
       margin-bottom: var(--space-md);
@@ -280,6 +280,7 @@ body {
         line-height: 1;
         margin-bottom: var(--space-sm);
         font-weight: bold;
+        color: $drkGrey;
       }
       
       h2 {
@@ -290,6 +291,7 @@ body {
       p {
         margin-bottom: var(--space-lg);
         font-size: 1.8vmin;
+        color: $drkGrey;
       }
       
       .service-icon {
@@ -475,17 +477,33 @@ main {
 /*******************************************************/
 /*************** Form validation styles ***************/
 /*****************************************************/
-error {
+
+.error {
   color: $red;
+  font-weight: 800;
   display: block;
-  margin-top: 5px;
-  font-size: 0.8em;
+  margin-top: 4vmin;
+  font-size: var(--xlarge-size);
 }
 
 .error-input {
   border: 2px solid $red !important;
 }
-
+.error-message {
+  color: $red;
+  border: 1vmin solid $red;
+  font-weight: 800;
+  display: block;
+  font-size: var(--xlarge-size);
+  text-align: center;
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 1.5vmin;
+  border-radius: 0.8vmin;
+  box-shadow: 0 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  max-width: 80vmin;
+  margin: 2vmin auto;
+}
 /* Success styles */
 .success {
   color: $green;
@@ -496,6 +514,21 @@ error {
 
 .success-input {
   border: 2px solid $green !important;
+}
+.sending-message {
+  color: $green-light;
+  font-size: var(--xlarge-size);
+  font-weight: bold;
+  border: 1vmin solid $green;
+  margin: 2vmin auto;
+  padding: 1.5vmin;
+  background-color: rgba(0, 128, 0, 0.1);
+  border-radius: 0.8vmin;
+  box-shadow: 0 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  max-width: 80vmin;
+  margin-top:var(--space-md);
+  text-align: center;
 }
 
 /* Position for success checkmark */
@@ -633,12 +666,21 @@ span.success {
   color: $drkGrey;
   font-size: 4vmin;
   margin-top: 5vmin;
+  padding: var(--space-sm);
  
 
   .dialog {
     color: $drkGrey;
     margin: auto;
     margin-top: 5vmin;
+    background-color: $litBlurey;
+  
+    h3 {
+      color: $drkGrey;
+      font-size: 5vmin;
+      margin-bottom: 2vmin;
+      text-align: left;
+    }
   }
 }
 
