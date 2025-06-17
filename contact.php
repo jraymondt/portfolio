@@ -25,15 +25,17 @@ include 'includes/navbar.php';
                     <form method="post" action="process_contact.php">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input class="bb-input orange" type="text" id="name" name="name">
+                            <input class="bb-input orange" type="text" id="name" name="name" minlength="2" required title="Please enter at least 2 characters">
+                            <span class="input-hint">* Min 2 characters</span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input class="bb-input orange" type="email" id="email" name="email">
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea class="bb-input orange" id="message" name="message"></textarea>
+                            <label for="message">Message for the 🐍 server 🍄🍄 </label>
+                            <textarea class="bb-input orange" id="message" name="message" minlength="2" required title="Please enter at least 10 characters"></textarea>
+                            <span class="input-hint">* Min 10 characters</span>
                         </div>
                         <input class="bb-button orange rounded" type="submit" value="Send Message">
                     </form>

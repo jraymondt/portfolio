@@ -1,7 +1,8 @@
+
 // Contact Form Validation Script that forms the main part of the contact form validation.
 // Function to validate the contact form
 function validateContactForm(e) {
-    'use strict';
+'use strict';    
     
     // Get the event object
     if (typeof e == 'undefined') e = window.event;
@@ -56,6 +57,7 @@ function validateContactForm(e) {
 }
 
 function addErrorMessage(element, message) {
+    'use strict';
     element.classList.add('error');
     
     // create error message element
@@ -69,18 +71,20 @@ function addErrorMessage(element, message) {
 
 
 function addSuccessIndicator(element) {
+    'use strict';
     element.classList.add('success');
     element.classList.remove('error');
 }
 
 
 function clearAllMessages() {
+    'use strict';
     // remove all error messages
     var errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(function(message) {
         message.parentNode.removeChild(message);
     });
-    
+   
     // remove error/success classes
     var inputs = document.querySelectorAll('input, textarea');
     inputs.forEach(function(input) {
@@ -90,8 +94,7 @@ function clearAllMessages() {
 
 // Set up the form validation when the page loads
 window.onload = function() {
-    'use strict';
-        
+    'use strict';        
     var form = document.querySelector('form');
     
 //add event listener if form exists

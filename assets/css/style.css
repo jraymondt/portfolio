@@ -1865,9 +1865,9 @@ body {
 }
 .navbar .nav-links a {
   color: #060a0b;
-  font-weight: bold;
+  font-weight: 900;
   text-decoration: none;
-  font-size: 1.9vmin;
+  font-size: 2.9vmin;
   text-transform: uppercase;
   transition: color 0.2s ease-in-out;
   padding: 1.2vmin 1.8vmin;
@@ -1897,12 +1897,12 @@ body {
     padding: 3vmin 6vmin;
   }
   .navbar .nav-links a {
-    font-size: 2.2vmin;
+    font-size: 3.1vmin;
   }
 }
 @media screen and (max-width: 1024px) {
   .navbar .nav-links a {
-    font-size: 1.8vmin;
+    font-size: 2.9vmin;
     padding: 0.9vmin 1.2vmin;
   }
 }
@@ -1989,13 +1989,13 @@ body {
     width: 9vmin;
   }
   .navbar .mobile-title {
-    font-size: 1.8vmin;
+    font-size: 2.9vmin;
   }
   .navbar .nav-links {
     width: 70%;
   }
   .navbar .nav-links a {
-    font-size: 1.9vmin;
+    font-size: 2.2vmin;
   }
 }
 /**************************************** ****************************************
@@ -2114,7 +2114,7 @@ main {
   color: #060a0b;
   padding: 4vmin;
   border-radius: 1.5vmin;
-  border: 1.3vmin solid #ad97c6;
+  border: 1.3vmin solid #c4519e;
   box-shadow: 0.6vmin 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
 }
 .form-container form .form-group {
@@ -2143,18 +2143,18 @@ main {
 }
 .form-container form .form-group .bb-input:focus {
   outline: none;
-  border-color: #000000;
+  border-color: #ad97c6;
   box-shadow: 0 0 0 0.3vmin rgba(255, 107, 53, 0.2);
   transform: translateY(-0.1vmin);
 }
 .form-container form .form-group .bb-input:hover {
-  border-color: #f37c37;
+  border-color: #d177b3;
 }
 .form-container form .form-group .bb-input.orange {
-  border-color: #e95e0e;
+  border-color: #ad97c6;
 }
 .form-container form .form-group .bb-input.orange:focus {
-  border-color: #b94b0b;
+  border-color: #594075;
   box-shadow: 0 0 0 0.4vmin rgba(255, 107, 53, 0.25);
 }
 .form-container form .form-group textarea.bb-input {
@@ -2172,9 +2172,10 @@ main {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1vmin;
-  border: none;
+  border: 0.5vmin solid #000000;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
 }
 .form-container form .bb-button.orange {
   background-color: #e95e0e;

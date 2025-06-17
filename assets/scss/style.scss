@@ -88,9 +88,9 @@ body {
     
     a {
       color: $drkGrey;
-      font-weight: bold;
+      font-weight: 900;
       text-decoration: none;
-      font-size: 1.9vmin;
+      font-size: 2.9vmin;
       text-transform: uppercase;
       transition: color 0.2s ease-in-out;
       padding: 1.2vmin 1.8vmin;
@@ -126,7 +126,7 @@ body {
     padding: 3vmin 6vmin;
     
     .nav-links a {
-      font-size: 2.2vmin;
+      font-size: 3.1vmin;
     }
   }
 }
@@ -134,7 +134,7 @@ body {
 @media screen and (max-width: 1024px) {
   .navbar {
     .nav-links a {
-      font-size: 1.8vmin;
+      font-size: 2.9vmin;
       padding: 0.9vmin 1.2vmin;
     }
   }
@@ -239,14 +239,14 @@ body {
     }
     
     .mobile-title {
-      font-size: 1.8vmin;
+      font-size: 2.9vmin;
     }
 
     .nav-links {
       width: 70%; 
       
       a {
-        font-size: 1.9vmin;
+        font-size: 2.2vmin;
       }
     }
   }
@@ -380,7 +380,7 @@ main {
     color: $drkGrey;
     padding: 4vmin;
     border-radius: 1.5vmin;
-    border: 1.3vmin solid $purp;
+    border: 1.3vmin solid $pinky;
     box-shadow: 0.6vmin 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
     
     .form-group {
@@ -410,20 +410,20 @@ main {
         
         &:focus {
           outline: none;
-          border-color: $black;
+          border-color: $purp;
           box-shadow: 0 0 0 0.3vmin rgba(255, 107, 53, 0.2);
           transform: translateY(-0.1vmin);
         }
         
         &:hover {
-          border-color: lighten($orange, 10%);
+          border-color: lighten($pinky, 10%);
         }
         
         &.orange {
-          border-color: $orange;
+          border-color: $purp;
           
           &:focus {
-            border-color: darken($orange, 10%);
+            border-color: darken($purp, 33%);
             box-shadow: 0 0 0 0.4vmin rgba(255, 107, 53, 0.25);
           }
         }
@@ -446,9 +446,10 @@ main {
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.1vmin;
-      border: none;
+      border: 0.5vmin solid $black;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      transition: box-shadow 0.2s ease, transform 0.1s ease;
       
       &.orange {
         background-color: $orange;
