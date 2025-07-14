@@ -18,8 +18,9 @@
 /**************************************** ****************************************
       GLOBAL SASS ****************************************************************/
 * {
-  font-size: 2.5vmin;
+  font-size: clamp(16px, 2.8vmin, 24px);
 }
+
 
 body {
   font-family: "B612", sans-serif;
@@ -539,85 +540,6 @@ span.success {
   font-weight: bold;
 }
 
-// Responsive adjustments for the contact form
-@media screen and (max-width: 768px) {
-  .form-container {
-    max-width: 95vmin;
-    padding: 2vmin;
-    
-    form {
-      padding: 3vmin;
-      gap: 2.5vmin;
-      
-      .form-group {
-        label {
-          font-size: 2vmin;
-        }
-        
-        .bb-input {
-          padding: 1.2vmin;
-          font-size: 1.8vmin;
-        }
-        
-        textarea.bb-input {
-          min-height: 15vmin;
-        }
-      }
-      
-      .bb-button {
-        padding: 1.5vmin 3vmin;
-        font-size: 2vmin;
-        align-self: stretch; // Full width on mobile
-      }
-    }
-  }
-}
-
-// Add to the form styling above
-.form-group {
-  &.error {
-    .bb-input {
-      border-color: $red;
-      background-color: rgba(231, 76, 60, 0.05);
-    }
-  }
-  
-  .error-message {
-    color: $red;
-    font-size: 1.6vmin;
-    margin-top: 0.5vmin;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .form-container {
-    padding: 1.5vmin;
-    
-    form {
-      padding: 2.5vmin;
-      
-      .form-group {
-        label {
-          font-size: 1.8vmin;
-        }
-        
-        .bb-input {
-          padding: 1vmin;
-          font-size: 1.6vmin;
-        }
-        
-        textarea.bb-input {
-          min-height: 12vmin;
-        }
-      }
-      
-      .bb-button {
-        padding: 1.2vmin 2.5vmin;
-        font-size: 1.8vmin;
-      }
-    }
-  }
-}
 
 /**************************************** ****************************************
       BUTTONS SASS @extend
@@ -953,7 +875,9 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
   }
 }
   
-
+/**************************************** ****************************************
+      1200 max-width media queries
+***************************************** ***************************************/
 @media screen and (max-width: 1200px) {
   .dialog {
     width: 70%;
@@ -971,7 +895,9 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     }
   }
 }
-
+/**************************************** ****************************************
+      2000 max-width media queries
+***************************************** ***************************************/
 @media screen and (max-width: 2000px) {
   .dialog {
     width: 70%;
@@ -993,6 +919,10 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     }
   }
 }
+
+/**************************************** ****************************************
+      1024 max-width media queries
+***************************************** ***************************************/
 
 @media screen and (max-width: 1024px) {
   .dialog {
@@ -1016,24 +946,74 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     }
   }
 }
+/**************************************** ****************************************
+      768 max-width media queries
+***************************************** ***************************************/
 
 @media screen and (max-width: 768px) {
   * {
-    font-size: 1.9vmin;
+    font-size: clamp(16px, 3.2vmin, 24px);
   }
 
+.form-container {
+    max-width: 95vmin;
+    padding: 2vmin;
+    
+    form {
+      padding: 3vmin;
+      gap: 2.5vmin;
+      
+      .form-group {
+        label {
+          font-size: 2vmin;
+        }
+        
+        .bb-input {
+          padding: 1.2vmin;
+          font-size: 1.8vmin;
+        }
+        
+        textarea.bb-input {
+          min-height: 15vmin;
+        }
+      }
+      
+      .bb-button {
+        padding: 1.5vmin 3vmin;
+        font-size: 2vmin;
+        align-self: stretch; // Full width on mobile
+      }
+    }
+  }
+}
+
+
+.form-group {
+  &.error {
+    .bb-input {
+      border-color: $red;
+      background-color: rgba(231, 76, 60, 0.05);
+    }
+  }
+  
+  .error-message {
+    color: $red;
+    font-size: 1.6vmin;
+    margin-top: 0.5vmin;
+  }
+}
   .gallery .row .container {
     flex: 1 1 calc(50% - #{$gallery-gap});
     max-width: calc(50% - #{$gallery-gap});
   }
 
   #welcome p {
-    font-size: 1.9vmin;
+    font-size: 3.5vmin;
   }
 
   body {
     overflow-x: hidden;
-    font-size: 1.8vmin;
+    font-size: 2.8vmin;
   }
 
   .container {
@@ -1096,20 +1076,86 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
       font-size: 1.8vmin;
     }
   }
-}
+  
+  .service-card {
+    font-weight: 600;
+  }
+  
+  h3 {
+    font-size: 3.5vmin;
+  }
+
+  p {
+    font-size: 2.8vmin;
+  }
+
+  footer {
+    padding: 2.2vmin;
+    font-size: 2.5vmin;
+    text-align: center;
+
+    .footer-column {
+      flex: 1 1 100%;
+      margin-bottom: 2.2vmin;
+
+      h3 {
+        font-size: 2.5vmin;
+      }
+
+      p {
+        font-size: 2.2vmin;
+      }
+    }
+
+    .footer-social a {
+      font-size: 2.5vmin;
+    }
+  }
+
+
+/**************************************** ****************************************
+      480 max-width media queries
+***************************************** ***************************************/
 
 @media (max-width: 480px) {
   * {
-    font-size: 1.2vmin;
+    font-size: clamp(16px, 3.8vmin, 28px);
   }
   
+  .form-container {
+    padding: 1.5vmin;
+    
+    form {
+      padding: 2.5vmin;
+      
+      .form-group {
+        label {
+          font-size: 1.8vmin;
+        }
+        
+        .bb-input {
+          padding: 1vmin;
+          font-size: 1.6vmin;
+        }
+        
+        textarea.bb-input {
+          min-height: 12vmin;
+        }
+      }
+      
+      .bb-button {
+        padding: 1.2vmin 2.5vmin;
+        font-size: 1.8vmin;
+      }
+    }
+  }
   .gallery .row .container {
     flex: 1 1 100%;
     max-width: 100%;
   }
 
   #welcome p {
-    font-size: 1.2vmin;
+    font-size: 3.5vmin;
   }
 
   .skills {
@@ -1120,17 +1166,40 @@ $hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
     padding: 1.5vmin;
 
     h3 {
-      font-size: 1.35vmin;
+      font-size: 4vmin;
     }
 
     p {
-      font-size: 1.2vmin;
+      font-size: 4vmin;
     }
   }
 
   #footer-wrap {
     padding: 1.5vmin;
-    font-size: 1.2vmin;
+    font-size: 4vmin;
+  }
+
+  footer {
+    padding: 1.5vmin;
+    font-size: 3.5vmin;
+    text-align: center;
+
+    .footer-column {
+      flex: 1 1 100%;
+      margin-bottom: 2.2vmin;
+
+      h3 {
+        font-size: 3.5vmin;
+      }
+
+      p {
+        font-size: 3vmin;
+      }
+    }
+
+    .footer-social a {
+      font-size: 3.5vmin;
+    }
   }
 
   .profile_pic {

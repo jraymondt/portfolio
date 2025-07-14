@@ -16,9 +16,7 @@ include 'includes/navbar.php';
                 <br>
                 <p>Contact me via the form below or</p> 
                 <br><br>
-                    <a href="mailto:james@jraymondt.com">
-                    <button class="bb-button orange rounded"> email </button>
-                    </a>
+                    <a href="mailto:james@jraymondt.com" class="bb-button orange rounded"></a>
                 <br><br>            
                 <p>Alternatively, you can fill out the privacy friendly form that definitely doesn't harvest all your souls and make you start at the begining of the map. Form below:↓ ↓ ↓</p>              
                 <div class="form-container">
@@ -43,30 +41,21 @@ include 'includes/navbar.php';
                 <br><br>
                 <p>Or connect with me on social media:</p>
                 <div class="social-links">
-                    <a href="https://linkedin.com/in/jraymondt" target="_blank" rel="noopener noreferrer">
-                        <button class="bb-button blue rounded">LinkedIn</button>
-                    </a>
-                    <a href="https://github.com/jraymondt" target="_blank" rel="noopener noreferrer">
-                        <button class="bb-button blue rounded">GitHub</button>
-                    </a>
-                    <a href="https://x.com/jraymondt" target="_blank" rel="noopener noreferrer">
-                        <button class="bb-button orange rounded">Cooked</button>
-                    </a>
-                    <a href="https://www.instagram.com/jraymondt" target="_blank" rel="noopener noreferrer">
-                        <button class="bb-button pink rounded">Insta</button>
-                    </a>
-                    <a href="https://www.tiktok.com/@jraymondt" target="_blank" rel="noopener noreferrer">
-                        <button class="bb-button purple rounded">TokTok</button>
-                    </a>
-                    <a href="https://www.youtube.com/@jraymondt" target="_blank" rel="noopener noreferrer">
-                        <button class="bb-button red rounded">Tubes</button>
-                    </a>
-                    <a href="https://www.twitch.tv/jraymondt" target="_blank" rel="noopener noreferrer">
-                        <button class="bb-button purple rounded">Twitch</button>
-                    </a>
-                    <a href="https://www.facebook.com/jraymondt" target="_blank" rel="noopener noreferrer">
-                        <button class="bb-button blue rounded">Facecook</button>
-                    </a>    
+                    <a href="https://linkedin.com/in/jraymondt" target="_blank" rel="noopener noreferrer" class="bb-button blue rounded">LinkedIn</a>
+                    
+                    <a href="https://github.com/jraymondt" target="_blank" rel="noopener noreferrer" class="bb-button blue rounded">GitHub</a>
+                    
+                    <a href="https://x.com/jraymondt" target="_blank" rel="noopener noreferrer" class="bb-button orange rounded">Cooked</a>
+                    
+                    <a href="https://www.instagram.com/jraymondt" target="_blank" rel="noopener noreferrer" class="bb-button pink rounded">Insta</a>
+                    
+                    <a href="https://www.tiktok.com/@jraymondt" target="_blank" rel="noopener noreferrer" class="bb-button purple rounded">TokTok</a>
+                    
+                    <a href="https://www.youtube.com/@jraymondt" target="_blank" rel="noopener noreferrer" class="bb-button red rounded">Tubes</a>
+                    
+                    <a href="https://www.twitch.tv/jraymondt" target="_blank" rel="noopener noreferrer" class="bb-button purple rounded">Twitch</a>
+                    
+                    <a href="https://www.facebook.com/jraymondt" target="_blank" rel="noopener noreferrer" class="bb-button blue rounded">Facecook</a>
                 </div>
             </div><!--end dialog-->       
         </div><!--end wrapper-->

@@ -1799,7 +1799,7 @@ input.bb-checkbox:checked::before {
 /**************************************** ****************************************
       GLOBAL SASS ****************************************************************/
 * {
-  font-size: 2.5vmin;
+  font-size: clamp(16px, 2.8vmin, 24px);
 }
 
 body {
@@ -2262,63 +2262,6 @@ span.success {
   font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
-  .form-container {
-    max-width: 95vmin;
-    padding: 2vmin;
-  }
-  .form-container form {
-    padding: 3vmin;
-    gap: 2.5vmin;
-  }
-  .form-container form .form-group label {
-    font-size: 2vmin;
-  }
-  .form-container form .form-group .bb-input {
-    padding: 1.2vmin;
-    font-size: 1.8vmin;
-  }
-  .form-container form .form-group textarea.bb-input {
-    min-height: 15vmin;
-  }
-  .form-container form .bb-button {
-    padding: 1.5vmin 3vmin;
-    font-size: 2vmin;
-    align-self: stretch;
-  }
-}
-.form-group.error .bb-input {
-  border-color: #e74c3c;
-  background-color: rgba(231, 76, 60, 0.05);
-}
-.form-group .error-message {
-  color: #e74c3c;
-  font-size: 1.6vmin;
-  margin-top: 0.5vmin;
-}
-
-@media screen and (max-width: 480px) {
-  .form-container {
-    padding: 1.5vmin;
-  }
-  .form-container form {
-    padding: 2.5vmin;
-  }
-  .form-container form .form-group label {
-    font-size: 1.8vmin;
-  }
-  .form-container form .form-group .bb-input {
-    padding: 1vmin;
-    font-size: 1.6vmin;
-  }
-  .form-container form .form-group textarea.bb-input {
-    min-height: 12vmin;
-  }
-  .form-container form .bb-button {
-    padding: 1.2vmin 2.5vmin;
-    font-size: 1.8vmin;
-  }
-}
 /**************************************** ****************************************
       BUTTONS SASS @extend
 ***************************************** ***************************************/
@@ -2609,6 +2552,9 @@ span.success {
     padding: 4.8vmin 2.4vmin;
   }
 }
+/**************************************** ****************************************
+      1200 max-width media queries
+***************************************** ***************************************/
 @media screen and (max-width: 1200px) {
   .dialog {
     width: 70%;
@@ -2624,6 +2570,9 @@ span.success {
     padding: 3.3vmin;
   }
 }
+/**************************************** ****************************************
+      2000 max-width media queries
+***************************************** ***************************************/
 @media screen and (max-width: 2000px) {
   .dialog {
     width: 70%;
@@ -2642,6 +2591,9 @@ span.success {
     padding: 1vmin;
   }
 }
+/**************************************** ****************************************
+      1024 max-width media queries
+***************************************** ***************************************/
 @media screen and (max-width: 1024px) {
   .dialog {
     width: 100%;
@@ -2661,81 +2613,180 @@ span.success {
     padding: 1.8vmin;
   }
 }
+/**************************************** ****************************************
+      768 max-width media queries
+***************************************** ***************************************/
 @media screen and (max-width: 768px) {
   * {
-    font-size: 1.9vmin;
+    font-size: clamp(16px, 3.2vmin, 24px);
   }
-  .gallery .row .container {
-    flex: 1 1 calc(50% - 1.5vmin);
-    max-width: calc(50% - 1.5vmin);
+  .form-container {
+    max-width: 95vmin;
+    padding: 2vmin;
   }
-  #welcome p {
-    font-size: 1.9vmin;
-  }
-  body {
-    overflow-x: hidden;
-    font-size: 1.8vmin;
-  }
-  .container {
-    flex-direction: column;
-    gap: 2.2vmin;
-  }
-  .skill-box {
+  .form-container form {
     padding: 3vmin;
-    text-align: center;
+    gap: 2.5vmin;
   }
-  .skill-box h3 {
-    font-size: 1.9vmin;
+  .form-container form .form-group label {
+    font-size: 2vmin;
   }
-  .skill-box p {
+  .form-container form .form-group .bb-input {
+    padding: 1.2vmin;
     font-size: 1.8vmin;
   }
-  .navbar {
-    padding: 1.5vmin 1.5vmin;
-    background-color: #678ba5;
-    box-shadow: none;
+  .form-container form .form-group textarea.bb-input {
+    min-height: 15vmin;
   }
-  .navbar .logo-image {
-    width: 15vmin;
-    height: auto;
-  }
-  .profile_pic {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .profile_pic img {
-    max-width: 63vmin;
-    height: auto;
-    flex: 1 1 100%;
-    padding: 0.37vmin;
-  }
-  .skills {
-    grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr));
-    gap: 2.2vmin;
-  }
-  .skill-box {
-    padding: 3.3vmin;
-    text-align: center;
-  }
-  .skill-box h3 {
-    font-size: 1.9vmin;
-  }
-  .skill-box p {
-    font-size: 1.8vmin;
+  .form-container form .bb-button {
+    padding: 1.5vmin 3vmin;
+    font-size: 2vmin;
+    align-self: stretch;
   }
 }
+.form-group.error .bb-input {
+  border-color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.05);
+}
+.form-group .error-message {
+  color: #e74c3c;
+  font-size: 1.6vmin;
+  margin-top: 0.5vmin;
+}
+
+.gallery .row .container {
+  flex: 1 1 calc(50% - 1.5vmin);
+  max-width: calc(50% - 1.5vmin);
+}
+
+#welcome p {
+  font-size: 3.5vmin;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: 2.8vmin;
+}
+
+.container {
+  flex-direction: column;
+  gap: 2.2vmin;
+}
+
+.skill-box {
+  padding: 3vmin;
+  text-align: center;
+}
+.skill-box h3 {
+  font-size: 1.9vmin;
+}
+.skill-box p {
+  font-size: 1.8vmin;
+}
+
+.navbar {
+  padding: 1.5vmin 1.5vmin;
+  background-color: #678ba5;
+  box-shadow: none;
+}
+.navbar .logo-image {
+  width: 15vmin;
+  height: auto;
+}
+
+.profile_pic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile_pic img {
+  max-width: 63vmin;
+  height: auto;
+  flex: 1 1 100%;
+  padding: 0.37vmin;
+}
+
+.skills {
+  grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr));
+  gap: 2.2vmin;
+}
+
+.skill-box {
+  padding: 3.3vmin;
+  text-align: center;
+}
+.skill-box h3 {
+  font-size: 1.9vmin;
+}
+.skill-box p {
+  font-size: 1.8vmin;
+}
+
+.service-card {
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 3.5vmin;
+}
+
+p {
+  font-size: 2.8vmin;
+}
+
+footer {
+  padding: 2.2vmin;
+  font-size: 2.5vmin;
+  text-align: center;
+}
+footer .footer-column {
+  flex: 1 1 100%;
+  margin-bottom: 2.2vmin;
+}
+footer .footer-column h3 {
+  font-size: 2.5vmin;
+}
+footer .footer-column p {
+  font-size: 2.2vmin;
+}
+footer .footer-social a {
+  font-size: 2.5vmin;
+}
+
+/**************************************** ****************************************
+      480 max-width media queries
+***************************************** ***************************************/
 @media (max-width: 480px) {
   * {
-    font-size: 1.2vmin;
+    font-size: clamp(16px, 3.8vmin, 28px);
+  }
+  .form-container {
+    padding: 1.5vmin;
+  }
+  .form-container form {
+    padding: 2.5vmin;
+  }
+  .form-container form .form-group label {
+    font-size: 1.8vmin;
+  }
+  .form-container form .form-group .bb-input {
+    padding: 1vmin;
+    font-size: 1.6vmin;
+  }
+  .form-container form .form-group textarea.bb-input {
+    min-height: 12vmin;
+  }
+  .form-container form .bb-button {
+    padding: 1.2vmin 2.5vmin;
+    font-size: 1.8vmin;
   }
   .gallery .row .container {
     flex: 1 1 100%;
     max-width: 100%;
   }
   #welcome p {
-    font-size: 1.2vmin;
+    font-size: 3.5vmin;
   }
   .skills {
     padding: 1.5vmin;
@@ -2744,14 +2795,32 @@ span.success {
     padding: 1.5vmin;
   }
   .skill-box h3 {
-    font-size: 1.35vmin;
+    font-size: 4vmin;
   }
   .skill-box p {
-    font-size: 1.2vmin;
+    font-size: 4vmin;
   }
   #footer-wrap {
     padding: 1.5vmin;
-    font-size: 1.2vmin;
+    font-size: 4vmin;
+  }
+  footer {
+    padding: 1.5vmin;
+    font-size: 3.5vmin;
+    text-align: center;
+  }
+  footer .footer-column {
+    flex: 1 1 100%;
+    margin-bottom: 2.2vmin;
+  }
+  footer .footer-column h3 {
+    font-size: 3.5vmin;
+  }
+  footer .footer-column p {
+    font-size: 3vmin;
+  }
+  footer .footer-social a {
+    font-size: 3.5vmin;
   }
   .profile_pic {
     display: flex;
