@@ -1,0 +1,30 @@
+:root {
+  /* Spacing variables */
+  --space-sm: 0.75vmin;
+  --space-md: 1.5vmin;
+  --space-lg: 3vmin;
+  --space-xl: 6vmin;
+  /* Border variables */
+  --border-width: 0.3vmin;
+  --border-radius: 1.2vmin;
+  /* Shadow variables */
+  --shadow-offset-small: 0.3vmin;
+  --shadow-offset-medium: 0.6vmin;
+  --shadow-offset-large: 0.9vmin;
+  /* Color references */
+  --dark: #000000;
+  --light: #ffffff;
+  /* Fonts */
+  --base-font-size: 2vmin;
+  --scale-ratio: 1.25;
+  --h1-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio));
+  --h2-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
+  --h3-size: calc(var(--base-font-size) * var(--scale-ratio));
+  --body-size: var(--base-font-size);
+  --small-size: calc(var(--base-font-size) / var(--scale-ratio));
+  --large-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
+  --xlarge-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio));
+  --space-sm: calc(var(--base-font-size) / 2);
+  --space-md: var(--base-font-size);
+  --space-lg: calc(var(--base-font-size) * 2);
+}/*# sourceMappingURL=old_colours.css.map */

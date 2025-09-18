@@ -1,47 +1,53 @@
+
+@use "sass:color";
+
 :root {
-    /* Spacing variables */
-    --space-sm: 0.75vmin;
-    --space-md: 1.5vmin;
-    --space-lg: 3vmin;
-    --space-xl: 6vmin;
-    
-    /* Border variables */
-    --border-width: 0.3vmin;
-    --border-radius: 1.2vmin;
-    
-    /* Shadow variables */
-    --shadow-offset-small: 0.3vmin;
-    --shadow-offset-medium: 0.6vmin;
-    --shadow-offset-large: 0.9vmin;
-    
-    /* Color references */
-    --dark: #000000;
-    --light: #ffffff;
-    /* Fonts */
-    --base-font-size: 2vmin;
-    --scale-ratio: 1.25;
-    --h1-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio));
-    --h2-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
-    --h3-size: calc(var(--base-font-size) * var(--scale-ratio));
-    --body-size: var(--base-font-size);
-    --small-size: calc(var(--base-font-size) / var(--scale-ratio));
-    --large-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
-    --xlarge-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio));
-    --space-sm: calc(var(--base-font-size) / 2);
-    --space-md: var(--base-font-size);
-    --space-lg: calc(var(--base-font-size) * 2);
+  /* Spacing variables */
+  --space-sm: 0.75vmin;
+  --space-md: 1.5vmin;
+  --space-lg: 3vmin;
+  --space-xl: 6vmin;
+
+  /* Border variables */
+  --border-width: 4px; /* Increased for neobrutalist look */
+  --border-radius: 0px; /* Sharp corners for brutalist aesthetic */
+
+  /* Shadow variables - Sharp and bold */
+  --shadow-offset-small: 4px;
+  --shadow-offset-medium: 6px;
+  --shadow-offset-large: 8px;
+
+  /* Color references */
+  --dark: #2C2C2C;
+  --light: #F5F5F5;
+
+  /* Fonts - Bold and impactful */
+  --base-font-size: 18px;
+  --scale-ratio: 1.4; /* Increased for more dramatic hierarchy */
+  --h1-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio));
+  --h2-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
+  --h3-size: calc(var(--base-font-size) * var(--scale-ratio));
+  --body-size: var(--base-font-size);
+  --small-size: calc(var(--base-font-size) / var(--scale-ratio));
+  --large-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
+  --xlarge-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio));
 }
 
-// badger colours
-$drkGrey: #060a0b;
-$greeGrey: #678ba5;
-$litBlurey: #9dbfe5;
-$pinky: #c4519e;
-$purp: #ad97c6;
-$white: #ffffff;
+// EARTHY BRUTALIST COLOR PALETTE
+// Primary colors - Charcoal and Light Gray
+$charcoal: #2C2C2C;
+$light-gray: #F5F5F5;
+$white: #FFFFFF;
 $black: #000000;
-$dark: #142331;
-$light: #faf6ea;
+
+// Accent colors - Orange-Red and Gold  
+$orange-red: #FF6B35;
+$gold: #FFD700;
+
+// Supporting colors for variety
+$dark-charcoal: #1A1A1A;
+$medium-gray: #CCCCCC;
+$warm-white: #FAFAFA;
 
 // Primary colours
 $orange: #e95e0e;
@@ -63,18 +69,54 @@ $pale-yellow: #ffeaa7;
 $pale-yellow-light: #faeab4;
 $green-light: #a8e6cf;
 $sky-blue-light: #b2ebf2;
-// Accent colours
-$hover-orange: darken($orange, 10%);
-$hover-blue: darken($blue, 10%);
-$hover-green: darken($green, 10%);
-$hover-red: darken($red, 10%);
-$hover-purple: darken($purple, 10%);
-$hover-pink: darken($pink, 10%);
-$hover-yellow: darken($yellow, 10%);
-$hover-gray: darken($gray, 10%);
-$hover-sky-blue: darken($sky-blue, 10%);
-$hover-pale-red: darken($pale-red, 10%);
-$hover-pale-violet: darken($pale-violet, 10%);
-$hover-soft-blue: darken($soft-blue, 10%);
-$hover-pale-cyan: darken($pale-cyan, 10%);
-$hover-pale-yellow: darken($pale-yellow, 10%);
+
+// Hover states
+$hover-orange-red: color.scale($orange-red, $lightness: 12%, $space: oklch);
+$hover-gold: color.scale($gold, $lightness: 15%, $space: oklch);
+$hover-charcoal: color.scale($charcoal, $lightness: 18%, $space: oklch);
+$hover-pale-cyan: color.scale($charcoal, $lightness: 5%, $space: oklch);
+$hover-soft-blue: color.scale($charcoal, $lightness: 35%, $space: oklch);
+$hover-pale-viole: color.scale($charcoal, $lightness: 35%, $space: oklch);
+$hover-pale-red: color.scale($charcoal, $lightness: 18%, $space: oklch);
+$hover-sky-blue: color.scale($charcoal, $lightness: 5%, $space: oklch);
+$hover-green: color.scale($charcoal, $lightness: 25%, $space: oklch);
+
+// Legacy color mappings for compatibility
+$drkGrey: $charcoal;
+$greeGrey: $medium-gray; 
+$litBlurey: $light-gray;
+$orange: $orange-red;
+$purp: $charcoal;
+$pinky: $orange-red;
+$pale-yellow: $gold;
+$red: $orange-red;
+
+
+// Brutalist color system
+$primary-bg: $light-gray;
+$primary-text: $charcoal;
+$accent-primary: $orange-red;
+$accent-secondary: $gold;
+$border-color: $black;
+$shadow-color: $black;
+
+// Card background colors for variety
+$bg-card-1: $warm-white;
+$bg-card-2: gold;
+$bg-card-3: $orange-red;
+$bg-card-4: $light-gray;
+$bg-card-5: $gold;
+$bg-card-6: red;
+$bg-card-7: gray;
+$bg-card-8: $warm-white;
+
+// Additional supporting variables
+$space-xs: 8px;
+$space-sm: 16px;
+$space-md: 24px;
+$space-lg: 40px;
+$space-xl: 64px;
+$border-width: 4px;
+$shadow-1: 8px 8px 0 $shadow-color;
+$shadow-2: 12px 12px 0 $shadow-color;
+$shadow-3: 16px 16px 0 $shadow-color;

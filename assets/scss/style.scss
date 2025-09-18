@@ -1,74 +1,108 @@
-@import "colours";
-@import "reset";
+@use "colours" as *;
+@use "reset" as *;
 
-@import "components/buttons";
-@import "components/inputs";
-@import "components/dialog";
-@import "components/marquee";
-@import "components/cards";
-@import "components/avatar";
-@import "components/checkbox";
-@import "components/badge";
-@import "components/modal";
-@import "components/alert";
-@import "components/accordion";
-@import "components/dropdown";
-@import "components/util";
+@use "components/buttons" as *;
+@use "components/inputs" as *;
+@use "components/dialog" as *;
+@use "components/marquee" as *;
+@use "components/cards" as *;
+@use "components/avatar" as *;
+@use "components/checkbox" as *;
+@use "components/badge" as *;
+@use "components/modal" as *;
+@use "components/alert" as *;
+@use "components/accordion" as *;
+@use "components/dropdown" as *;
+@use "components/util" as *;
 
-/**************************************** ****************************************
-      GLOBAL SASS ****************************************************************/
+/***************************************************************************
+ GLOBAL SASS - EARTHY BRUTALIST OVERHAUL
+***************************************************************************/
+
+/* Import bold neobrutalist font */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap');
+
 * {
-  font-size: clamp(16px, 2.8vmin, 24px);
+  font-size: 18px;
+  box-sizing: border-box;
 }
-
 
 body {
-  font-family: "B612", sans-serif;
-  background-color: $black;
+  font-family: "Work Sans", Arial, sans-serif;
+  background-color: #2C2C2C;
+  color: black;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden; 
+  line-height: 1.4;
+  overflow-x: hidden;
 }
 
-/**************************************** ****************************************
-      NAVIGATION SASS
-***************************************** ***************************************/
+/* Neobrutalist geometric separator */
+.geometric-separator {
+  width: 100%;
+  height: 8px;
+  background-color: #FF6B35;
+  border: 4px solid #FFD700;
+  margin: 2vmin 0;
+  /* fixed invalid usage of custom property; using a practical hard-coded shadow */
+  box-shadow: 6px 0 0 #000000;
+}
+
+.geometric-separator::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #ffeaa7;
+  border: 4px solid #FFD700;
+  margin: -36px auto 0;
+  transform: rotate(45deg);
+  /* fixed invalid usage of custom property; using a practical hard-coded shadow */
+  box-shadow: 6px 0 0 #000000;
+}
+
+/***************************************************************************
+ NAVIGATION SASS - BRUTALIST OVERHAUL
+***************************************************************************/
+
 .navbar {
   position: sticky;
   top: 0;
-  width: calc(100% - 3vmin);
+  width: calc(100% - 20px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $litBlurey;
-  border: 1.6vmin solid $pinky;
-  padding: 2.2vmin 3.7vmin;
-  box-shadow: 0.9vmin 0.9vmin 0 $black;
-  border-radius: 2.2vmin;
-  margin: 1.5vmin;
+  background-color: $white;
+  border: $border-width solid $border-color;
+  padding: 20px 30px;
+  box-shadow: $shadow-2;
+  margin: 10px;
   z-index: 1000;
 
   .mobile-title {
-    display: none; 
-    color: $pale-yellow;
-    font-size: 3.2vmin;
-    font-weight: bold;
+    display: none;
+    color: $accent-primary;
+    font-size: 1.8rem;
+    font-weight: 900;
     text-align: center;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
     flex: 1;
+    font-family: "Work Sans", Arial, sans-serif;
   }
 
   .logo-container {
     display: flex;
     align-items: center;
-    background-color: $greeGrey;
+    background-color: $accent-secondary;
+    border: $border-width solid $border-color;
+    padding: 10px;
+    box-shadow: 4px 4px 0 $shadow-color;
     flex: 0 0 auto;
-    
+
     img {
-      width: 12vmin;
+      width: 80px;
       height: auto;
       display: block;
     }
@@ -82,1146 +116,410 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    
+
     li {
-      margin: 0 1.5vmin;
+      margin: 0 8px;
     }
-    
+
     a {
-      color: $drkGrey;
-      font-weight: 900;
+      color: $primary-text;
+      font-weight: 700;
       text-decoration: none;
-      font-size: 2.9vmin;
+      font-size: 1.4rem;
       text-transform: uppercase;
-      transition: color 0.2s ease-in-out;
-      padding: 1.2vmin 1.8vmin;
+      transition: all 0.2s ease;
+      padding: 12px 16px;
       display: block;
-      
+      border: 2px solid transparent;
+      background-color: transparent;
+
       &:hover {
-        color: $black;
+        background-color: $accent-primary;
+        color: $white;
+        border: 2px solid $border-color;
+        box-shadow: 4px 4px 0 $shadow-color;
+        transform: translate(-2px, -2px);
       }
     }
   }
 
   .burger {
     display: none;
-    background-color: $greeGrey;
-    border: 0.15vmin dashed $purp;
+    background-color: $accent-secondary;
+    border: $border-width solid $border-color;
+    padding: 10px;
     cursor: pointer;
     z-index: 1001;
-    flex: 0 0 auto; 
-    
+    flex: 0 0 auto;
+    box-shadow: 4px 4px 0 $shadow-color;
+
     div {
-      width: 4.5vmin;
-      height: 0.45vmin;
-      background-color: $drkGrey;
-      margin: 0.9vmin 0;
+      width: 25px;
+      height: 4px;
+      background-color: $primary-text;
+      margin: 4px 0;
       transition: all 0.3s ease;
     }
   }
 }
 
-// Responsive styles
-@media screen and (min-width: 1025px) {
-  .navbar {
-    padding: 3vmin 6vmin;
-    
-    .nav-links a {
-      font-size: 3.1vmin;
-    }
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .navbar {
-    .nav-links a {
-      font-size: 2.9vmin;
-      padding: 0.9vmin 1.2vmin;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .navbar {
-    padding: 1.8vmin 3vmin;
-    
-    .mobile-title {
-      display: block; 
-      opacity: 1;
-      transition: opacity 0.3s ease;
-    }
-    
-    &.menu-active .mobile-title {
-      opacity: 1;
-    }
-
-    .nav-links {
-      position: fixed; 
-      right: 0;
-      top: 0;
-      height: 100vh;
-      background-color: $greeGrey;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 60%;
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in;
-      z-index: 999;
-      padding-top: 9vmin;
-      border-left: 0.6vmin solid $orange;
-      box-shadow: -0.7vmin 0 2.2vmin rgba(0,0,0,0.2);
-      
-      li {
-        opacity: 0;
-        margin: 2.2vmin 0;
-        width: 100%;
-        text-align: center;
-        
-        .nav-active & {
-          opacity: 1;
-          animation: navLinkFade 0.5s ease forwards;
-        }
-      }
-      
-      a {
-        font-size: 2.1vmin;
-        padding: 1.8vmin;
-        width: 100%;
-        display: inline-block;
-      }
-    }
-    
-    .burger {
-      display: block;
-      margin-left: auto;
-    }
-  }
-  
-  .nav-active {
-    transform: translateX(0%) !important;
-  }
-  
-  @keyframes navLinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(7.5vmin);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  .toggle {
-    .line1 {
-      transform: rotate(-45deg) translate(-0.7vmin, 0.9vmin);
-      background-color: $orange;
-    }
-    
-    .line2 {
-      opacity: 0;
-    }
-    
-    .line3 {
-      transform: rotate(45deg) translate(-0.7vmin, -0.9vmin);
-      background-color: $orange; 
-    }
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .navbar {
-    padding: 1.5vmin 2.2vmin;
-    
-    .logo-container img {
-      width: 9vmin;
-    }
-    
-    .mobile-title {
-      font-size: 2.9vmin;
-    }
-
-    .nav-links {
-      width: 70%; 
-      
-      a {
-        font-size: 2.2vmin;
-      }
-    }
-  }
-}
-
-/**************************************** ****************************************
-      404 SASS
-***************************************** ***************************************/      
-.error-page {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  .container {
-    margin: var(--space-md);
-    padding: var(--space-lg);
-
-    .dialog {
-      text-align: center;
-      padding: var(--space-xl);
-      border: var(--border-width) solid var(--dark);
-      box-shadow: var(--shadow-1);
-      background-color: $purp;
-      max-width: 90vmin;
-      margin: 0 auto;
-      margin-bottom: var(--space-md);
-    
-      h1 {
-        font-size: 12vmin;
-        line-height: 1;
-        margin-bottom: var(--space-sm);
-        font-weight: bold;
-        color: $drkGrey;
-      }
-      
-      h2 {
-        margin-bottom: var(--space-md);
-        color: var(--dark);
-      }
-      
-      p {
-        margin-bottom: var(--space-lg);
-        font-size: 1.8vmin;
-        color: $drkGrey;
-      }
-      
-      .service-icon {
-        margin: var(--space-md) auto;
-        font-size: 6.7vmin;
-      }
-    }  
-  }
-  
-  .error-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    margin: var(--space-lg) 0;
-    
-    .bb-button {
-      min-width: 30vmin;
-    }
-  }
-}
-
-/**************************************** ****************************************
-      svg logo
-***************************************** ***************************************/
-.logo-container {
-  position: relative; 
-  display: inline-block; 
-
-  img {
-    display: block;
-    max-width: 15vmin; 
-    height: auto;
-    z-index: 1001;
-  }
-
-  .logo {
-    background-color: $greeGrey;
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 1002; 
-    text-align: center; 
-  }
-}
+/***************************************************************************
+ MAIN CONTENT BRUTALIST STYLING
+***************************************************************************/
 
 main {
-  background-color: $drkGrey;
+  background-color: $primary-bg;
   overflow: hidden;
+  padding: $space-lg 0;
+}
+
+/* Hero section */
+#welcome {
+  text-align: center;
+  padding: $space-xl $space-lg;
+  background-color: $white;
+  border: $border-width solid $border-color;
+  margin: $space-lg;
+  box-shadow: $shadow-3;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: $primary-text;
+    text-transform: uppercase;
+    margin-bottom: $space-md;
+    font-family: "Work Sans", Arial, sans-serif;
+    line-height: 0.9;
+    text-shadow: 4px 4px 0 $accent-secondary;
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $accent-primary;
+    margin-bottom: $space-lg;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+    margin: $space-lg 0;
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      background-color: $accent-secondary;
+      color: $primary-text;
+      padding: $space-sm $space-md;
+      border: 2px solid $border-color;
+      box-shadow: 4px 4px 0 $shadow-color;
+      margin: 4px;
+      display: inline-block;
+    }
+  }
 }
 
 .profile_pic {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
-  margin-bottom: 5vmin;  
+  margin: $space-xl 0;
 
   img {
-    flex: 1 1 50%;
-    max-width: 100vmin;
-    box-shadow: $drkGrey 0.15vmin 0.45vmin 4.9vmin 4.9vmin;
-    border-radius: 10%;
-    margin-bottom: 2vmin;
-  }
-}  
-
-
-/**************************************** 
-****************************************
-      CONTACT FORM SASS
-***************************************** 
-***************************************/
-.form-container {
-  width: 100%;
-  max-width: 90vmin;
-  margin: 0 auto;
-  padding: 3vmin;
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 3vmin;
-    background-color: $litBlurey;
-    color: $drkGrey;
-    padding: 4vmin;
-    border-radius: 1.5vmin;
-    border: 1.3vmin solid $pinky;
-    box-shadow: 0.6vmin 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
-    
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 1vmin;
-      
-      label {
-        font-weight: bold;
-        color: $drkGrey;
-        font-size: 2.2vmin;
-        text-transform: uppercase;
-        letter-spacing: 0.1vmin;
-        margin-bottom: 0.5vmin;
-      }
-      
-      .bb-input {
-        width: 100%;
-        padding: 1.5vmin;
-        border: 1.2vmin solid $greeGrey;
-        border-radius: 0.8vmin;
-        font-size: 2vmin;
-        transition: all 0.3s ease;
-        box-sizing: border-box;
-        background-color: $light;
-        text-align: left !important;
-        
-        &:focus {
-          outline: none;
-          border-color: $purp;
-          box-shadow: 0 0 0 0.3vmin rgba(255, 107, 53, 0.2);
-          transform: translateY(-0.1vmin);
-        }
-        
-        &:hover {
-          border-color: lighten($pinky, 10%);
-        }
-        
-        &.orange {
-          border-color: $purp;
-          
-          &:focus {
-            border-color: darken($purp, 33%);
-            box-shadow: 0 0 0 0.4vmin rgba(255, 107, 53, 0.25);
-          }
-        }
-      }
-      
-      textarea.bb-input {
-        min-height: 18vmin;
-        resize: vertical;
-        font-family: inherit;
-        line-height: 1.5;
-        text-align: left !important;
-      }
-    }
-    
-    .bb-button {
-      align-self: flex-start;
-      color: $drkGrey;
-      padding: 1.8vmin 3.5vmin;
-      font-size: 2.2vmin;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.1vmin;
-      border: 0.5vmin solid $black;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      transition: box-shadow 0.2s ease, transform 0.1s ease;
-      
-      &.orange {
-        background-color: $orange;
-        color: $light;
-        
-        &:hover {
-          background-color: darken($orange, 10%);
-          transform: translateY(-0.2vmin);
-          box-shadow: 0 0.4vmin 0.8vmin rgba(0, 0, 0, 0.2);
-        }
-        
-        &:active {
-          transform: translateY(0);
-          box-shadow: 0 0.2vmin 0.4vmin rgba(0, 0, 0, 0.2);
-        }
-      }
-      
-      &.rounded {
-        border-radius: 0.8vmin;
-      }
-    }
+    max-width: 400px;
+    height: auto;
+    border: 8px solid $border-color;
+    box-shadow: $shadow-3;
+    background-color: $white;
+    padding: 10px;
   }
 }
 
-
-/*******************************************************/
-/*************** Form validation styles ***************/
-/*****************************************************/
-
-.error {
-  color: $red;
-  font-weight: 800;
-  display: block;
-  margin-top: 4vmin;
-  font-size: var(--xlarge-size);
+/* Skills section with neobrutalist cards */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $space-lg;
+  padding: $space-lg;
+  margin: $space-xl 0;
 }
 
-.error-input {
-  border: 2px solid $red !important;
-}
-.error-message {
-  color: $red;
-  border: 1vmin solid $red;
-  font-weight: 800;
-  display: block;
-  font-size: var(--xlarge-size);
-  text-align: center;
-  background-color: rgba(231, 76, 60, 0.1);
-  padding: 1.5vmin;
-  border-radius: 0.8vmin;
-  box-shadow: 0 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
-  width: fit-content;
-  max-width: 80vmin;
-  margin: 2vmin auto;
-}
-/* Success styles */
-.success {
-  color: $green;
-  display: inline-block;
-  margin-left: 5px;
-  font-size: 1.2em;
-}
-
-.success-input {
-  border: 2px solid $green !important;
-}
-.sending-message {
-  color: $green-light;
-  font-size: var(--xlarge-size);
-  font-weight: bold;
-  border: 1vmin solid $green;
-  margin: 2vmin auto;
-  padding: 1.5vmin;
-  background-color: rgba(0, 128, 0, 0.1);
-  border-radius: 0.8vmin;
-  box-shadow: 0 0.6vmin 1.2vmin rgba(0, 0, 0, 0.1);
-  width: fit-content;
-  max-width: 80vmin;
-  margin-top:var(--space-md);
-  text-align: center;
-}
-
-/* Position for success checkmark */
-span.success {
+.skill-box {
+  background-color: $white;
+  border: $border-width solid $border-color;
+  padding: $space-lg;
+  box-shadow: $shadow-2;
+  transition: all 0.3s ease;
   position: relative;
-  top: 2px;
-  font-weight: bold;
+
+  &:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 $shadow-color;
+  }
+
+  // Assign different background colors to skill cards
+  &:nth-child(1) { background-color: $bg-card-1; }
+  &:nth-child(2) { background-color: $bg-card-2; }
+  &:nth-child(3) { background-color: $bg-card-3; }
+  &:nth-child(4) { background-color: $bg-card-4; }
+  &:nth-child(5) { background-color: $bg-card-5; }
+  &:nth-child(6) { background-color: $bg-card-6; }
+  &:nth-child(7) { background-color: $bg-card-7; }
+  &:nth-child(8) { background-color: $bg-card-8; }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+    background-color: $accent-primary;
+    border: $border-width solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $space-md;
+    box-shadow: 4px 4px 0 $shadow-color;
+
+    // Replace emoji icons with geometric shapes
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-color: $white;
+      display: block;
+    }
+
+    // Different geometric shapes for each skill
+    &.design::before { clip-path: circle(50%); }
+    &.development::before { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+    &.html::before { clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%); }
+    &.tools::before { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+    &.languages::before { clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%); }
+    &.soft::before { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
+    &.hobbies::before { clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+    &.education::before { clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); }
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: $primary-text;
+    margin-bottom: $space-sm;
+    text-transform: uppercase;
+    font-family: "Work Sans", Arial, sans-serif;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $primary-text;
+    font-weight: 500;
+  }
 }
 
+/* Episode section */
+#starwar {
+  background-color: $accent-primary;
+  color: $white;
+  border: $border-width solid $border-color;
+  padding: $space-xl;
+  margin: $space-xl $space-lg;
+  box-shadow: $shadow-3;
 
-/**************************************** ****************************************
-      BUTTONS SASS @extend
-***************************************** ***************************************/
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: $space-lg;
+    text-shadow: 4px 4px 0 $shadow-color;
+  }
+
+  p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+}
+
+/***************************************************************************
+ BUTTONS - BRUTALIST OVERHAUL
+***************************************************************************/
+
 %button-base {
   display: inline-block;
-  padding: 1.1vmin 1.9vmin;
-  border-radius: 0.6vmin;
-  font-weight: bold;
+  padding: $space-md $space-lg;
+  font-weight: 700;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  border: $border-width solid $border-color;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: "Work Sans", Arial, sans-serif;
 }
 
 .button {
   @extend %button-base;
-  background-color: $purp; 
-  color: $orange;
-  box-shadow: 0 1.2vmin 2.4vmin 0 rgba(0,0,0,0.2), 0 0.9vmin 3vmin 0 rgba(0,0,0,0.19);
-  text-decoration: none;
+  background-color: $accent-secondary;
+  color: $primary-text;
+  box-shadow: $shadow-1;
 
   &:hover {
-    box-shadow: 0 1.8vmin 2.4vmin 0 rgba(0,0,0,0.24), 0 2.5vmin 7.5vmin 0 rgba(0,0,0,0.19);
-    background-color: darken($purp, 10%);
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 $shadow-color;
+    background-color: $hover-gold;
   }
 }
- 
+
 .secondary-button {
-  margin: 3vmin; 
   @extend %button-base;
-  background-color: $orange;
-  color: $black;
-  border: 0.15vmin solid $purp;
-  
+  background-color: $accent-primary;
+  color: $white;
+  margin: $space-md;
+  box-shadow: $shadow-1;
+
   &:hover {
-    background-color: $hover-orange;
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 $shadow-color;
+    background-color: $hover-orange-red;
   }
 }
 
-/**************************************** ****************************************
-      wrapper SASS
-***************************************** ***************************************/
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: $drkGrey;
-  font-size: 4vmin;
-  margin-top: 5vmin;
-  padding: var(--space-sm);
- 
+/***************************************************************************
+ FOOTER - BRUTALIST OVERHAUL
+***************************************************************************/
 
-  .dialog {
-    color: $drkGrey;
-    margin: auto;
-    margin-top: 5vmin;
-    background-color: $litBlurey;
-  
-    h3 {
-      color: $drkGrey;
-      font-size: 5vmin;
-      margin-bottom: 2vmin;
-      text-align: left;
-    }
-  }
-}
-
-.layer {
-  background-color: $drkGrey;
-  padding: 6vmin;
-  width: 100%;
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  margin-top: 5vmin; 
-
-  .container {
-    background-color: $drkGrey;
-    padding: 2vmin;
-    border-radius: 1.5vmin;
-    box-shadow: 0 0.6vmin 1.2vmin rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  
-    h3 {
-      color: $litBlurey;
-      font-size: 5vmin;
-      margin-top: 5vmin; 
-      text-align: center;
-    }
-    
-    p {
-      color: $orange;
-      font-size: 3vmin;
-      margin-top: 5vmin; 
-      text-align: left;
-    }
-  }
-}
-
-/**************************************** ****************************************
-      gallery SASS
-***************************************** ***************************************/
-$gallery-gap: 1.5vmin;
-$hover-scale: 1.05;
-$box-shadow: 0 0.6vmin 0.9vmin rgba(0, 0, 0, 0.1);
-$hover-box-shadow: 0 0.9vmin 1.5vmin rgba(0, 0, 0, 0.15);
-
-.gallery {
-  padding: 3vmin;
-  position: relative;
-  margin-top: 7.5vmin;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr)); 
-  gap: $gallery-gap; 
-
-  .container {
-    position: relative;
-
-    img {
-      width: 100%; 
-      height: auto;
-      border-radius: 1.2vmin;
-      box-shadow: $box-shadow;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-      &:hover {
-        transform: scale($hover-scale);
-        box-shadow: $hover-box-shadow;
-      }
-    }
-  }
-}
-
-/**************************************** ****************************************
-      Footer SASS
-***************************************** ***************************************/
 #footer-wrap {
-  width: calc(100% - 3vmin);
-  margin: 1.5vmin;
-  margin-top: 12vmin;
-  background-color: $greeGrey;
-  border-radius: 2.2vmin;
-  
+  width: calc(100% - 20px);
+  margin: $space-xl 10px $space-lg;
+
   footer {
-    background-color: $greeGrey;
-    border: 1.6vmin solid $pinky;
-    padding: 3vmin 3.7vmin;
-    box-shadow: 0.9vmin 0.9vmin 0 #000;
-    border-radius: 2.2vmin;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 3vmin;
-    margin-top: 12vmin;
+    background-color: $charcoal;
+    border: $border-width solid $border-color;
+    padding: $space-xl;
+    box-shadow: $shadow-3;
+    color: $white;
 
     .footer-column {
-      flex: 1 1 30%;
-      text-align: center;
-      background-color: $greeGrey;
-      color: $white ;
+      margin-bottom: $space-lg;
 
       h3 {
-        background-color: $greeGrey;
-        font-size: 2.2vmin;
-        margin-bottom: 1.5vmin;
-        color: $drkGrey;
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: $accent-secondary;
         text-transform: uppercase;
-        font-weight: bold;
+        margin-bottom: $space-md;
+        font-family: "Work Sans", Arial, sans-serif;
       }
 
-      p {
-        background-color: $greeGrey;
-        color: $white;
-        margin: 0.7vmin 0;
+      p, a {
+        font-size: 1.1rem;
+        font-weight: 500;
       }
 
       a {
-        color: $drkGrey;
+        color: $accent-primary;
         text-decoration: none;
-        font-weight: bold;
-        transition: color 0.2s ease-in-out;
+        font-weight: 700;
+        transition: color 0.2s ease;
 
         &:hover {
-          color: $hover-orange;
-        }
-      }
-    }
-
-    .footer-profile {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: $greeGrey;
-
-      .avatar {
-        width: 12vmin;
-        height: 12vmin;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 0.45vmin solid $orange;
-        box-shadow: 0.6vmin 0.6vmin 0 #000;
-        transition: transform 0.3s ease;
-        
-        &:hover {
-          transform: translateY(-0.7vmin);
-        }
-        
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-
-    .footer-social {
-      .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: 1.5vmin;
-        background-color: $greeGrey;
-
-        a {
-          font-size: 3vmin;
-          color: $drkGrey;
-          padding: 1.2vmin;
-          border-radius: 1.2vmin;
-          transition: all 0.3s ease;
-
-          &:hover {
-            color: $hover-orange;
-            transform: translateY(-0.45vmin);
-          }
+          color: $accent-secondary;
         }
       }
     }
   }
 }
+
+/***************************************************************************
+ RESPONSIVE DESIGN
+***************************************************************************/
 
 @media screen and (max-width: 768px) {
-  #footer-wrap footer {
-    flex-direction: column;
-    align-items: center;
-    
-    .footer-column {
-      flex: 1 1 100%;
-      margin-bottom: 2.2vmin;
-    }
-  }
-}
-
-/**************************************** ****************************************
-      MISC ADDITIONAL SASS/CSS
-***************************************** ***************************************/
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(45vmin, 1fr));
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-}
-
-.service-card {
-  color: $greeGrey;
-  background-color: $drkGrey;
-  border: $drkGrey 0.15vmin solid;
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-offset-large) var(--shadow-offset-large) 0 $greeGrey;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  
-  &:hover {
-    transform: translate(-0.45vmin, -0.45vmin);
-    box-shadow: 1.8vmin 1.8vmin 0 $black;
-  }
-  
-  h3 {
-    font-size: 2.2vmin;
-    margin-bottom: 2.2vmin;
-  }
-  
-  p {
-    font-size: 1.5vmin;
-    line-height: 1.5;
-  }
-}
-
-.service-icon {
-  font-size: 3vmin;
-  margin-bottom: var(--space-md);
-  color: $drkGrey;
-  background-color: $drkGrey;
-  width: 9vmin;
-  height: 9vmin;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: var(--border-width) solid var(--light);
-}
-
-/**************************************** ****************************************
-      MISC @media
-***************************************** ***************************************/
-
-@media only screen and (max-width: 800px) {
-  * {
-    font-size: 1.8vmin;
-  }
-
-  .extra-item {
-    display: none;
-  }
-
-  .container {
-    width: 100%;
-  }
-
-  .container:focus,
-  .container:hover {
-    transform: none;
-    z-index: 1;
-  }
-
-  .text {
-    font-size: smaller;
-    padding: 4.8vmin 2.4vmin;
-  }
-}
-  
-/**************************************** ****************************************
-      1200 max-width media queries
-***************************************** ***************************************/
-@media screen and (max-width: 1200px) {
-  .dialog {
-    width: 70%;
-    max-width: 147vmin;
-    margin-top: 5vmin;
-    padding: 8vmin;
-    
-    p {
-      color: $black;
-      text-align: center;
-    }
-
-    label {
-      padding: 3.3vmin;
-    }
-  }
-}
-/**************************************** ****************************************
-      2000 max-width media queries
-***************************************** ***************************************/
-@media screen and (max-width: 2000px) {
-  .dialog {
-    width: 70%;
-    max-width: 147vmin;
-    margin-top: 5vmin;
-    padding: 10vmin;
-    
-    p {
-      color: $black;
-      text-align: center;
-    }
-
-    label {
-      padding: 1vmin;
-    }
-
-    input {
-      padding: 1vmin;
-    }
-  }
-}
-
-/**************************************** ****************************************
-      1024 max-width media queries
-***************************************** ***************************************/
-
-@media screen and (max-width: 1024px) {
-  .dialog {
-    width: 100%;
-    max-width: 135vmin;
-    margin-top: 5vmin;
-    padding: 8vmin;
-    
-    p {
-      color: $black;
-      text-align: center;
-    }
-
-    label {
-      padding: 3vmin;
-    }
-    
-    input {
-      margin-top: 8vmin;
-      padding: 1.8vmin;
-    }
-  }
-}
-/**************************************** ****************************************
-      768 max-width media queries
-***************************************** ***************************************/
-
-@media screen and (max-width: 768px) {
-  * {
-    font-size: clamp(16px, 3.2vmin, 24px);
-  }
-
-.form-container {
-    max-width: 95vmin;
-    padding: 2vmin;
-    
-    form {
-      padding: 3vmin;
-      gap: 2.5vmin;
-      
-      .form-group {
-        label {
-          font-size: 2vmin;
-        }
-        
-        .bb-input {
-          padding: 1.2vmin;
-          font-size: 1.8vmin;
-        }
-        
-        textarea.bb-input {
-          min-height: 15vmin;
-        }
-      }
-      
-      .bb-button {
-        padding: 1.5vmin 3vmin;
-        font-size: 2vmin;
-        align-self: stretch; // Full width on mobile
-      }
-    }
-  }
-}
-
-
-.form-group {
-  &.error {
-    .bb-input {
-      border-color: $red;
-      background-color: rgba(231, 76, 60, 0.05);
-    }
-  }
-  
-  .error-message {
-    color: $red;
-    font-size: 1.6vmin;
-    margin-top: 0.5vmin;
-  }
-}
-  .gallery .row .container {
-    flex: 1 1 calc(50% - #{$gallery-gap});
-    max-width: calc(50% - #{$gallery-gap});
-  }
-
-  #welcome p {
-    font-size: 3.5vmin;
-  }
-
-  body {
-    overflow-x: hidden;
-    font-size: 2.8vmin;
-  }
-
-  .container {
-    flex-direction: column;
-    gap: 2.2vmin;
-  }
-
-  .skill-box {
-    padding: 3vmin;
-    text-align: center;
-
-    h3 {
-      font-size: 1.9vmin;
-    }
-
-    p {
-      font-size: 1.8vmin;
-    }
-  }
-
   .navbar {
-    padding: 1.5vmin 1.5vmin;
-    background-color: $greeGrey;
-    box-shadow: none;
-    
-    .logo-image {
-      width: 15vmin; 
-      height: auto;
-    }
-  }
+    padding: 15px 20px;
 
-  .profile_pic {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-  
-    img {
-      max-width: 63vmin;
-      height: auto;
-      flex: 1 1 100%;
-      padding: 0.37vmin;    
-    }
-  }
-    
-  .skills {
-    grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr));
-    gap: 2.2vmin;
-  }
-  
-  .skill-box {
-    padding: 3.3vmin;
-    text-align: center;
-
-    h3 {
-      font-size: 1.9vmin;
+    .mobile-title {
+      display: block;
     }
 
-    p {
-      font-size: 1.8vmin;
-    }
-  }
-  
-  .service-card {
-    font-weight: 600;
-  }
-  
-  h3 {
-    font-size: 3.5vmin;
-  }
+    .nav-links {
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+      z-index: 999;
+      border-left: $border-width solid $border-color;
+      box-shadow: -8px 0 0 $shadow-color;
 
-  p {
-    font-size: 2.8vmin;
-  }
-
-  footer {
-    padding: 2.2vmin;
-    font-size: 2.5vmin;
-    text-align: center;
-
-    .footer-column {
-      flex: 1 1 100%;
-      margin-bottom: 2.2vmin;
-
-      h3 {
-        font-size: 2.5vmin;
+      li {
+        margin: $space-md 0;
+        width: 80%;
+        text-align: center;
       }
-
-      p {
-        font-size: 2.2vmin;
-      }
-    }
-
-    .footer-social a {
-      font-size: 2.5vmin;
-    }
-  }
-
-
-/**************************************** ****************************************
-      480 max-width media queries
-***************************************** ***************************************/
-
-@media (max-width: 480px) {
-  * {
-    font-size: clamp(16px, 3.8vmin, 28px);
-  }
-  
-  .form-container {
-    padding: 1.5vmin;
-    
-    form {
-      padding: 2.5vmin;
-      
-      .form-group {
-        label {
-          font-size: 1.8vmin;
-        }
-        
-        .bb-input {
-          padding: 1vmin;
-          font-size: 1.6vmin;
-        }
-        
-        textarea.bb-input {
-          min-height: 12vmin;
-        }
-      }
-      
-      .bb-button {
-        padding: 1.2vmin 2.5vmin;
-        font-size: 1.8vmin;
-      }
-    }
-  }
-  .gallery .row .container {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  #welcome p {
-    font-size: 3.5vmin;
-  }
-
-  .skills {
-    padding: 1.5vmin;
-  }
-
-  .skill-box {
-    padding: 1.5vmin;
-
-    h3 {
-      font-size: 4vmin;
-    }
-
-    p {
-      font-size: 4vmin;
-    }
-  }
-
-  #footer-wrap {
-    padding: 1.5vmin;
-    font-size: 4vmin;
-  }
-
-  footer {
-    padding: 1.5vmin;
-    font-size: 3.5vmin;
-    text-align: center;
-
-    .footer-column {
-      flex: 1 1 100%;
-      margin-bottom: 2.2vmin;
-
-      h3 {
-        font-size: 3.5vmin;
-      }
-
-      p {
-        font-size: 3vmin;
-      }
-    }
-
-    .footer-social a {
-      font-size: 3.5vmin;
-    }
-  }
-
-  .profile_pic {
-    display: flex;
-    justify-content: center; 
-    align-items: center;  
-
-    img {
-      flex: 1 1 50%;
-      max-width: 33.7vmin;
-      padding: 6vmin;
-      box-shadow: chartreuse 0.15vmin 0.45vmin 4.9vmin 4.9vmin;
-      border-radius: 12%;
-      margin-bottom: 3vmin;
 
       a {
-        margin: 0.09vmin;
+        width: 100%;
+        padding: $space-md;
+        font-size: 1.6rem;
       }
     }
-  }  
-}
-  .nav-active {
-    transform: translateX(0);
+
+    .burger {
+      display: block;
+    }
   }
 
+  .nav-active {
+    transform: translateX(0%) !important;
+  }
+
+  #welcome h1 {
+    font-size: 2.5rem;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+    padding: $space-md;
+    gap: $space-md;
+  }
+
+  .skill-box {
+    padding: $space-md;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  * {
+    font-size: 16px;
+  }
+
+  #welcome h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem !important;
+  }
+
+  .skill-box {
+    padding: $space-sm;
+
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
