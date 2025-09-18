@@ -45,7 +45,7 @@
 .profile-card {
   height: 85vmin;
   aspect-ratio: 5/8;
-  background: $purp;
+  background: rgb(169, 33, 169);
   border-radius: 4vmin;
   box-shadow: var(--shadow-1);
   border: var(--border);
@@ -53,7 +53,7 @@
   overflow: visible;
   padding-block: 4vmin;
   margin: auto;
-  color: $black;
+  color: black;
   margin-top: 5vmin;
 
   #mug {
@@ -78,11 +78,11 @@
   }
   .desc {
     width: fit-content;
-    color: $drkGrey;
+    color: rgb(153, 118, 118);
     height: 20%;
-    background: $litBlurey;
+    background: rgb(93, 93, 117);
     position: relative;
-    border-color: $orange;
+    border-color: orange;
     border-radius: 3vmin;
     border: var(--border-small);
     display: flex;
@@ -105,24 +105,24 @@
     justify-content: center;
   }
   #descParent :nth-child(2) {
-    background: $purp;
-    border-color: $black;
+    background: rgb(139, 23, 139);
+    border-color: black;
     left: 8vmin;
-    box-shadow: 0.6vmin 0.6vmin $pale-yellow-light, 1vmin 1vmin #000,
+    box-shadow: 0.6vmin 0.6vmin rgb(205, 188, 90), 1vmin 1vmin #000,
       1vmin 1vmin #000, 0.65vmin 1vmin #000, 1vmin 0.65vmin #000;
   }
   #descParent :first-child {
     right: 18vmin;
-    border-color: $black;
-    background: $pale-red;
-    box-shadow: 0.6vmin 0.6vmin $pale-violet, 1vmin 1vmin #000,
+    border-color: black;
+    background: rgb(228, 147, 147);
+    box-shadow: 0.6vmin 0.6vmin rgb(227, 152, 227), 1vmin 1vmin #000,
       0.65vmin 1vmin #000, 1vmin 0.65vmin #000;
   }
   #descParent :last-child {
     right: 8vmin;
-    border-color: $hover-orange;
-    background: $pale-yellow-light;
-    box-shadow: 0.6vmin 0.6vmin $green-light, 1vmin 1vmin #000,
+    border-color: rgb(109, 81, 28);
+    background: rgb(205, 188, 90);
+    box-shadow: 0.6vmin 0.6vmin rgb(152, 222, 152), 1vmin 1vmin #000,
       1vmin 1vmin #000, 0.65vmin 1vmin #000, 1vmin 0.65vmin #000;
   }
   #btn {
@@ -137,16 +137,16 @@
     border: var(--border-small);
     box-shadow: 0.6vmin 0.6vmin #000;
     text-align: center;
-    background: $pale-yellow;
+    background: rgb(205, 188, 90);
     text-decoration: none;
     font-weight: 800;
-    color: $black;
+    color: black;
     font-size: 4vmin;
     transition: all 0.2s ease;
   
     &:hover {
-      background: $green-light;
-      color: $black;
+      background: rgb(152, 222, 152);
+      color: black;
       box-shadow: 0.6vmin 0.6vmin #000, 1vmin 1vmin #000, 0.65vmin 1vmin #000,
         1vmin 0.65vmin #000;
       transform: translate(0.5vmin, -0.5vmin);

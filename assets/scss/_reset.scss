@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -9,35 +10,10 @@ h4,
 h5,
 h6,
 pre {
-	font-family: "B612", sans-serif;
-	margin: 0 0 0.5rem 0;
-	color: $drkGrey;
-	line-height: 1.2;
-  font-weight: 700;
-}
-h1 {
-    font-size: var(--h1-size);
-    color: $litBlurey;
-}
-h2 {
-    font-size: var(--h2-size);
-    font-weight: 600;
-    color: $greeGrey;   
-}
-h3 {
-    font-size: var(--h3-size);
-    font-weight: 500;
-    color: $pinky; 
-}
-a {
-    color: $purp;
-    font-weight: 500;
-    text-decoration: none;
-}
-
-a:hover {
-    color: $pinky;
-    text-decoration: underline;
+	font-family: "Work Sans", Arial, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
 }
 
 html,

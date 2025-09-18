@@ -12,20 +12,20 @@
 
 $alert-variants: (
   success: (
-    $green-light,
-    $green,
+    rgb(156, 212, 156),
+    green,
   ),
   error: (
-    $pale-red,
-    $red,
+    rgb(228, 145, 145),
+    red,
   ),
   warning: (
-    $pale-yellow-light,
-    $pale-yellow,
+    rgb(227, 218, 167),
+    rgb(205, 188, 90),
   ),
   info: (
-    $sky-blue-light,
-    $sky-blue,
+    rgb(184, 184, 233),
+    rgb(133, 133, 234),
   ),
 );
 
