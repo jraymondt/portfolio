@@ -13,7 +13,7 @@ include 'includes/navbar.php';
         <div class="profile_pic">
           <img src="assets/images/hunter_bob.jpg" alt="james thompson">
         </div>
-        <a href="assets/resources/2025_APRIL_JRT-web.pdf" target="_blank" class="bb-button orange rounded">
+        <a href="assets/resources/generalMisc.pdf" target="_blank" class="bb-button orange rounded">
           <i class="fas fa-envelope"></i>
           <span>Download Resume</span>
         </a>

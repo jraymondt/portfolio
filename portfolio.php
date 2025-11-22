@@ -15,7 +15,7 @@ include 'includes/navbar.php';
                   </a>
                 </div><!--end container -->
                 <div class="container">
-                  <a href="https://jraymondt.com" target="_blank" rel="noopener" title="Herald">
+                  <a href="https://progressweb.au" target="_blank" rel="noopener" title="Herald">
                     <img src="<?php echo $baseUrl; ?>/assets/images/Herald.png" alt="website">
                   </a>
                 </div><!--end container -->
@@ -40,7 +40,7 @@ include 'includes/navbar.php';
                       </a>
                 </div><!--end container -->
                 <div class="container">
-                      <a href="https://progressweb.au" target="_blank" rel="noopener" title="Exemplar"> 
+                      <a href="https://theexemplar.com.au" target="_blank" rel="noopener" title="Exemplar"> 
                         <img src="<?php echo $baseUrl; ?>/assets/images/exemplar.webp" alt="Exemplar Screen shot">
                       </a>
                 </div><!--end container -->

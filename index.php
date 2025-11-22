@@ -15,12 +15,11 @@ include 'includes/navbar.php';
         <p class="subtitle">frontEnd webDev</p>
 
         <div class="description">
-            <p>MAKES STUFF WITH 01</p>
             <p>MAKES STUFF WITH HANDS</p>
             <p>LIFE ENTHUSIAST</p>
         </div>
 
-        <a href="#" class="button">DOWNLOAD RESUME</a>
+        <a href="assets/resources/generalMisc.pdf" target="_blank" class="button">DOWNLOAD RESUME</a>
 
         <div class="geometric-separator"></div>
     </section>
@@ -29,14 +28,14 @@ include 'includes/navbar.php';
         <?php 
         // Array of skill cards with geometric icons
         $skills = [
-            ['icon_class' => 'design', 'title' => 'Web Design', 'description' => 'Coding my tits off like a champ'],
-            ['icon_class' => 'development', 'title' => 'Development', 'description' => 'Clean, things take time!'],
+            ['icon_class' => 'design', 'title' => 'Web Design', 'description' => 'Human centered, UX/UI, Responsive, Mobile First. Have a face-to-face meatspace meeting with a real human?'],
+            ['icon_class' => 'development', 'title' => 'Development', 'description' => 'Let him cook your code, clean your billion dollar project and maintain the landing gear.'],
             ['icon_class' => 'html', 'title' => 'HTML', 'description' => 'HTML5, CSS3, JavaScript, SASS, Bootstrap, Wordpress, PHP, MySQL, Astro, Laravel, React, NEXTjs'],
             ['icon_class' => 'tools', 'title' => 'Tools', 'description' => 'VSCode, Git, GitHub, Figma, Gimp, Photoshop, Excel, Power-BI'],
-            ['icon_class' => 'languages', 'title' => 'Languages', 'description' => 'English (getting there), Japanese (barely)'],
+            ['icon_class' => 'languages', 'title' => 'Languages', 'description' => 'English (getting there), Japanese (desuu)'],
             ['icon_class' => 'soft', 'title' => 'Soft Skills', 'description' => 'Problem-work, Comms with talk box, People Solving'],
-            ['icon_class' => 'hobbies', 'title' => 'Hobbies', 'description' => 'Real world activities, Art - misc, Cooking, Bloggins / webDev'],
-            ['icon_class' => 'education', 'title' => 'Education', 'description' => 'Cert IV of FrontEnd Web Dev (2021)<br>Diploma of FrontEnd Web Dev (2025)']
+            ['icon_class' => 'hobbies', 'title' => 'Hobbies', 'description' => 'Real world activities, Art - misc, Cooking, Bloggins / webDev, Golf and Bowls'],
+            ['icon_class' => 'education', 'title' => 'Education', 'description' => 'Cert IV of FrontEnd Web Dev (2021) Diploma of FrontEnd Web Dev (2025)']
         ];
 
         // Generate skill cards dynamically

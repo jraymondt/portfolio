@@ -1,20 +1,21 @@
 <div id="footer-wrap">
     <footer>
         <div class="footer-column footer-profile">
-            <p>
-                <a href="mailto:james@jraymondt.com">james</a></p>
-            <p>
-                <div class="avatar bg-pale-red">
-                    <a href="https://spiritualperfection.com.au" target="_blank" rel="noopener">
-                      <img src="<?php echo $baseUrl; ?>/assets/images/logo.svg" alt="tar">
-                    </a>  
-                </div>
+            <div class="avatar bg-pale-red">
+                <a href="https://spiritualperfection.com.au" target="_blank" rel="noopener">
+                    <img src="<?php echo $baseUrl; ?>/assets/images/logo.svg" alt="tar">
+                </a>  
+            </div>
             <p>
                 <a href="mailto:james@jraymondt.com">jraymondt.com</a></p>
             <p>
         </div><!-- profile dial-->
         <div class="footer-column footer-social"><!-- socials -->
-            <a href="https://spiritualperfection.com.au" target="_blank" rel="noopener"><h3>Follow me</h3></a>
+            <a href="https://spiritualperfection.com.au" target="_blank" rel="noopener">
+                <video autoplay loop muted playsinline style="max-width: 299px; height: auto; border: 4px solid var(--border-color); box-shadow: 6px 6px 0 var(--shadow-color);">
+                <source src="assets/resources/1996.mp4" type="video/mp4">Your browser does not support the video tag.
+                </video>
+            </a>
             <div class="social-icons">
                 <a href="https://github.com/jraymondt" target="_blank" rel="noopener" title="GitHub">
                 <i class="fa fa-github"></i></a>
@@ -30,7 +31,7 @@
             <p>James Raymond Thompson</p>
             <p>Morley, Western Australia</p>
             <a href="tel:+61406642114">
-            <i class="fa fa-phone"></i> 040 66 42 114</a>
+            <i class="fa fa-phone"></i> 0406 642 114</a>
         </div>
     </footer>
 </div>
