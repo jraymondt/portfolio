@@ -9,7 +9,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
       <img src="<?php echo $baseUrl; ?>/assets/images/logo.svg" alt="logo" class="logo-image">
     </a>
   </div>
-  <h1 class="mobile-title">JamesRThompson</h1>
+  <h1 class="mobile-title">JRT Portfolio</h1>
   <ul class="nav-links">
     <?php foreach ($nav_items as $item): ?>
       <li>

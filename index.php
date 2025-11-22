@@ -10,14 +10,14 @@ include 'includes/navbar.php';
     <section id="welcome" class="wrapper">
         <div class="geometric-separator"></div>
 
-        <h1>WELCOME EARTH HUMANOIDS</h1>
-        <p class="subtitle">JimBob</p>
-        <p class="subtitle">Front End Web Student</p>
+        <h1>🚎 WELCOME 👾 HUMANOIDS</h1>
+        <p class="subtitle">jimBob</p>
+        <p class="subtitle">frontEnd webDev</p>
 
         <div class="description">
-            <p>MAKES STUFF WITH CODE</p>
+            <p>MAKES STUFF WITH 01</p>
             <p>MAKES STUFF WITH HANDS</p>
-            <p>WEB TECH ENTHUSIAST</p>
+            <p>LIFE ENTHUSIAST</p>
         </div>
 
         <a href="#" class="button">DOWNLOAD RESUME</a>
@@ -31,7 +31,7 @@ include 'includes/navbar.php';
         $skills = [
             ['icon_class' => 'design', 'title' => 'Web Design', 'description' => 'Coding my tits off like a champ'],
             ['icon_class' => 'development', 'title' => 'Development', 'description' => 'Clean, things take time!'],
-            ['icon_class' => 'html', 'title' => 'HTML', 'description' => 'HTML5, CSS3, JavaScript, SASS, Bootstrap, Wordpress, PHP, MySQL, Astro, Laravel'],
+            ['icon_class' => 'html', 'title' => 'HTML', 'description' => 'HTML5, CSS3, JavaScript, SASS, Bootstrap, Wordpress, PHP, MySQL, Astro, Laravel, React, NEXTjs'],
             ['icon_class' => 'tools', 'title' => 'Tools', 'description' => 'VSCode, Git, GitHub, Figma, Gimp, Photoshop, Excel, Power-BI'],
             ['icon_class' => 'languages', 'title' => 'Languages', 'description' => 'English (getting there), Japanese (barely)'],
             ['icon_class' => 'soft', 'title' => 'Soft Skills', 'description' => 'Problem-work, Comms with talk box, People Solving'],

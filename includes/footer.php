@@ -33,6 +33,7 @@
             <i class="fa fa-phone"></i> 040 66 42 114</a>
         </div>
     </footer>
+</div>
 </div><!--end wrapper-->    
 <script src="<?php echo $baseUrl; ?>/assets/js/navbar.js"></script>
 <script src="<?php echo $baseUrl; ?>/assets/js/errorMessages.js"></script>
