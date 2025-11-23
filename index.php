@@ -11,10 +11,13 @@ include 'includes/navbar.php';
         <div class="geometric-separator"></div>
 
         <h1>🚎 WELCOME 👾 HUMANOIDS</h1>
-        <p class="subtitle">jimBob</p>
-        <p class="subtitle">frontEnd webDev</p>
-
+        <p class="subtitle">james</p>
+        <p class="subtitle">frontEnd webDev & IT person</p>
+        <div class="portrait-container">
+            <img class="portrait-image" src="assets/images/nodow.webp" alt="james bob">
+        </div>
         <div class="description">
+
             <p>MAKES STUFF WITH HANDS</p>
             <p>LIFE ENTHUSIAST</p>
         </div>

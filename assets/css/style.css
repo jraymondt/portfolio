@@ -243,20 +243,120 @@ main {
     display: inline-block;
 }
 
-.profile_pic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: var(--space-xl) 0;
+
+.portrait-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 8px solid var(--border-color);
+    margin: var(--space-xl) auto;
+    display: block;
+    object-fit: cover;
+    background-color: var(--white);
+    padding: 12px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    box-shadow: 
+    0 0 0 4px var(--accent-primary),
+    0 0 0 8px var(--white),
+    0 0 0 12px var(--accent-secondary),
+    0 0 0 16px var(--border-color),
+    16px 16px 0 0 var(--shadow-color),
+    -4px -4px 0 0 var(--accent-primary);
+    filter: grayscale(20%) contrast(1.1);
 }
 
-.profile_pic img {
-    max-width: 400px;
-    height: auto;
+.portrait-image:hover {
+    transform: translate(-8px, -8px) rotate(-5deg) scale(1.05);
+    box-shadow: 
+    0 0 0 4px var(--accent-secondary),
+    0 0 0 8px var(--white),
+    0 0 0 12px var(--accent-primary),
+    0 0 0 16px var(--border-color),
+    24px 24px 0 0 var(--shadow-color),
+    -6px -6px 0 0 var(--accent-secondary);
+    filter: grayscale(0%) contrast(1.2);
+}
+
+/* Alternative: Portrait with geometric backdrop /////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////*/
+.portrait-container {
+    position: relative;
+    display: inline-block;
+    margin: var(--space-xl) auto;
+    filter: drop-shadow(12px 12px 0 var(--shadow-color));
+}
+
+.portrait-container::before {
+    content: '👾';
+    position: absolute;
+    font-size: 12rem;
+    width: 222px;
+    height: 244px;
+    background: 
+    repeating-linear-gradient(
+        45deg,
+        var(--accent-secondary),
+                              var(--accent-secondary) 20px,
+                              var(--accent-primary) 20px,
+                              var(--accent-primary) 40px
+    );
     border: 8px solid var(--border-color);
-    box-shadow: var(--shadow-3);
-    background-color: var(--white);
-    padding: 10px;
+    top: -30px;
+    left: -30px;
+    z-index: -1;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 4px var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 6s ease-in-out infinite, popOut 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(45deg) translateY(-10px);
+    }
+}
+
+@keyframes popOut {
+    0%, 85%, 100% {
+        z-index: -1;
+        font-size: 12rem;
+        opacity: 0.3;
+    }
+    90%, 95% {
+        z-index: 10;
+        font-size: 15rem;
+        opacity: 1;
+        transform: rotate(45deg) translateY(0) scale(1.2);
+    }
+}
+
+/* Add glitch effect on hover */
+.portrait-container:hover .portrait-image {
+    animation: glitch 0.3s ease-in-out;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+    }
+    40% {
+        transform: translate(3px, -3px);
+    }
+    60% {
+        transform: translate(-3px, -3px);
+    }
+    80% {
+        transform: translate(3px, 3px);
+    }
 }
 
 /* Skills section with neobrutalist cards */
@@ -811,7 +911,11 @@ textarea.bb-input {
   }
 }
 
-/* RESPONSIVE DESIGN */
+/* /////////////////////////////////RESPONSIVE DESIGN 786//////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* RESPONSIVE DESIGN - 768px BREAKPOINT */
 @media screen and (max-width: 768px) {
     .navbar {
         padding: 15px 20px;
@@ -859,17 +963,18 @@ textarea.bb-input {
         transform: translateX(0%) !important;
     }
 
-    .social-links {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .social-links .bb-button {
-        width: 100%;
-    }
-
     #welcome h1 {
         font-size: 2.5rem;
+    }
+    
+    .portrait-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .portrait-container::before {
+        width: 230px;
+        height: 230px;
     }
 
     .skills {
@@ -909,8 +1014,13 @@ textarea.bb-input {
         grid-template-columns: 1fr;
     }
     
-    .social-icons {
-        grid-template-columns: 1fr;
+    .social-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .social-links .bb-button {
+        width: 100%;
     }
     
     .error-page h1 {
@@ -922,7 +1032,55 @@ textarea.bb-input {
     }
 }
 
+/* RESPONSIVE DESIGN - 480px BREAKPOINT */
 @media screen and (max-width: 480px) {
+    * {
+        font-size: 16px;
+    }
+
+    #welcome h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.4rem !important;
+    }
+
+    .portrait-image {
+        width: 200px;
+        height: 200px;
+        box-shadow:
+            8px 8px 0 var(--shadow-color),
+            0 0 0 8px var(--accent-primary),
+            0 0 0 12px var(--border-color);
+    }
+
+    .portrait-container::before {
+        width: 180px;
+        height: 180px;
+        top: -15px;
+        left: -15px;
+    }
+
+    .portrait-container::after {
+        width: 60px;
+        height: 60px;
+        bottom: -20px;
+        right: -20px;
+    }
+
+    .skill-box {
+        padding: var(--space-sm);
+    }
+
+    .skill-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .skill-box p {
+        font-size: 0.9rem;
+    }
+
     footer {
         padding: var(--space-md);
         gap: var(--space-md);
@@ -961,43 +1119,15 @@ textarea.bb-input {
     .error-page h2 {
         font-size: 1.8rem;
     }
-
-    
-
-    @keyframes navLinkFade {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
 }
 
-@media screen and (max-width: 480px) {
-    * {
-        font-size: 16px;
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
     }
-
-    #welcome h1 {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1.4rem !important;
-    }
-
-    .skill-box {
-        padding: var(--space-sm);
-    }
-
-    .skill-box h3 {
-        font-size: 1.3rem;
-    }
-
-    .skill-box p {
-        font-size: 0.9rem;
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

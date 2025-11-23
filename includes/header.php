@@ -16,7 +16,7 @@
     <meta property="og:title" content="<?php echo $site_title; ?>">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo $site_url; ?>">
-    <meta property="og:image" content="<?php echo $baseUrl; ?>/assets/images/best_can.png">
+    <meta property="og:image" content="<?php echo $baseUrl; ?>/assets/images/nodow.webp">
     <meta property="og:description" content="<?php echo $site_title; ?>: Personal Portfolio">
     <meta property="og:locale" content="en_AU">
     <meta property="og:locale:alternate" content="en_GB">

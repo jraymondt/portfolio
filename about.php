@@ -11,7 +11,7 @@ include 'includes/navbar.php';
       <h2>👨🏻‍🚀  about a boy  👨🏻‍🚀</h2>
       <div class="dialog">
         <div class="profile_pic">
-          <img src="assets/images/hunter_bob.jpg" alt="james thompson">
+          <img class="portrait-image" src="assets/images/hunter_bob.jpg" alt="james thompson">
         </div>
         <a href="assets/resources/generalMisc.pdf" target="_blank" class="bb-button orange rounded">
           <i class="fas fa-envelope"></i>

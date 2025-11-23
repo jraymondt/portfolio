@@ -12,13 +12,13 @@ function getBaseUrl() {
 $baseUrl = getBaseUrl();
 
 // site configuration
-$site_title = "James PortoFolo";
+$site_title = "James Portfolio";
 $site_description = "Personal Portfolio";
 $site_author = "James Raymond Thompson";
 $site_url = $baseUrl;
 
 // metadata (can be overridden per page)
-$page_title = "JRT";
+$page_title = "James Raymond Thompson";
 $page_description = "Personal Portfolio";
 $page_keywords = "Personal portfolio, front end, web development";
 
