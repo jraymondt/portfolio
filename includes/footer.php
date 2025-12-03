@@ -39,6 +39,7 @@
 <script src="<?php echo $baseUrl; ?>/assets/js/navbar.js"></script>
 <script src="<?php echo $baseUrl; ?>/assets/js/errorMessages.js"></script>
 <script src="<?php echo $baseUrl; ?>/assets/js/register.js"></script>
+<script src="<?php echo $baseUrl; ?>/assets/js/qR.js"></script>
 <script src="https://kit.fontawesome.com/18d6f5b67f.js" crossorigin="anonymous"></script>
 </body>
 </html>

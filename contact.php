@@ -38,7 +38,41 @@ include 'includes/navbar.php';
                         <input class="bb-button orange rounded" type="submit" value="Send Message">
                     </form>
                 </div>
-                <br><br>
+                <br>
+                <section class="qr-gallery">
+                    <h2>Graduation QR Gallery</h2>
+                    <div class="qr-grid">
+                        <!-- Card 1: LinkedIn -->
+                        <article class="qr-card" data-real="LinkedIn profile">
+                            <img src="assets/images/qr-linkedin.png" alt="LinkedIn QR">
+                            <h3 class="qr-caption">Final Boss Fight: LinkedIn</h3>
+                            <p class="qr-meta">Career mode · +10 anxiety</p>
+                        </article>
+
+                        <!-- Card 2: Portfolio home -->
+                        <article class="qr-card" data-real="Portfolio home page">
+                            <img src="assets/images/qr-portfolio.png" alt="Portfolio QR">
+                            <h3 class="qr-caption">Enter the Skill Dungeon</h3>
+                            <p class="qr-meta">Loot: projects, case studies</p>
+                        </article>
+
+                        <!-- Card 3: Demo reel -->
+                        <article class="qr-card" data-real="Demo reel">
+                            <img src="assets/images/qr-reel.png" alt="Demo reel QR">
+                            <h3 class="qr-caption">Unskippable Cutscene</h3>
+                            <p class="qr-meta">Runtime: short, promise</p>
+                        </article>
+                    </div>
+
+                    <!-- optional tiny legend -->
+                    <p class="qr-legend">
+                        These are the same QR codes used at my grad showcase. Click to open,
+                        or scan them on your phone for the “real” experience. 
+                        <sub>**real experience is subjective and may be contigent on astrological objects ruining your day</sub>
+                    </p>
+                </section>
+
+                <br>
                 <p>Or connect with me on social media:</p>
                 <div class="social-links">
                     <a href="https://linkedin.com/in/jraymondt" target="_blank" rel="noopener noreferrer" class="bb-button blue rounded">LinkedIn</a>
